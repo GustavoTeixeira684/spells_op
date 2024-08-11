@@ -1,0 +1,112 @@
+[
+	{
+		"id":0,
+		"titulo":"Ballet Chop",
+		"descricao":"Um golpe rápido que atinge o inimigo nos olhos com uma jogada de ataque corpo-a-corpo desarmado na forma de umtapa, em partes sensíveis do rosto. O alvo atingido receberá desvantagem no próximo Teste de Resistência que fizeraté o final do seu próximo turno.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação Versátil",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Death Wink",
+		"descricao":"Cria uma explosão de pressão de ar apenas piscando os olhos, liberando uma jogada de ataque à distância poderosa.Sua pressão é similar a um soco, e não recebe desvantagem ao tentar acertar alvos que estejam a 1,5 metro de você.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 12 metros, Linha",
+		"requisito":"Ação Versátil",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Rolling Aesthe",
+		"descricao":"Você pode usar uma reação para se jogar no chão, rolando graciosamente de um lado para o outro, se tornando difícilde acertar. Quando você for alvo de um efeito que exige um Teste de Resistência de Destreza para sofrer metade dodano, você não sofre dano algum se passar, e somente metade do dano se falhar.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Pessoal",
+		"requisito":"Reação",
+		"dano":"Nenhum",
+		"grau":"1"
+	},
+	{
+		"id":3,
+		"titulo":"Bombardier",
+		"descricao":"Uma jogada de ataque corpo-a-corpo desarmado desferindo vários chutes rápidos, em sequência com uma margem deacerto crítico 19-20. Uma criatura atingida com este ataque deve ser bem sucedida em um Teste de Resistência deEspírito para não sofrer a condição “Enfeitiçado” até o final do seu próximo turno, se falhar.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"4d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Keri Pointe",
+		"descricao":"Você salta no ar, girando, e chuta o inimigo realizando uma jogada de ataque corpo-a-corpo desarmado com ambos ospés em seu corpo. O impacto empurra a criatura Grande ou menor para um espaço desocupado a até 6 metros dedistância dela, caso ela não passe em um Teste de Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá2d8 de dano extra.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"5d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":5,
+		"titulo":"Galaxy Wink",
+		"descricao":"Você desfere várias piscadas com os olhos, criando várias explosões de pressão de ar, liberando em direção aos inimigoscomo se fosse uma metralhadora. Toda a criatura, à sua escolha, dentro da área da técnica deve fazer um Teste deResistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Até 12 metros, Cone",
+		"requisito":"Ação",
+		"dano":"9d6 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":6,
+		"titulo":"Grand Fouetté: Ano Natsu No Hi No Memoir",
+		"descricao":"Depois de girar o corpo, você executa uma jogada de ataque corpo-a-corpo desarmado contra uma criatura. Se o alvoescolhido estiver com 80 pontos de vida ou menos, ele receberá a condição “Estremecido”, por até 1 minuto. Docontrário, essa técnica não produz esse efeito. O alvo estremecido deve realizar um Teste de Resistência deConstituição no final de cada um dos turnos dele. Se obtiver sucesso na resistência, o efeito termina.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"6d12 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":7,
+		"titulo":"Bombardier Arabesque",
+		"descricao":"Você realiza uma jogada de ataque corpo-a-corpo desarmado desferindo vários chutes rápidos, em sequência com umamargem de acerto crítico 18-20. Uma criatura atingida com este ataque deve ser bem sucedida em um Teste deResistência de Espírito para não sofrer a condição “Enfeitiçado” até o final do seu próximo turno, se falhar.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"9d12 de dano de Concussão",
+		"grau":"4"
+	},
+	{
+		"id":8,
+		"titulo":"Ohikae Na Foutté",
+		"descricao":"Realizando uma cambalhota para trás no ar, para conseguir desferir uma jogada de ataque corpo-a-corpo desarmadocom um poderoso chute em uma criatura. O alvo deste ataque deve fazer um Teste de Resistência de Constituição,recebendo a condição “Atordoado” até o final do seu próximo turno, se falhar.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"13d12 de dano de Concussão",
+		"grau":"5"
+	},
+	{
+		"id":9,
+		"titulo":"Newkama Kenpo: Yonjuyon (44) No Aesthe Ogi - Mudade Shori Ken",
+		"descricao":"Você apunhala as suas mãos rapidamente em seu oponente, com uma força sobre-humana, em várias partes de suacabeça em uma jogada de ataque corpo-a-corpo desarmado. O alvo deve fazer um Teste de Constituição, recebendo ascondições “Atordoado” até o final do seu próximo turno, se falhar, ou as condições “Cego” e “Sufocado” até o finaldo próximo turno, se passar.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"14d12 de dano de Concussão",
+		"grau":"6"
+	}
+]

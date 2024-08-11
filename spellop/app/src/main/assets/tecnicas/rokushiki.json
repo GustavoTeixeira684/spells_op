@@ -1,0 +1,167 @@
+[
+	{
+		"id":0,
+		"titulo":"Soru",
+		"descricao":"O usuário impulsiona suas pernas contra o chão várias vezes rapidamente, aumentando explosivamente sua velocidadeao dar uma investida. Você adiciona 3 metros ao seu deslocamento normal, até o início do seu próximo turno. Odeslocamento feito usando esta habilidade não sofre reações como a característica “Ataque de Oportunidade” e apróxima jogada de ataque que você fizer recebe vantagem.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Shigan",
+		"descricao":"O usuário aplica uma grande força em seu dedo em uma jogada de ataque corpo-a-corpo, de modo que o seu impactoem alta velocidade contra o corpo de uma criatura cause um dano semelhante ao do tiro de uma pistola, porém, muitomais forte.A criatura atingida deve fazer um Teste de Resistência de Constituição, caso falhe ela recebe a condição“Sangramento”.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação Versátil",
+		"dano":"2d12 de dano Perfurante",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Tekkai",
+		"descricao":"O usuário enrijece os músculos do corpo por um curto período de tempo. Quando o “Tekkai” for usado, o usuário teráseu deslocamento reduzido a 0, até o final do seu próximo turno.Você consegue endurecer o seu corpo para se proteger de danos de concussão, cortantes ou perfurantes com10d8 Pontos de Vida Temporários, que são reduzidos a cada ataque. A proteção acaba quando os danos ultrapassaremo resultado dos dados ou no início do seu próximo turno.",
+		"energia":"2",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Reação",
+		"dano":"Nenhum",
+		"grau":"1"
+	},
+	{
+		"id":3,
+		"titulo":"Geppo",
+		"descricao":"O usuário aplica grande força nas pernas e 'chuta' o ar, assim se impulsionando usando apenas a resistência do ar como poder de seus 'chutes', essa técnica permite que o utilizador salte no próprio ar, ganhando movimento de voo igualao seu deslocamento normal, até o início do seu próximo turno, podendo cruzar grandes distâncias sem nunca tocar ochão, ou fazer ataques rápidos e aéreos. Ao receber dano, o usuário deve fazer um Teste de Resistência de ConstituiçãoCD 17 subtraído pelo seu modificador de Constituição, para não cair.",
+		"energia":"2",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Rankyaku",
+		"descricao":"O usuário chuta o ar tão forte e rápido, realizando uma jogada de ataque à distância, que forma uma lâmina de ar quecorta tudo que atinge. Abrange uma área de 4,5 metros que consegue atingir, por exemplo, até 3 criaturas médias oumenores que estejam uma ao lado da outra com a mesma jogada de ataque. O dano causado por esta técnica é dobradoem estruturas.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Até 12 metros, Linha",
+		"requisito":"Ação",
+		"dano":"6d10 de dano Cortante",
+		"grau":"2"
+	},
+	{
+		"id":5,
+		"titulo":"Kamie",
+		"descricao":"Esta técnica consiste em relaxar o corpo do usuário, deixando-o leve e flexível, sendo capaz de evitar os golpes doadversário mais facilmente. Usando uma reação, até o início do seu próximo turno, quando você for alvo de uma jogadade ataque, jogue um d20 adicionando seu modificador de Destreza ao resultado, se o número for maior do que onúmero do dado da jogada de ataque para te acertar, você desvia e não sofre dano.Ao ser atingido por uma jogada de ataque, esta técnica se encerra automaticamente.",
+		"energia":"6",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Reação",
+		"dano":"Nenhum",
+		"grau":"2"
+	},
+	{
+		"id":6,
+		"titulo":"Tobu Shigan: Mittsu Bachi",
+		"descricao":"Um “Shigan” aprimorado ao ponto de que quando o usuário pressiona com força o indicador contra o polegar e depoissolta, repetindo rapidamente 3 vezes, faz uma jogada de ataque à distância que consegue projetar o impacto muitomais forte que o de uma bala através do ar, contra um adversário.A criatura atingida deve fazer um Teste de Resistência de Constituição, caso falhe ela recebe a condição“Sangramento”.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Até 15 metros, Linha",
+		"requisito":"Ação",
+		"dano":"9d12 de dano Perfurante",
+		"grau":"3"
+	},
+	{
+		"id":7,
+		"titulo":"Rankyaku Ran",
+		"descricao":"O usuário, no ar ou com ambas as pernas livres, usando o movimento de chutes, consegue lançar rapidamente vários“Rankyaku” menores em vários inimigos. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistênciade Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Até 12 metros, Cone",
+		"requisito":"Ação",
+		"dano":"9d6 de dano Cortante",
+		"grau":"3"
+	},
+	{
+		"id":8,
+		"titulo":"Kamisori",
+		"descricao":"União do “Soru” com o “Geppo”, podendo assim, adicionar 6 metros ao seu deslocamento normal e recebendodeslocamento de voo igual ao seu deslocamento total. O usuário permanece no ar até o início do seu próximo turno. Odeslocamento feito usando esta habilidade não sofre reações como a característica “Ataque de Oportunidade” e apróxima jogada de ataque que você fizer recebe vantagem.",
+		"energia":"6",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"3"
+	},
+	{
+		"id":9,
+		"titulo":"Shigan Madara",
+		"descricao":"O usuário agora consegue usar o “Shigan” utilizando as duas mãos, simultaneamente, diversas vezes em um únicoturno. Acertando um único alvo várias vezes ou fazendo uma jogada de ataque corpo-a-corpo contra duas criaturas edividindo seu dano em dois alvos diferentes.A criatura atingida deve fazer um Teste de Resistência de Constituição, caso falhe ela recebe a condição“Sangramento”.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"12d12 de dano Perfurante",
+		"grau":"4"
+	},
+	{
+		"id":10,
+		"titulo":"Rankyaku Gaichou",
+		"descricao":"Um “Rankyaku”feito com o movimento mais extenso das pernas que cria uma forma de pássaro,realizando uma jogadade ataque à distância. Abrange uma área de 7,5 metros que consegue atingir, por exemplo, até 5 criaturas médias oumenores que estejam uma ao lado da outra com a mesma jogada de ataque. O dano causado por esta técnica é dobradoem estruturas.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Até 18 metros, Linha",
+		"requisito":"Ação",
+		"dano":"12d10 de dano Cortante",
+		"grau":"4"
+	},
+	{
+		"id":11,
+		"titulo":"Tekkai Utsugi",
+		"descricao":"Ao receber um ataque corpo-a-corpo, enrijecendo os músculos com tamanha força que retornando a mesma quantidadede dano causado pelo ataque e adicionando dano de concussão extra, encerrando o turno da criatura que atacou e nãosofrendo dano algum.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Pessoal",
+		"requisito":"Reação",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"4"
+	},
+	{
+		"id":12,
+		"titulo":"Jusshigan",
+		"descricao":"Forma ofensiva definitiva do “Shigan”, acertando o corpo de uma criatura com uma jogada de ataque corpo-a-corpocom as duas mãos opostas uma à outra e com todos os dedos tensionados. Uma criatura ferida por este ataque devefazer um Teste de Resistência de Constituição, recebendo a condição “Atordoado” até o final do seu próximo turno,se falhar.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"13d12 de dano Perfurante",
+		"grau":"5"
+	},
+	{
+		"id":13,
+		"titulo":"Rankyaku Amanedachi",
+		"descricao":"Girando o corpo algumas vezes o usuário se torna capaz de criar um único “Rankyaku” que cobre uma grande área.Toda a criatura dentro do alcance da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano sefalhar ou metade desse dano se obtiver sucesso. O dano causado por esta técnica é dobrado em estruturas.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Até 12 metros de raio, Cilindro",
+		"requisito":"Ação",
+		"dano":"15d6 de dano Cortante",
+		"grau":"5"
+	},
+	{
+		"id":14,
+		"titulo":"Rokuougan",
+		"descricao":"Somente aqueles que têm o domínio completo do Rokushiki podem ter acesso a esta sétima habilidade. O usuáriocoloca seus punhos na frente do alvo e, com uma jogada de ataque corpo-a-corpo, lança uma onda de choquedevastadora, causando danos internos no corpo da criatura. Uma criatura ferida por este ataque deve fazer um Testede Resistência de Constituição, recebendo a condição “Estremecido” por 1 minuto, se falhar. O alvo estremecido poderepetir o Teste de Resistência ao fim de cada um de seus turnos, terminando o efeito em si mesmo com um sucesso.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"15d12 de dano Trovejante",
+		"grau":"6"
+	}
+]

@@ -1,0 +1,57 @@
+[
+	{
+		"id":0,
+		"titulo":"Hasshoken - Buto",
+		"descricao":"Você realiza uma jogada de ataque corpo-a-corpo, feita com sua cabeça, contra um alvo. A criatura atingida deve serbem sucedida em um Teste de Resistência de Constituição ou receberá a condição “Incapacitado”.O impacto do ataque cria uma onda de choque ao seu redor fazendo com que toda criatura a 1,5 metro de vocêdeva fazer um Teste de Resistência de Destreza. Sofrendo 3d8 de dano Trovejante se falhar ou metade desse dano seobtiver sucesso.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Hasshoken, Ação",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":1,
+		"titulo":"Hasshoken - Galleon Lariat",
+		"descricao":"Você cria e concentra ondas destrutivas de choque no seu braço e lança contra seus inimigos. Toda a criatura dentroda área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade dessedano se obtiver sucesso.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"12 metros, Cone",
+		"requisito":"Hasshoken, Ação",
+		"dano":"9d6 de dano Trovejante",
+		"grau":"3"
+	},
+	{
+		"id":2,
+		"titulo":"Hasshoken - Bujaogen",
+		"descricao":"Você realiza uma jogada de ataque corpo-a-corpo contra uma criatura que deve ser bem sucedida em um Teste deResistência de Constituição ou receberá a condição “Atordoado”.O impacto do ataque cria uma onda de choque ao seu redor fazendo com que toda criatura a 1,5 metro de vocêdeva fazer um Teste de Resistência de Destreza. Sofrendo 6d8 de dano Trovejante se falhar ou metade desse dano seobtiver sucesso.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Hasshoken, Ação",
+		"dano":"4d12 de dano de Concussão",
+		"grau":"4"
+	},
+	{
+		"id":3,
+		"titulo":"Hasshoken - Hado Elbow",
+		"descricao":"Um ataque direto com seu cotovelo contra uma criatura, que deve passar em um Teste de Resistência de Força.Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso. Caso a criatura falhe no primeiro teste, oimpacto empurra a criatura Grande ou menor para um espaço desocupado a até 9 metros de distância dela, caso elanão passe em um novo Teste de Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá3d8 de dano de Concussão extra.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Hasshoken, Ação",
+		"dano":"14d10 de dano Trovejante",
+		"grau":"5"
+	},
+	{
+		"id":4,
+		"titulo":"Hasshoken Ogi - Kiryu Kirikugi",
+		"descricao":"Você realiza uma jogada de ataque corpo-a-corpo contra uma criatura. O impacto do ataque cria uma onda de choqueao seu redor fazendo com que toda criatura a 1,5 metro de você deva fazer um Teste de Resistência de Destreza, comdesvantagem. Sofrendo 8d8 de dano Trovejante se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Hasshoken, Ação",
+		"dano":"10d12 de dano Trovejante",
+		"grau":"6"
+	}
+]

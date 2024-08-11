@@ -1,0 +1,57 @@
+[
+	{
+		"id":0,
+		"titulo":"Flechada Certeira",
+		"descricao":"Você utiliza grande força e concentração para fazer um ataque sem chance de errar com seu arco. Esta técnica acertaautomaticamente e não há jogada de ataque.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Arco, Linha",
+		"requisito":"1 Arco, 1 Flecha Ação",
+		"dano":"3d12 de dano Perfurante",
+		"grau":"2"
+	},
+	{
+		"id":1,
+		"titulo":"Passos do Arqueiro",
+		"descricao":"Enquanto a técnica durar, o seu movimento normal se torna 18 metros, você recebe deslocamento de natação eescalada igual ao seu deslocamento normal e recebe vantagem em Testes de Habilidade de Destreza (Furtividade). Oseu deslocamento também não pode ser reduzido por terreno difícil e você pode se mover sem provocar reações denenhum tipo, mesmo as que ignorem esse tipo de característica como “Ataque de Oportunidade Superior”.",
+		"energia":"9",
+		"duracao":"Até 1 minuto, Concentração",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"3"
+	},
+	{
+		"id":2,
+		"titulo":"Tempestade de Flechas",
+		"descricao":"Com uma velocidade inacreditável, você dispara uma saraivada de flechas contra todos os seus inimigos. Toda acriatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar oumetade desse dano se obtiver sucesso.Alternativamente, você pode focar as flechas em uma única criatura, fazendo uma jogada de ataque à distância(18 metros em linha), com uma ação bônus e gastando apenas 10 flechas, que causa 9d12 de dano Perfurante.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"15 metros, Cone",
+		"requisito":"1 Arco, 50 Flechas, Ação",
+		"dano":"12d6 de dano Perfurante",
+		"grau":"4"
+	},
+	{
+		"id":3,
+		"titulo":"Disparo Estratégico",
+		"descricao":"Mirando pontos importantes como mãos, pés, cotovelos e outros, você consegue atrapalhar seus alvos. Uma criaturaatingida com este ataque deve ser bem sucedida em um Teste de Resistência de Constituição para não sofrer a condição“Impedido” ou “Incapacitado” (à sua escolha) até o final do seu próximo turno, se falhar.Você pode gastar 1 Ponto de Energia para adicionar 1d12 de dano Perfurante, até um dano máximo total de14d12 de dano Perfurante.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Arco, Linha",
+		"requisito":"1 Arco, 1 Flecha, Ação",
+		"dano":"1d12 de dano Perfurante",
+		"grau":"5"
+	},
+	{
+		"id":4,
+		"titulo":"Bullseye",
+		"descricao":"Atingindo o ápice da concentração, por um curto período de tempo, você se torna mais preciso que uma máquina.Todas as suas jogadas de ataque à distância com arco acertam o alvo automaticamente, desde que esteja dentro doalcance do seu arco.",
+		"energia":"12",
+		"duracao":"Até o final do seu turno, Concentração",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"6"
+	}
+]

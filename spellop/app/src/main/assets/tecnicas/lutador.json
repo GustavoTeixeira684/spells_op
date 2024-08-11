@@ -1,0 +1,134 @@
+[
+	{
+		"id":0,
+		"titulo":"Overthrow",
+		"descricao":"Realizando uma jogada de ataque corpo-a-corpo, você desfere um golpe que joga uma criatura Grande ou menor comtoda a força contra o chão. A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição oureceberá a condição “Caído”.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação Versátil",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Party Table",
+		"descricao":"Com as mãos apoiadas no chão ou outro local, ao realizar giros e se movimentando rapidamente para perto dos alvos,aplicando um grande número de chutes poderoso em todos os inimigos próximos. Toda a criatura dentro da área datécnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiversucesso.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 1,5 metro de raio, Esfera",
+		"requisito":"Ação Versátil",
+		"dano":"2d8 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Grau",
+		"descricao":"Hard BlockAo sofrer dano, você pode usar sua reação para reduzir os danos de Concussão, Cortantes e Perfurantes sofridos em6d8, até o início do seu próximo turno.Heavy Block: No 13o nível, usando sua reação, você pode usar essa técnica como uma técnica de 4o Grau, para reduziros danos de Concussão, Cortantes e Perfurantes sofridos em 10d8 e aumentar a sua CR em +3, até o início do seupróximo turno, custando 8 Pontos de Energia.Você pode gastar 1 Ponto de Energia para adicionar 2d8 de redução, até um dano máximo total de 22d8.",
+		"energia":"2",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Reação",
+		"dano":"Nenhum",
+		"grau":"8"
+	},
+	{
+		"id":3,
+		"titulo":"Power Shot",
+		"descricao":"Você realiza uma jogada de ataque corpo-a-corpo com um chute poderoso, ao acertar o inimigo. O impacto empurra acriatura Grande ou menor para um espaço desocupado a até 6 metros de distância dela, caso ela não passe em um Testede Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá2d8 de dano extra.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"5d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Heavy Strike",
+		"descricao":"Realizando um salto e girando no ar algumas vezes, para aumentar a potência do golpe, você realiza uma jogada deataque corpo-a-corpo que desfere um chute para baixo acertando com a ponta traseira do pé. A criatura atingida deveser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição “Incapacitado”, até o final dopróximo turno da criatura.Você pode gastar 1 Ponto de Energia para adicionar 1d12 de dano, até um dano máximo total de 5d12.",
+		"energia":"3",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"1d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":5,
+		"titulo":"Rage Uppercut",
+		"descricao":"Ao ser alvo de uma jogada de ataque corpo-a-corpo de uma criatura, você pode usar sua reação para desferir um socoascendente na cabeça ou corpo da criatura, causando grande dano e desestabilizando-a. A criatura atingida deve serbem sucedida em um Teste de Resistência de Constituição ou receberá a condição “Atordoado”, até o final do próximoturno da criatura.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Reação",
+		"dano":"3d12 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":6,
+		"titulo":"Kick Course",
+		"descricao":"Um chute de baixo para cima com grande poder, que lança o inimigo no ar. No final do próximo turno da criatura, elacai no chão e recebe o dano da técnica.Alternativamente, você pode lançar uma criatura voluntária, de tamanho médio ou menor, por 15 metros emqualquer direção, sem causar qualquer dano a ela diretamente e gastando apenas 3 Pontos de Energia.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"7d12 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":7,
+		"titulo":"Kick Overdrive",
+		"descricao":"Com uma jogada de ataque corpo-a-corpo você desfere inúmeros chutes em sequência com grande força e potência,para quebrar ossos e romper ligamentos, acertando todas as partes do corpo do inimigo. A criatura atingida deve serbem sucedida em um Teste de Resistência de Constituição ou perderá metade do seu movimento total, até o final dopróximo turno da criatura. Se o resultado do teste for menor que 8 + seu modificador de Força o efeito durará até queo alvo terminar um descanso curto ou longo.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"10d12 de dano de Concussão",
+		"grau":"4"
+	},
+	{
+		"id":8,
+		"titulo":"Dempsey Roll",
+		"descricao":"Você assume uma postura que garante a união perfeita de esquivas e golpes. Enquanto a técnica durar, todas as suasjogadas de ataque corpo-a-corpo desarmado recebem vantagem e todas as jogadas de ataque corpo-a-corpo contra vocêrecebem desvantagem.Além disso, enquanto essa técnica durar, você recebe duas jogadas de ataque adicionais, quando usar a ação“Atacar”.",
+		"energia":"12",
+		"duracao":"Até 1 minuto, Concentração",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"4"
+	},
+	{
+		"id":9,
+		"titulo":"Rotary Pain",
+		"descricao":"Com uma jogada de ataque corpo-a-corpo você agarra um objeto ou criatura média por um dos membros e gira seucorpo, acertando outras criaturas, objetos, chão, etc. Toda a criatura a até 1,5 metro de você deve fazer um Teste deResistência de Destreza. Sofrendo metade do dano se falhar e nenhum dano de for bem sucedida.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"15d8 de dano de Concussão",
+		"grau":"5"
+	},
+	{
+		"id":10,
+		"titulo":"Tekken",
+		"descricao":"Você realizar um ataque rápido e preciso, sem chance de errar, contra uma criatura que recebe a condição “Atordoado”,até o final do próximo turno da criatura, sem a necessidade de um Teste de Resistência.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"5d12 de dano de Concussão",
+		"grau":"5"
+	},
+	{
+		"id":11,
+		"titulo":"Berserker Barrage",
+		"descricao":"Com uma jogada de ataque corpo-a-corpo contra uma criatura, você libera uma longa sequência de golpes poderososcom toda a sua força.Alternativamente, quando você cai a 0 pontos de vida, caso não morra e não esteja incapacitado, você podeusar sua reação para realizar essa técnica sem utilizar Pontos de Energia (o dano se tornará 8d12). Você precisaráterminar um descanso longo para usar está característica novamente e receberá 2 níveis de exaustão, após o primeirodescanso.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"18d12 de dano de Concussão",
+		"grau":"6"
+	}
+]

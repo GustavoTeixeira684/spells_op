@@ -1,0 +1,74 @@
+[
+    {
+        "id":1,
+        "nome":"Manobra Evasiva",
+        "tipo":"reação",
+        "duracao":1,
+        "tipo_duracao":"turno",
+        "alcance":"1.5 metros",
+        "requisito":"Reação",
+        "dano":"0",
+        "tipo_ataque":"none",
+        "energia":2,
+        "grau":1,
+        "descricao":"Quando for necessário se livrar de inimigos próximos, você pode usar uma reação para rapidamente se afastar 9 metros. Esse movimento não provoca reações, como a característica “Ataque de Oportunidade”. Após isso é adicionando +1 na sua CR e nenhum ataque possuirá vantagem contra você, até o início do seu próximo turno."
+    },
+    {
+        "id":2,
+        "nome":"Ultimo Recurso",
+        "tipo":"ação",
+        "duracao":0,
+        "tipo_duracao":"turno",
+        "alcance":"9 metros",
+        "requisito": "1 arma de fogo, Ação Versátil",
+        "dano":"2d12 concussão",
+        "tipo_ataque":"acerto",
+        "energia":2,
+        "grau":1,
+        "descricao":"Mesmo que uma arma não tenha munições, ela ainda se torna um recurso para você. Sempre que quiser, você pode arremessar uma arma de fogo, dentro do alcance da técnica. A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição, com desvantagem, ou receberá a condição “Incapacitado”, até o final do próximo turno da criatura."
+    },
+    {
+        "id":3,
+        "nome":"Death Blossom",
+        "tipo":"ação",
+        "duracao":0,
+        "tipo_duracao":"turno",
+        "alcance":"Arma, Esfera",
+        "requisito": "2 Pistolas, 8 Munições (Qualquer), Ação",
+        "dano":"6d6 concussão ou perfurante",
+        "tipo_ataque":"acerto",
+        "energia":6,
+        "grau":2,
+        "descricao":"Você executa disparos contra todos os inimigos ao seu redor. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso."
+    },
+    {
+        "id":4,
+        "nome":"Covering",
+        "tipo":"ação",
+        "duracao":0,
+        "tipo_duracao":"turno",
+        "alcance":"Arma, Linha",
+        "requisito": "2 Pistolas, 6 Munições (Qualquer), Ação",
+        "dano":"6d12 concussão ou perfurante",
+        "tipo_ataque":"acerto",
+        "energia":6,
+        "grau":2,
+        "descricao":"Você realiza uma série de tiros cadenciados, com uma jogada de ataque a distância contra uma criatura. Caso ela seja atingida, a próxima jogada de ataque (comum ou de técnica) que ela fizer receberá desvantagem, até o final do próximo turno dela."
+    },
+    {
+        "id":5,
+        "nome":"Quick Fire",
+        "tipo":"ação",
+        "duracao":0,
+        "tipo_duracao":"turno",
+        "alcance":"Arma, Linha",
+        "requisito": "2 Pistolas, 6 Munições (Qualquer), Ação",
+        "dano":"6d12 concussão ou perfurante",
+        "tipo_ataque":"acerto",
+        "energia":6,
+        "grau":2,
+        "descricao":"Você realiza uma série de tiros cadenciados, com uma jogada de ataque a distância contra uma criatura. Caso ela seja atingida, a próxima jogada de ataque (comum ou de técnica) que ela fizer receberá desvantagem, até o final do próximo turno dela."
+    },
+    
+    
+]

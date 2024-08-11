@@ -1,0 +1,112 @@
+[
+	{
+		"id":0,
+		"titulo":"Soru",
+		"descricao":"O usuário impulsiona suas pernas contra o chão várias vezes rapidamente, aumentando explosivamente sua velocidadeao dar uma investida. Você adiciona 3 metros ao seu deslocamento normal, até o início do seu próximo turno. Odeslocamento feito usando esta habilidade não sofre reações como a característica “Ataque de Oportunidade” e apróxima jogada de ataque que você fizer recebe vantagem.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Genkotsu Meteor",
+		"descricao":"Com sua força, você consegue lançar, em uma jogada de ataque à distância, objetos do tamanho de uma bola de canhãoou pedras na direção de uma criatura, em alta velocidade e percorrendo grandes distâncias. Caso o objeto já tenha danopróprio, prevalece o dano maior.Alternativamente, você pode arremessar uma criatura voluntária ou objeto Pequeno (ou menor) em um localque esteja a até 45 metros de distância, dependendo de onde e como cair ou caso ninguém o apanhe, o dano causado àcriatura ou objeto é determinado pelo Mestre.Ryusei Ken: No 17o nível, usando uma ação, você pode usar essa técnica como uma técnica de 5o Grau, seu danoaumenta para 15d12 de dano cortante, seu alcance se torna uma Linha de 21 metros e custa 15 Pontos de Energia.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 9 metros, Linha",
+		"requisito":"1 Bola de canhão, pedra ou objeto similar, Ação Versátil",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Geppo",
+		"descricao":"O usuário aplica grande força nas pernas e 'chuta' o ar, assim se impulsionando usando apenas a resistência do ar como poder de seus 'chutes', essa técnica permite que o utilizador salte no próprio ar, ganhando movimento de voo igualao seu deslocamento normal, até o início do seu próximo turno, podendo cruzar grandes distâncias sem nunca tocar ochão, ou fazer ataques rápidos e aéreos. Ao receber dano, o usuário deve fazer um Teste de Resistência de ConstituiçãoCD 15, para não cair.",
+		"energia":"2",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"2"
+	},
+	{
+		"id":3,
+		"titulo":"Great Impact",
+		"descricao":"Você executa um golpe certeiro com uma jogada de ataque devastadora contra uma criatura. O impacto empurra acriatura Grande ou menor para um espaço desocupado a até 6 metros de distância dela, caso ela não passe em um Testede Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá2d8 de dano extra.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"5d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Seiretsu",
+		"descricao":"Usando sua mente treinada e atingindo grande calma e concentração, você consegue entrar em um estado de purofoco, recebendo as seguintes características, enquanto a técnica durar:Vantagem em suas jogadas de ataque;Vantagem em Testes de Habilidade em que você seja proficiente;Aumenta sua Classe de Resistência em +1.",
+		"energia":"6",
+		"duracao":"Até 1 minuto, Concentração",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"2"
+	},
+	{
+		"id":5,
+		"titulo":"Great Stomp",
+		"descricao":"Um golpe no chão que cria uma onda de choque causando um grande impacto. Toda a criatura dentro da área da técnicadeve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiversucesso. A área afetada por esta técnica se torna um terreno difícil e o dano em estruturas é dobrado.Ao realizar esta técnica, você pode gastar 1 Ponto de Energia para adicionar 1d6 de dano, até um dano máximototal de 9d6.",
+		"energia":"1",
+		"duracao":"Instantâneo",
+		"alcance":"Até 6 metros de raio, Esfera",
+		"requisito":"Ação",
+		"dano":"1d6 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":6,
+		"titulo":"Lufada Cortante",
+		"descricao":"Com uma série de movimentos rápidos, você lança uma onda de cortes. Toda a criatura dentro da área da técnica devefazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.Alternativamente, você pode focar o corte em uma única criatura, fazendo uma jogada de ataque à distância(15 metros em linha) que causa 9d12 de dano de Cortante.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Até 9 metros, Cone",
+		"requisito":"1 Arma cortante, Ação",
+		"dano":"9d6 de dano Cortante",
+		"grau":"3"
+	},
+	{
+		"id":7,
+		"titulo":"Killer Bowling",
+		"descricao":"Com uma força ainda maior, você consegue lançar, em uma jogada de ataque à distância, objetos de tamanho médio,como uma pessoa, desde que você esteja impondo a condição “Agarrado” nela, ou mesmo arrancando um pedaço dochão e lançando na direção de uma criatura, em alta velocidade e percorrendo grandes distâncias. Caso o objeto játenha dano próprio, prevalece o dano maior.Alternativamente, você pode arremessar uma criatura voluntária ou objeto Médio (ou menor) em um localque esteja a até 90 metros de distância, dependendo de onde e como cair ou caso ninguém o apanhe, o dano causado àcriatura ou objeto é determinado pelo Mestre.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Até 18 metros, Linha",
+		"requisito":"1 criatura agarrada, pedra grande ou objeto similar, Ação",
+		"dano":"12d12 de dano de Concussão",
+		"grau":"4"
+	},
+	{
+		"id":8,
+		"titulo":"Hard Punch",
+		"descricao":"Um único soco desferido com grande força na cabeça de uma criatura, com uma jogada de ataque corpo-a-corpo. Acriatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição“Incapacitado”, até o final do próximo turno da criatura.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"15d12 de dano de Concussão",
+		"grau":"5"
+	},
+	{
+		"id":9,
+		"titulo":"Suisei Ken",
+		"descricao":"Uma jogada de ataque corpo-a-corpo desarmado poderosa contra uma criatura, a pressão criada pelo golpe cria umaonda de choque que atinge um cilindro de 9 metros de raio. Toda a criatura dentro da área da técnica deve fazer umTeste de Resistência de Destreza. Sofrendo 5d6 de concussão se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"16d12 de dano de Concussão",
+		"grau":"6"
+	}
+]

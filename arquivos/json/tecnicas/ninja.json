@@ -1,0 +1,90 @@
+[
+	{
+		"id":0,
+		"titulo":"Ninpo: Kawarimi no Jutsu",
+		"descricao":"Instantaneamente após um ataque te atingir, você se transporta para um local que você possa ver dentro do alcance etroca de lugar com um único objeto inanimado, que não esteja preso ou amarrado, que você possa ver no alcance. Oobjeto alvo deve ser capaz de caber inteiro dentro do mesmo local que você estava ocupando. O objeto recebe o danono seu lugar e você não recebe dano algum.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 6 metros de raio, Esfera",
+		"requisito":"Reação",
+		"dano":"Nenhum",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Ninpo: Goukakyuu no Jutsu",
+		"descricao":"Usando sua arte ninja, você pode cuspir uma gigantesca bola de fogo. Toda a criatura dentro da área da técnica devefazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 6 metros, Cone",
+		"requisito":"Ação Versátil",
+		"dano":"2d6 de dano de Fogo",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Ninpo: Enton no Jutsu",
+		"descricao":"Usando uma forma de distração, como uma bomba de fumaça, você se torna invisível até a técnica acabar. Qualquercoisa que você esteja vestindo ou objetos pequenos que esteja carregando ficam invisíveis enquanto estiver na suaposse. A técnica termina para caso você ataque ou use outra técnica qualquer.",
+		"energia":"6",
+		"duracao":"Até 1 minuto, Concentração",
+		"alcance":"Pessoal",
+		"requisito":"Ação",
+		"dano":"Nenhum",
+		"grau":"2"
+	},
+	{
+		"id":3,
+		"titulo":"Hana Shuriken",
+		"descricao":"Utilizando todo o seu foco nos ataques, você lança dez shuriken, com o máximo de eficiência, potencializando o danoe sem chance de errar, forçando os projéteis a fazerem curvas até chegarem ao alvo. As shuriken atingem criaturas àsua escolha, que você possa ver e que estejam dentro do alcance. Uma shuriken causa 1d6 de dano perfurante ao alvo.Todos os projéteis atingem simultaneamente e você pode direciona-los para atingir uma única criatura ou várias.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Até 15 metros, Linha",
+		"requisito":"Ação, 10 shuriken",
+		"dano":"1d6 de dano Perfurante (cada shuriken)",
+		"grau":"3"
+	},
+	{
+		"id":4,
+		"titulo":"Ninpo: Henge no Jutsu",
+		"descricao":"Você faz com que você mesmo – incluindo suas roupas, armas e outros pertences no seu personagem – pareça diferenteaté a técnica acabar ou até você usar sua ação para dispensa-la. Você pode se parecer 30 centímetros mais baixo oumais alto, e pode parecer magro, gordo ou entre ambos. Você não pode mudar o tipo do seu corpo, portanto, você deveadotar uma forma que tenha a mesma disposição básica de membros. No mais, a extensão da sua ilusão cabe a você.As mudanças criadas por essa técnica são ilusórias e não conseguem se sustentar perante uma inspeção física.Por exemplo, se você usar essa técnica para adicionar um chapéu ao seu visual, objetos que passarem pelo chapéu equalquer um que tocá-lo não sentirá nada ou sentirá sua cabeça e cabelo. Se você usar essa técnica para aparentar sermais magro do que é, a mão de alguém que a erguer para tocar em você, irá esbarrar em você enquanto ainda está,aparentemente, no ar.Para perceber que você está disfarçado, uma criatura pode usar a ação dela para inspecionar sua aparência edeve ser bem sucedida em um Teste de Sabedoria (Investigação) contra a CD da sua técnica.",
+		"energia":"9",
+		"duracao":"Até 10 minutos",
+		"alcance":"Pessoal",
+		"requisito":"Ação",
+		"dano":"Nenhum",
+		"grau":"3"
+	},
+	{
+		"id":5,
+		"titulo":"Kemuridama",
+		"descricao":"Você usa uma bomba de fumaça especial, feita com um modo de preparo conhecido apenas pelos ninjas, usandodiversos materiais conseguidos na natureza. Uma cortina de fumaça se espalha de um ponto à sua escolha dentro doalcance e preenche uma esfera de 9 metros de raio pela duração. Criaturas que dependam da visão não conseguemenxergar dentro da área afetada, e luz não pode iluminar.Você não é afetado pela fumaça e consegue enxergar dentro da área da técnica, usando outros sentidos comosua audição e olfato e só consegue ver silhuetas e não consegue discernir cores só tons de cinza.",
+		"energia":"12",
+		"duracao":"Até 1 minuto",
+		"alcance":"Até 9 metros, Linha",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"4"
+	},
+	{
+		"id":6,
+		"titulo":"Ninpo: Bunshin no Jutsu",
+		"descricao":"Dez duplicatas ilusórias de você aparecem dentro do alcance da técnica. Até a técnica acabar, os clones se movem comvocê e copiam as suas ações, trocando de posição, tornando impossível rastrear qual imagem é real. Você pode usar suaação para dissipar os clones.Cada vez que uma criatura mirar você com um ataque enquanto a técnica durar, role um d20 para determinarse o atacante, em vez de você, mira uma das suas duplicatas.Se você tiver dez clones, você deve rolar um 6 ou maior para mudar o alvo do ataque para um clone. Com noveduplicatas, você deve rolar um 7 ou maior. Com oito duplicatas, você deve rolar um 8 ou maior e assim por diante.A CR de uma duplicata é igual a 10 + seu modificador de Destreza. Se um ataque atingir uma duplicata, ela édestruída. Uma duplicata só pode ser destruída por um ataque que a atinja. Ela ignora todos os outros danos e efeitos.A técnica acaba quando todos os clones forem destruídos.Uma criatura não pode ser afetada por essa técnica se não puder enxergar, se ela contar com outros sentidosalém da visão, como percepção às cegas, ou se ela puder perceber ilusões como falsas.",
+		"energia":"15",
+		"duracao":"Até 2 minutos",
+		"alcance":"Até 6 metros de raio, Esfera",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"5"
+	},
+	{
+		"id":7,
+		"titulo":"Ninpo: Kanashibari no Jutsu",
+		"descricao":"Você analisa e ataca o local mais sensível e vulnerável de um inimigo, arremessando uma esfera de metal, uma pedraou qualquer objeto similar, dentro do alcance da técnica.O alvo escolhido recebe o dano e a condição “Atordoado” automaticamente, sem a necessidade de uma jogadade acerto ou um Teste de Resistência.O alvo atordoado deve realizar um Teste de Resistência de Constituição no final de cada um dos turnos dele,enquanto a técnica durar. Se obtiver sucesso na resistência, o efeito de atordoamento termina.",
+		"energia":"18",
+		"duracao":"Até 1 minuto",
+		"alcance":"Até 24 metros, Linha",
+		"requisito":"Ação",
+		"dano":"11d12 de dano de Concussão",
+		"grau":"6"
+	}
+]

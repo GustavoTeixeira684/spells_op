@@ -1,0 +1,112 @@
+[
+	{
+		"id":0,
+		"titulo":"Senmaigawara Seiken",
+		"descricao":"Uma rápida jogada de ataque corpo-a-corpo que atinge um oponente, sua velocidade e potência fazem com que o alvocrie aberturas e se torne um alvo mais fácil para outros ataques.O alvo deste ataque deve ser bem sucedido em um Teste de Resistência de Constituição ou a próxima jogadade ataque que tiver ele como alvo receberá vantagem até o final do seu próximo turno.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação Versátil",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Uchimizu",
+		"descricao":"Molhando a mão, juntando a água presente na atmosfera, dispara uma lança de água como um projétil com altavelocidade, em uma jogada de ataque à distância que perfura um inimigo.A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição“Sangramento”.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 9 metros, Linha",
+		"requisito":"Ação Versátil",
+		"dano":"2d12 de dano Perfurante",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Gosenmaigawara Seiken",
+		"descricao":"Uma jogada de ataque corpo-a-corpo com um soco direto feito com toda a força do corpo contra uma criatura. Oimpacto empurra a criatura Grande ou menor para um espaço desocupado a até 6 metros de distância dela, caso elanão passe em um Teste de Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá2d8 de dano extra.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"5d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":3,
+		"titulo":"Yabusame",
+		"descricao":"Semelhante ao “Uchimizu”, porém, desta vez, concentrando água em todo o braço, lançando dezenas de gotas d’águacomo projéteis em alta velocidade. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistência deDestreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Até 9 metros, Cone",
+		"requisito":"Ação",
+		"dano":"6d6 de dano Perfurante",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Dai Uzu",
+		"descricao":"Você começa a nadar em alta velocidade em círculos, aumentando sua própria velocidade, gradativamente, a cada volta,criando um redemoinho na superfície da água que atinge uma área de até 30 metros de raio, impedindo-o de realizarações, ações bônus, reações ou outros tipos de movimentos, enquanto a técnica durar ou até que você a desfaça.Navios devem fazer um Teste de Desastre Natural CD 16 para não ficarem presos no redemoinho até a duraçãoda técnica e criaturas devem fazer um Teste de Resistência de Força, ao passarem no teste, enquanto estiverem na áreada técnica devem repetir o teste, no início de cada um dos seus turnos, para não ficarem presos novamente.Durante a duração da técnica todos os ataques direcionados à área da técnica podem te atingir, sua CRaumenta em +6 e você recebe vantagem em todos os Testes de Resistência.",
+		"energia":"4",
+		"duracao":"Até 10 minutos, Concentração",
+		"alcance":"Até 30 metros de raio, Cilindro",
+		"requisito":"Ação, Estar em uma grande área fluvial",
+		"dano":"Nenhum",
+		"grau":"3"
+	},
+	{
+		"id":5,
+		"titulo":"Samegawara Seiken",
+		"descricao":"Uma jogada de ataque corpo-a-corpo com um soco certeiro que quando utilizado, libera uma onda de choque atravésdo oponente, que pode acertar mais um inimigo que esteja na mesma linha de direção do golpe, a até 6 metros, querecebe metade do dano se não passar em um Teste de Resistência de Destreza.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"9d10 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":6,
+		"titulo":"Kairyuu Ipponzeoi",
+		"descricao":"Concentrando uma grande quantidade de água contida da atmosfera, você envia uma corrente poderosa em direção aoadversário, em uma jogada de ataque à distância com o movimento do ombro e do braço.O alvo atingido deve ser bem sucedido em um Teste de Resistência de Constituição ou terá desvantagem napróxima jogada de ataque que ele fizer antes do final do próximo turno dele.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Até 21 metros, Linha",
+		"requisito":"Ação",
+		"dano":"12d12 de dano de Concussão",
+		"grau":"4"
+	},
+	{
+		"id":7,
+		"titulo":"Yarinami",
+		"descricao":"Você manipula a água próxima a você e cria uma corrente de água ao seu redor, após isso libera está onda com grandevelocidade e pressão em uma jogada de ataque à distância, que se torna uma lâmina afiada e corta tudo em sua frente.O dano causado por esta técnica é dobrado em estruturas.Está técnica só pode ser usada estando a 1,5 metro de grandes fontes de água.",
+		"energia":"10",
+		"duracao":"Instantâneo",
+		"alcance":"Até 18 metros, Linha",
+		"requisito":"Ação. 3.000 litros de água",
+		"dano":"12d12 de dano Cortante",
+		"grau":"4"
+	},
+	{
+		"id":8,
+		"titulo":"Nanasenmaigawara Mawashigeri",
+		"descricao":"Uma jogada de ataque corpo-a-corpo com um chute rápido que acerta o adversário com precisão em um ponto frágil.A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição“Atordoado”, até o final do próximo turno da criatura.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"13d12 de dano de Concussão",
+		"grau":"5"
+	},
+	{
+		"id":9,
+		"titulo":"Gyojin Karate Ogi: Buraikan",
+		"descricao":"Concentrando a água presente na atmosfera no punho e realizando uma jogada de ataque corpo-a-corpo em um socobrutal contra o oponente, fazendo com que a água o atravesse e estremeça todo o seu corpo. A criatura atingida deveser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição “Letárgico”, por até 1 minuto.O alvo letárgico pode repetir o Teste de Resistência ao fim de cada um de seus turnos, terminando o efeito em si mesmocom um sucesso.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"15d12 de dano de Concussão",
+		"grau":"6"
+	}
+]

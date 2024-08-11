@@ -1,0 +1,90 @@
+[
+	{
+		"id":0,
+		"titulo":"Metralhadora Portátil",
+		"descricao":"Apontando uma parte escolhida do corpo para possuir essa função, você libera uma grande sequência de tiros contraseus inimigos. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todoo dano se falhar ou metade desse dano se obtiver sucesso.Alternativamente, você pode focar os tiros em uma única criatura, fazendo uma jogada de ataque à distância(12 metros em linha) que causa 2d12 de dano de Concussão ou Perfurante.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 6 metros, Cone",
+		"requisito":"Ação Versátil, 8 Munições (Qualquer)",
+		"dano":"2d6 de dano de Concussão ou Perfurante",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Escudo Metálico",
+		"descricao":"Ao ser alvo de uma jogada de ataque, você pode usar sua reação para que a parte escolhida do seu corpo com estamodificação se torne um escudo de metal e aumente sua CR em +2, até o início do seu próximo turno.",
+		"energia":"2",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Reação",
+		"dano":"Nenhum",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Canhão De Vento",
+		"descricao":"Apontando uma parte escolhida do corpo para possuir essa função, juntando uma grande quantidade de ar comprimidodentro do seu corpo e logo após liberando-o com tempestiva pressão e poder. Escolha uma criatura, que você possatocar e realize uma jogada de ataque corpo-a-corpo contra ela. O impacto empurra a criatura Grande ou menor paraum espaço desocupado a até 12 metros de distância dela, caso ela não passe em um Teste de Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá4d8 de dano extra.Caso a criatura escolhida não esteja em alcance corpo-a-corpo e a até 6 metros de distância, você pode realizaruma jogada de ataque à distância, se acertar, ela será empurrada para um espaço desocupado a até 12 metros de você,caso falhe em um Teste de Resistência de Força, sem sofrer qualquer dano.Alternativamente, você pode gastar 3 Pontos de Energia e escolher se lançar usando esta técnica. Ao se lançar,você percorre 12 metros em linha reta para a direção desejada.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Ação",
+		"dano":"3d12 de dano de Concussão",
+		"grau":"2"
+	},
+	{
+		"id":3,
+		"titulo":"Lança-Chamas",
+		"descricao":"Apontando uma parte escolhida do corpo para possuir essa função, você libera uma rajada de fogo em todas as criaturasque estejam dentro do alcance da técnica. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistênciade Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.A criatura que não passar no primeiro Teste de Resistência de Destreza deve ser bem sucedida em um novoTeste de Resistência de Constituição ou receberá a condição “Queimado”.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Até 6 metros, Cone",
+		"requisito":"Ação",
+		"dano":"5d6 de dano de Fogo",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Soco Foguete",
+		"descricao":"Com um mecanismo no seu braço, você realiza uma jogada de ataque à distância que projeta o seu punho com altavelocidade na direção de uma criatura. O punho é conectado com o braço por meio de uma corrente metálica, que temuma extensão máxima de 15 metros. Ao acertar a jogada de ataque, você escolhe prender o alvo, impondo a ela acondição “Agarrado”, ou usar uma ação bônus e retornar o punho ao seu braço.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Até 15 metros, Linha",
+		"requisito":"Ação",
+		"dano":"9d12 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":5,
+		"titulo":"Rocket Launcher",
+		"descricao":"Apontando uma parte escolhida do corpo para possuir essa função, você lança, com uma jogada de ataque à distância,3 mísseis que acertam automaticamente um mesmo alvo, ao mesmo tempo, ou até 3 diferentes.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Até 18 metros, Linha",
+		"requisito":"Ação",
+		"dano":"1d10 de dano de Concussão + 3d10 de dano de Fogo (cada míssil)",
+		"grau":"4"
+	},
+	{
+		"id":6,
+		"titulo":"Laser Beam",
+		"descricao":"Apontando uma parte escolhida do corpo para possuir essa função, você concentra uma grande quantidade de energiae libera uma rajada de laser, dentro do alcance da técnica, que é disparado em uma direção qualquer, à sua escolha.Cada criatura na linha que o laser atravessa deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano sefalhar ou metade desse dano se obtiver sucesso.O laser termina e explode, em uma área à sua escolha, a até 9 metros de distância de você, e todos queestiverem a até 6 metros do ponto da explosão devem fazer um Teste de Resistência de Destreza. Sofrendo 5d6 dedano de fogo se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Até 9 metros, Linha",
+		"requisito":"Ação",
+		"dano":"12d10 de dano de Energia",
+		"grau":"5"
+	},
+	{
+		"id":7,
+		"titulo":"Hard Armor",
+		"descricao":"Você fica completamente envolvido por uma armadura, durante o tempo da duração da técnica e aprimora todas osseus melhoramentos, recebendo as seguintes características:Sua Classe de Resistência aumenta para 30;O retorno de dano da característica “Pele de Aço” dobra;A técnica “Laser Beam” passa a custar 10 Pontos de Energia;A técnica “Canhão de Vento” passa a custar 1 Ponto de Energia;Suas jogadas de ataque corpo-a-corpo desarmado aumentam para 1d12.",
+		"energia":"18",
+		"duracao":"Até 1 minuto",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"6"
+	}
+]

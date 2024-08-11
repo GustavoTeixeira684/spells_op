@@ -1,0 +1,57 @@
+[
+	{
+		"id":0,
+		"titulo":"Eleclaw",
+		"descricao":"Você realiza uma jogada de ataque corpo-a-corpo contra uma criatura em conjunto com seu electro para causar umgrande choque. A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou receberá acondição “Impedido”, até o final do próximo turno da criatura.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Leão da Lua, Ação",
+		"dano":"2d12 de dano de Concussão, Cortante ou Perfurante + 3d12 de dano Elétrico",
+		"grau":"2"
+	},
+	{
+		"id":1,
+		"titulo":"Mo Golova",
+		"descricao":"Você vai em direção a uma criatura e realiza uma jogada de ataque corpo-a-corpo com uma cabeçada, carregada deeletricidade, contra ela. A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição oureceberá a condição “Paralisado”, até o final do próximo turno da criatura.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Leão da Lua, Ação",
+		"dano":"4d12 de dano Elétrico",
+		"grau":"3"
+	},
+	{
+		"id":2,
+		"titulo":"Eletrical Luna",
+		"descricao":"Ao encostar no chão, você criar uma corrente elétrica que se espalha pelo solo e cria uma alta descarga de eletricidade.Toda a criatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano sefalhar ou metade desse dano se obtiver sucesso.Alternativamente, você pode focar os raios em uma única criatura, que você possa ver e que esteja a até 9metros de você, acertando automaticamente (sem fazer uma jogada de ataque) e causando 10d12 de dano Elétrico.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"15 metros, Cone",
+		"requisito":"Leão da Lua, Ação",
+		"dano":"12d6 de dano Elétrico",
+		"grau":"4"
+	},
+	{
+		"id":3,
+		"titulo":"Aka Byobu",
+		"descricao":"Você realiza um ataque corpo-a-corpo, que combina sua força com seu electro, contra uma criatura. O impacto empurraa criatura Grande ou menor para um espaço desocupado a até 9 metros de distância dela, caso ela não passe em umTeste de Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá3d8 de dano de Concussão extra.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Leão da Lua, Ação",
+		"dano":"6d12 de dano de Concussão, Cortante ou Perfurante + 8d12 de dano Elétrico",
+		"grau":"5"
+	},
+	{
+		"id":4,
+		"titulo":"Moon Raid",
+		"descricao":"Você realiza uma jogada de ataque extremamente carregada de eletricidade contra uma criatura, que deve passar emum Teste de Resistência de Destreza, com desvantagem. Sofrendo todo o dano se falhar ou metade desse dano seobtiver sucesso.A criatura que não passar no primeiro Teste de Resistência de Destreza deve ser bem sucedida em um novoTeste de Resistência de Constituição para não ter seu movimento reduzido a 0",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Leão da Lua, Ação",
+		"dano":"10d12 de dano de Concussão, Cortante ou Perfurante + 8d12 de dano Elétrico",
+		"grau":"6"
+	}
+]

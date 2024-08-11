@@ -1,0 +1,200 @@
+[
+	{
+		"id":0,
+		"titulo":"Manobra Evasiva",
+		"descricao":"Quando for necessário se livrar de inimigos próximos, você pode usar uma reação para rapidamente se afastar 9metros. Esse movimento não provoca reações, como a característica “Ataque de Oportunidade”. Após isso éadicionando +1 na sua CR e nenhum ataque possuirá vantagem contra você, até o início do seu próximo turno.",
+		"energia":"2",
+		"duracao":"Até o início do seu próximo turno",
+		"alcance":"Pessoal",
+		"requisito":"Reação",
+		"dano":"Nenhum",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Último Recurso",
+		"descricao":"Mesmo que uma arma não tenha munições, ela ainda se torna um recurso para você. Sempre que quiser, você podearremessar uma arma de fogo, dentro do alcance da técnica. A criatura atingida deve ser bem sucedida em um Teste deResistência de Constituição, com desvantagem, ou receberá a condição “Incapacitado”, até o final do próximo turnoda criatura.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 9 metros, Linha",
+		"requisito":"1 arma de fogo, Ação Versátil",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Death Blossom",
+		"descricao":"Você executa disparos contra todos os inimigos ao seu redor. Toda a criatura dentro da área da técnica deve fazer umTeste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Esfera",
+		"requisito":"2 Pistolas, 8 Munições (Qualquer), Ação",
+		"dano":"6d6 de dano de Concussão ou Perfurante",
+		"grau":"2"
+	},
+	{
+		"id":3,
+		"titulo":"Covering",
+		"descricao":"Você realiza uma série de tiros cadenciados, com uma jogada de ataque a distância contra uma criatura. Caso ela sejaatingida, a próxima jogada de ataque (comum ou de técnica) que ela fizer receberá desvantagem, até o final do próximoturno dela.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"2 Pistolas, 6 Munições (Qualquer), Ação",
+		"dano":"6d12 de dano de Concussão ou Perfurante",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Quick Fire",
+		"descricao":"Ao ser alvo de uma jogada de ataque de uma criatura, você pode usar sua reação para realizar uma jogada de ataque àdistância, como resposta. A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ouencerrará seu turno prematuramente, logo após sofrer o dano.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"1 Pistola, 1 Munição (Perfurante), Reação",
+		"dano":"4d12 de dano Perfurante",
+		"grau":"3"
+	},
+	{
+		"id":5,
+		"titulo":"Stunning Shot",
+		"descricao":"Você realiza uma jogada de ataque à distância, com disparos seguidos que acertam pontos fracos do corpo de umacriatura e atrapalham os seus movimentos. A criatura atingida deve ser bem sucedida em um Teste de Resistência deConstituição ou receberá a condição “Atordoado”, até o final do próximo turno da criatura.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"1 Pistola, 2 Munições (Esférica), Ação",
+		"dano":"10d12 de dano de Concussão",
+		"grau":"4"
+	},
+	{
+		"id":6,
+		"titulo":"Gun Powder Party",
+		"descricao":"Com grande velocidade no gatilho e uma mira impressionante, capaz de acompanhar esta velocidade, você realizavários disparos em todas as criaturas, à sua escolha, que estejam dentro do alcance da técnica. Toda a criatura dentroda área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade dessedano se obtiver sucesso.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Esfera",
+		"requisito":"2 Pistolas, 16 Munições (Qualquer), Ação",
+		"dano":"12d6 de dano de Concussão ou Perfurante",
+		"grau":"4"
+	},
+	{
+		"id":7,
+		"titulo":"Fast Reload",
+		"descricao":"Por um curto período de tempo, você fica completamente focado na batalha e alcança o auge da agilidade e da precisãocom seus disparos. Enquanto estiver concentrado, a característica “Ataque Extra” recebe 2 ataques adicionais e, aorealizar uma jogada de ataque à distância, você recebe +3 para acertar.",
+		"energia":"12",
+		"duracao":"Até 1 minuto, Concentração",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"5"
+	},
+	{
+		"id":8,
+		"titulo":"Execução",
+		"descricao":"Você analisa com eficiência um alvo, sendo capaz de se aproveitar de seus ferimentos ou brechas e fazer um únicodisparo mortal. Escolha uma criatura que você possa ver e esteja dentro do alcance da técnica. Se o alvo escolhidoestiver com 150 Pontos de Vida ou menos, ele morre, ao invés de receber o dano.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"2 Pistolas, 1 Munição (Qualquer), Ação",
+		"dano":"14d12 de dano Perfurante",
+		"grau":"6"
+	},
+	{
+		"id":9,
+		"titulo":"Saída Forçada",
+		"descricao":"No momento em que você se vê cercado por inimigos, você pode girar o seu mosquete acertando todos as criaturas aoseu redor. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo odano se falhar ou metade desse dano se obtiver sucesso.A criatura que não passar no primeiro Teste de Resistência de Destreza deve ser bem sucedida em um novoTeste de Resistência de Força ou receberá a condição “Caído”.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Até 1,5 metro de raio e 1,5 metro de altura, Cilindro",
+		"requisito":"Mosquete (ou algo semelhante), Reação",
+		"dano":"1d10 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":10,
+		"titulo":"Tiro de Advertência",
+		"descricao":"Ao realizar um disparo incrivelmente rápido e quase raspando no seu inimigo, com uma jogada de ataque à distância,você consegue assustá-lo e lhe causar dano psicológico.A criatura alvo desta técnica deve fazer um Teste de Resistência de Espírito, se falhar ela deve escolher entrese movimentar ou fazer uma ação e não pode usar reação ou ação bônus até o início do próximo turno dela.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"Mosquete, 1 Munição (Qualquer), Ação Versátil",
+		"dano":"2d12 de dano Psíquico",
+		"grau":"1"
+	},
+	{
+		"id":11,
+		"titulo":"Tiro Certo",
+		"descricao":"Com uma jogada de ataque à distância, você é capaz de fazer um disparo perfeito em uma criatura, que você possa vere que esteja dentro do alcance da técnica. Esta técnica acerta automaticamente.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"Mosquete, 1 Munição (Qualquer), Ação",
+		"dano":"3d12 de dano de Concussão ou Perfurante",
+		"grau":"2"
+	},
+	{
+		"id":12,
+		"titulo":"Defesa Improvisada",
+		"descricao":"Quando você for atingido por uma jogada de ataque corpo-a-corpo, você pode usar uma reação para se defender com omosquete e reduzir 2d8 de dano.Você pode gastar 1 Ponto de Energia para adicionar 2d8 na redução, até uma contenção total de 12d8.",
+		"energia":"3",
+		"duracao":"Instantâneo",
+		"alcance":"Pessoal",
+		"requisito":"Mosquete, Reação",
+		"dano":"Nenhum",
+		"grau":"2"
+	},
+	{
+		"id":13,
+		"titulo":"Mira Cruel",
+		"descricao":"Ao realiza uma jogada de ataque à distância mirando em suas articulações, você tenta incapacitar uma criatura. Acriatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição“Impedido”, até o final do próximo turno da criatura.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"Mosquete, 1 Munição (Perfurante), Ação",
+		"dano":"8d12 de dano Perfurante",
+		"grau":"3"
+	},
+	{
+		"id":14,
+		"titulo":"Overwatch",
+		"descricao":"Você pode marcar uma esfera de até 6 metros de raio, dentro do alcance da técnica, sempre que uma criatura realizaruma ação, durante a duração da técnica, antes que ela a complete, você pode fazer uma jogada de ataque contra ela.Você pode usar uma ação bônus para mover o centro da esfera a até 3 metros.Cada criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou encerrará seuturno prematuramente, logo após sofrer o dano. Caso você realize qualquer ação que não seja uma jogada de ataquenormal, você encerra automaticamente esta técnica.",
+		"energia":"8",
+		"duracao":"Até 1 minuto, Concentração",
+		"alcance":"Arma, Linha",
+		"requisito":"Mosquete, 1 Munição qualquer para cada ataque, Ação",
+		"dano":"Nenhum",
+		"grau":"4"
+	},
+	{
+		"id":15,
+		"titulo":"Shooting Stars",
+		"descricao":"Você realiza uma serie de disparos contra todos os seus inimigos. Toda a criatura dentro da área da técnica deve fazerum Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Até 18 metros, Cone",
+		"requisito":"Mosquete, 20 Munições (Qualquer), Ação",
+		"dano":"12d6 de dano de Concussão ou Perfurante",
+		"grau":"4"
+	},
+	{
+		"id":16,
+		"titulo":"Fuzilamento",
+		"descricao":"Você dispara rapidamente e causa grande dano em uma criatura à sua escolha, dentro do alcance da técnica. A criaturaatingida recebe a condição “Sangramento”, sem a necessidade de um teste.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"Mosquete, 10 Munições (Perfurante), Ação",
+		"dano":"15d12 de dano Perfurante",
+		"grau":"5"
+	},
+	{
+		"id":17,
+		"titulo":"Headshot",
+		"descricao":"Ao usar esta técnica contra uma criatura que tenha pelo menos uma cabeça e o resultado for um 20 natural, vocêatravessa a cabeça da criatura, que morre se não puder sobreviver sem a cabeça. Caso a criatura seja imune a danosperfurantes, não tiver ou precisar de uma cabeça, tiver Ações Lendárias ou o Mestre decidir não pode ser afetada poresta característica, ao invés da morte, ela sofre 6d10 de dano perfurante extra (que não é dobrado pelo crítico).",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Arma, Linha",
+		"requisito":"Mosquete, 1 Munição (Perfurante), Ação",
+		"dano":"15d12 de dano Perfurante",
+		"grau":"6"
+	}
+]

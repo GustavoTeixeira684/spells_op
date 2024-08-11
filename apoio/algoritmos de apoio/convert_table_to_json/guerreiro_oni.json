@@ -1,0 +1,112 @@
+[
+	{
+		"id":0,
+		"titulo":"Nari Kabura",
+		"descricao":"Você usa seu kanabo para fazer um golpe poderoso e preciso que transforma o próprio ar, rochas ou destroços em umprojétil, lançado contra uma criatura em uma jogada de ataque à distância com margem de acerto crítico 19-20.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"9 metros, Linha",
+		"requisito":"Kanabo, Ação Versátil",
+		"dano":"2d12 de dano de Concussão",
+		"grau":"1"
+	},
+	{
+		"id":1,
+		"titulo":"Shinsoku Hakujaku",
+		"descricao":"Você se move rapidamente, com passos firmes, para acertar uma criatura com uma jogada de ataque corpo-a-corpocom vantagem.O deslocamento feito por você até o final do turno não poderá ser reduzido por terreno difícil.",
+		"energia":"2",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Kanabo, Ação Versátil",
+		"dano":"2d12 de dano de Concussão ou Perfurante",
+		"grau":"1"
+	},
+	{
+		"id":2,
+		"titulo":"Kosanze Ragnaraku",
+		"descricao":"Você pula na direção de uma criatura e desce sua kanabo em uma criatura com grande brutalidade. A criatura atingidadeve ser bem sucedida em um Teste de Resistência de Força ou receberá a condição “Caído”.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Kanabo, Ação",
+		"dano":"6d12 de dano de Concussão ou Perfurante",
+		"grau":"2"
+	},
+	{
+		"id":3,
+		"titulo":"Mahoroba",
+		"descricao":"Você realiza um golpe que balança seu kanabo com grande força contra uma criatura em uma jogada de ataque corpo-a-corpo com arma. O impacto empurra a criatura Grande ou menor para um espaço desocupado a até 6 metros dedistância dela, caso ela não passe em um Teste de Resistência de Força.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá2d8 de dano extra.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Kanabo, Ação",
+		"dano":"5d12 de dano de Concussão ou Perfurante",
+		"grau":"2"
+	},
+	{
+		"id":4,
+		"titulo":"Raimei Hakke",
+		"descricao":"Você usa um golpe extremamente feroz que atinge uma criatura com uma jogada de ataque corpo-a-corpo com grandeviolência. Caso a jogada de ataque desta técnica seja um acerto crítico, quando estiver determinando o dano extra datécnica, adicione mais 3 dados de dano.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Kanabo, Ação",
+		"dano":"9d12 de dano de Concussão ou Perfurante",
+		"grau":"3"
+	},
+	{
+		"id":5,
+		"titulo":"Kongo Kabura",
+		"descricao":"Semelhante à técnica “Nari Kabura”, você rebate o próprio ar ou pequenos objetos como projeteis contra uma criaturacom uma jogada de ataque à distância, porém, deixando de lado qualquer refinamento e usando uma força brutal. Acriatura atingida deve fazer um Teste de Resistência de Constituição, se falhar, até o final do próximo turno dela, elanão poderá usar ações bônus e reações.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"15 metros, Linha",
+		"requisito":"Kanabo, Ação",
+		"dano":"8d12 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":6,
+		"titulo":"Gundari Ryuseigun",
+		"descricao":"Você realiza uma série de ataques rápidos, com uma jogada de ataque corpo-a-corpo com arma, contra uma criatura.Ao acertar a criatura ela deve fazer um Teste de Resistência de Constituição, se falhar, até o final do próximo turnodela, seu deslocamento é reduzido à metade, e não poderá usar reações. No turno dela, ele pode usar ou uma ação ouuma ação bônus, mas não ambas. Independentemente das habilidades, ela não poderá realizar mais de um ataquecorpo-a-corpo ou à distância durante o turno dela.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Kanabo, Ação",
+		"dano":"10d12 de dano de Concussão ou Perfurante",
+		"grau":"4"
+	},
+	{
+		"id":7,
+		"titulo":"Oni no Youna",
+		"descricao":"Você se coloca em um transe de fúria que só pode ser saciado com violência, recebendo as seguintes características:Você recebe todos os bônus presentes na tabela “Movimentos Ébrios” da característica “Shuron Hakke” ao mesmotempo (com exceção do “Ochikomi Jogo”);Você se torna incapaz de usar técnicas;Você ataca indiscriminadamente aliados e inimigos, priorizando as criaturas mais próximas (à escolha do Mestre);Esta técnica é encerrada se você não realizar uma jogada de ataque ou for atacado até o final do seu turno.",
+		"energia":"12",
+		"duracao":"Até 1 minuto",
+		"alcance":"Pessoal",
+		"requisito":"Ação Bônus",
+		"dano":"Nenhum",
+		"grau":"4"
+	},
+	{
+		"id":8,
+		"titulo":"Horai Hakke",
+		"descricao":"Você usa um golpe extremamente feroz, para atingir uma criatura com uma jogada de ataque corpo-a-corpo com arma,causando um impacto tão poderoso que pode desligar momentaneamente a consciência do alvo. A criatura atingidadeve ser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição “Incapacitado”.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Toque",
+		"requisito":"Kanabo, Ação",
+		"dano":"15d12 de dano de Concussão ou Perfurante",
+		"grau":"5"
+	},
+	{
+		"id":9,
+		"titulo":"Hakai",
+		"descricao":"Com o balançar do seu kanabo, você lança uma onda de destruição em massa contra todos os seus inimigos. Toda acriatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar oumetade desse dano se obtiver sucesso.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"18 metros, Cone",
+		"requisito":"Kanabo, Ação",
+		"dano":"18d8 de dano de Concussão",
+		"grau":"6"
+	}
+]

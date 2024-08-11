@@ -1,0 +1,88 @@
+2o
+Grau
+
+Ryusoken - Ryu no Saiga
+
+Com um rápido e leve movimento, você golpeia uma criatura com uma jogada de ataque corpo-a-corpo desarmado que
+pode desestabilizar o alvo. A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou
+receberá desvantagem na primeira rolagem que fizer em cada um dos seus turnos enquanto a técnica durar.
+6
+Pontos de Energia
+
+Duração Até 1 minuto
+Alcance Toque
+Requisito Ryusoken, Ação
+Dano 2d12 de dano de Concussão
+Ataque Combinado Impossível
+
+3o
+Grau
+
+Ryusoken - Ryu no Akugeki
+
+Você usa a potência de suas garras para fazer uma jogada de ataque corpo-a-corpo contra uma criatura Grande ou
+menor e agarrá-la com extrema força. A criatura atingida deve ser bem sucedida em um Teste de Resistência de
+Constituição ou receberá a condição “Atordoado”, até o final do próximo turno da criatura.
+9
+Pontos de Energia
+
+Duração Instantâneo
+Alcance Toque
+Requisito Ryusoken, Ação
+Dano 6d12 de dano de Concussão
+Ataque Combinado Impossível
+
+4o
+Grau
+
+Ryusoken - Ryu no Kagizume
+
+Com a sua mão na forma de uma garra de dragão, você realizar um golpe direto, com uma jogada de ataque corpo-a-
+corpo, contra uma criatura.
+
+O alvo deste ataque deve ser bem sucedido em um Teste de Resistência de Constituição para não ter seu
+deslocamento normal reduzido a 0.
+12
+Pontos de Energia
+
+Duração Instantâneo
+Alcance Toque
+Requisito Ryusoken, Ação
+Dano 12d12 de dano de Concussão
+Ataque Combinado Possível
+
+5o
+Grau
+
+Ryusoken - Ryu no Tekken
+
+Usando as garras do dragão, você cerra os punhos e desfere um golpe implacável contra uma criatura, com uma jogada
+de ataque corpo-a-corpo. O impacto empurra a criatura Grande ou menor para um espaço desocupado a até 9 metros
+de distância dela, caso ela não passe em um Teste de Resistência de Força.
+Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá
+3d8 de dano de Concussão extra.
+15
+Pontos de Energia
+
+Duração Instantâneo
+Alcance Toque
+Requisito Ryusoken, Ação
+Dano 14d12 de dano de Concussão
+Ataque Combinado Possível
+
+6o
+Grau
+
+Ryusoken - Ryu no Ibuki
+
+Você aplica uma grande força em um determinado ponto do chão com seus punhos e cria uma onda de choque
+destruidora. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza, com
+desvantagem. Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso.
+18
+Pontos de Energia
+
+Duração Instantâneo
+Alcance 15 metros, Esfera
+Requisito Ryusoken, Ação
+Dano 18d6 de dano de Concussão
+Ataque Combinado Impossível

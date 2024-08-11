@@ -1,0 +1,57 @@
+[
+	{
+		"id":0,
+		"titulo":"Hissatsu - Fire Bird Star",
+		"descricao":"Libera uma grande rajada de fogo que assume a forma de um pássaro e voa na direção dos seus inimigos. Toda a criaturadentro da área da técnica deve fazer um Teste de Resistência de Destreza. Sofrendo todo o dano se falhar ou metadedesse dano se obtiver sucesso. A criatura que não passar no primeiro Teste de Resistência de Destreza deve ser bemsucedida em um novo Teste de Resistência de força ou receberá a condição “Queimado”.Alternativamente, você pode focar as chamas em uma única criatura, fazendo uma jogada de ataque àdistância (15 metros em linha) que causa 6d12 de dano de Fogo.",
+		"energia":"6",
+		"duracao":"Instantâneo",
+		"alcance":"Até 9 metros, Cone",
+		"requisito":"Kabuto, 1 Flame Dial, Ação",
+		"dano":"6d6 de dano de Fogo",
+		"grau":"2"
+	},
+	{
+		"id":1,
+		"titulo":"Hissatsu - Metallic Star",
+		"descricao":"Uma jogada de ataque à distância com grande pressão concentrada, para um disparo rápido e poderoso contra um alvo.A criatura atingida deve ser bem sucedida em um Teste de Resistência de Constituição ou receberá a condição“Atordoado”, até o final do próximo turno da criatura.",
+		"energia":"9",
+		"duracao":"Instantâneo",
+		"alcance":"Até 12 metros, Linha",
+		"requisito":"Kabuto, 1 Breath Dial, Ação",
+		"dano":"9d12 de dano de Concussão",
+		"grau":"3"
+	},
+	{
+		"id":2,
+		"titulo":"Hissatsu - Winter Tiger Star",
+		"descricao":"Você dispara um raio de gelo no formato de um tigre em um ponto dentro da área da técnica, que explode em umaesfera de 9 metros. Toda a criatura dentro da área da técnica deve fazer um Teste de Resistência de Constituição.Sofrendo todo o dano se falhar ou metade desse dano se obtiver sucesso. A criatura que não passar no primeiro Testede Resistência de Destreza deve ser bem sucedida em um novo Teste de Resistência de Força, com desvantagem, oureceberá a condição “Impedido”.",
+		"energia":"12",
+		"duracao":"Instantâneo",
+		"alcance":"Até 12 metros, Linha",
+		"requisito":"Kabuto, 1 Frozen Dial, Ação",
+		"dano":"9d6 de dano de Frio",
+		"grau":"4"
+	},
+	{
+		"id":3,
+		"titulo":"Hissatsu - Atlas Suisei",
+		"descricao":"Uma jogada de ataque à distância que consiste em vários disparos contra uma única criatura e causam uma grandequantidade de dano. O impacto empurra a criatura Grande ou menor para um espaço desocupado a até 12 metros dedistância dela, caso ela não passe em um Teste de Resistência de Força, com desvantagem.Se, durante o empurrão, a criatura bater em um objeto ou estrutura com mais de 1,5 metro de raio, ela receberá4d8 de dano de Concussão extra.",
+		"energia":"15",
+		"duracao":"Instantâneo",
+		"alcance":"Até 18 metros, Linha",
+		"requisito":"Kabuto, 1 Breath Dial, Ação",
+		"dano":"15d12 de dano de Concussão",
+		"grau":"5"
+	},
+	{
+		"id":4,
+		"titulo":"Hissatsu - Heavenly Dragon Star",
+		"descricao":"Dispara um trovão gigante, que assume a forma de um dragão e acerta seus alvos com grande ferocidade. Toda acriatura dentro da área da técnica deve fazer um Teste de Resistência de Destreza, com desvantagem. Sofrendo todo odano se falhar ou metade desse dano se obtiver sucesso.Alternativamente, você pode mirar essa técnica em nuvens no céu para chamar uma tempestade, após 5minutos.",
+		"energia":"18",
+		"duracao":"Instantâneo",
+		"alcance":"Até 18 metros, Cone",
+		"requisito":"Kabuto, 1 Thunder Dial, Ação",
+		"dano":"18d6 de dano Elétrico",
+		"grau":"6"
+	}
+]
