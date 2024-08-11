@@ -3,12 +3,19 @@ package com.example.spellsop.view;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.spellsop.R;
+import com.example.spellsop.adapter.RecyclerSpellsAdapter;
+import com.example.spellsop.controller.SpellsController;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,9 @@ public class Spells extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView recyclerView;
+    private RecyclerSpellsAdapter spellsAdapter;
 
     // private attributes
     private String[] files;
@@ -48,6 +58,7 @@ public class Spells extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -60,6 +71,8 @@ public class Spells extends Fragment {
         }
 
 
+
+
     }
 
     @Override
@@ -67,7 +80,12 @@ public class Spells extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_spells, container, false);
-        // Obter referência ao TextView dentro do layout do fragmento
+
+        recyclerView = view.findViewById(R.id.lista_tecnicas);
+        spellsAdapter = new RecyclerSpellsAdapter(getContext(), new ArrayList<String>(Arrays.asList(SpellsController.getLista_tecnicas())));
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(spellsAdapter);
 
         return view;
     }

@@ -37,4 +37,11 @@
             android:src="@drawable/filter" />
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_tecnicas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
 </FrameLayout>
