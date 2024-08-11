@@ -1,4 +1,4 @@
-package com.example.spellsop;
+package com.example.spellsop.view;
 
 import android.os.Bundle;
 
@@ -7,14 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.example.spellsop.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Spells#newInstance} factory method to
+ * Use the {@link Settings#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Spells extends Fragment {
+public class Settings extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,10 +26,7 @@ public class Spells extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    // private attributes
-    private String[] files;
-
-    public Spells() {
+    public Settings() {
         // Required empty public constructor
     }
 
@@ -38,11 +36,11 @@ public class Spells extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Spells.
+     * @return A new instance of fragment Settings.
      */
     // TODO: Rename and change types and number of parameters
-    public static Spells newInstance(String param1, String param2) {
-        Spells fragment = new Spells();
+    public static Settings newInstance(String param1, String param2) {
+        Settings fragment = new Settings();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -57,22 +55,12 @@ public class Spells extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_spells, container, false);
-        // Obter referência ao TextView dentro do layout do fragmento
-
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
-
-    public void setTexti(String texto){
-
-    }
-
 }

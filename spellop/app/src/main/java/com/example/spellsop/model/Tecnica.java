@@ -1,4 +1,4 @@
-package com.example.spellsop;
+package com.example.spellsop.model;
 
 public class Tecnica {
 

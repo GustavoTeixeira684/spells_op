@@ -1,27 +1,16 @@
-package com.example.spellsop;
+package com.example.spellsop.view;
 
-import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.content.Context;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import java.io.Console;
 
+import com.example.spellsop.R;
+import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.databinding.ActivityMainBinding;
-
-import java.io.Console;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,11 +20,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
 
 
         // Inclui a regra para poder trocar as telas
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        getTechniques();
 
         this.replaceFragment(new Spells());
         binding.bottomNavigationViewMain.setOnItemSelectedListener(item -> {
@@ -77,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         String[] files = new String[0];
         try {
 //            files = assetManager.list("tecnicas");
-            Tecnicas.setArquivos(assetManager.list("tecnicas"));
+            SpellsController.setLista_tecnicas(assetManager.list("tecnicas"));
 
 
         } catch (Exception e) {
