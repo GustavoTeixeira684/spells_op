@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="70dp"
     android:fitsSystemWindows="true"
-    android:maxHeight="80dp">
+    android:maxHeight="90dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -42,7 +44,9 @@
                     android:id="@+id/labelNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/labelRequisito"
@@ -51,10 +55,11 @@
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelAlcance"
+                    android:id="@+id/labelEstilo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView

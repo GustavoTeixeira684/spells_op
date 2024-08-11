@@ -1,6 +1,7 @@
 package com.example.spellsop.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
+import com.example.spellsop.model.Tecnica;
 import com.example.spellsop.viewHolder.RecyclerSpellsViewHolder;
 
 import java.util.ArrayList;
@@ -17,9 +19,9 @@ import java.util.ArrayList;
 public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsViewHolder> {
 
     private Context context;
-    private ArrayList<String> itens; // Mudar. fiz só para teste
+    private ArrayList<Tecnica> itens; // Mudar. fiz só para teste
 
-    public RecyclerSpellsAdapter(Context context, ArrayList<String> itens) {
+    public RecyclerSpellsAdapter(Context context, ArrayList<Tecnica> itens) {
         this.context = context;
         this.itens = itens;
     }
@@ -30,16 +32,17 @@ public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsVi
 
 
         View view = LayoutInflater.from(this.context).inflate(R.layout.card_spells, parent, false);
-        RecyclerSpellsViewHolder viewHolder = new RecyclerSpellsViewHolder(view);
 
-        return viewHolder;
+        return new RecyclerSpellsViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerSpellsViewHolder holder, int position) {
-        // Mudar. Fiz só para teste
-           String item = itens.get(position);
-           holder.labelNome.setText(item);
+          Tecnica item = itens.get(position);
+          holder.labelNome.setText(item.getTitulo());
+          holder.labelEstilo.setText(item.getEstilo());
+          holder.labelRequisito.setText(item.getRequisito());
+          holder.labelGrau.setText(String.valueOf(item.getGrau()) + "°");
     }
 
     @Override

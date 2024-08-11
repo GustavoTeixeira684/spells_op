@@ -8,40 +8,47 @@
     tools:context=".view.Spells">
 
     <LinearLayout
-        android:id="@+id/linearLayouTopo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="32dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@android:color/transparent"
-            android:src="@drawable/add_spell" />
-
-        <SearchView
-            android:layout_width="214dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="32dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:backgroundTint="@android:color/transparent"
-            android:src="@drawable/filter" />
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lista_tecnicas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayouTopo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/add_spell" />
+
+            <SearchView
+                android:layout_width="214dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/filter" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista_tecnicas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
 </FrameLayout>

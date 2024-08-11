@@ -82,7 +82,7 @@ public class Spells extends Fragment {
         View view = inflater.inflate(R.layout.fragment_spells, container, false);
 
         recyclerView = view.findViewById(R.id.lista_tecnicas);
-        spellsAdapter = new RecyclerSpellsAdapter(getContext(), new ArrayList<String>(Arrays.asList(SpellsController.getLista_tecnicas())));
+        spellsAdapter = new RecyclerSpellsAdapter(getContext(), SpellsController.getTecnicas());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(spellsAdapter);

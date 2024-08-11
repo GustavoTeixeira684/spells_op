@@ -12,6 +12,8 @@ import com.example.spellsop.R;
 import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.databinding.ActivityMainBinding;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
@@ -70,7 +72,12 @@ public class MainActivity extends AppCompatActivity {
         String[] files = new String[0];
         try {
 //            files = assetManager.list("tecnicas");
-            SpellsController.setLista_tecnicas(assetManager.list("tecnicas"));
+//            SpellsController.setLista_tecnicas(assetManager.list("tecnicas"));
+            String[] tecnicas_padrao = assetManager.list("tecnicas");
+            for(int i = 0; i < Objects.requireNonNull(tecnicas_padrao).length; i++) {
+               tecnicas_padrao[i] = "tecnicas/"+tecnicas_padrao[i];
+            }
+            SpellsController.carregaTecnicas(MainActivity.this, Objects.requireNonNull(tecnicas_padrao));
 
 
         } catch (Exception e) {
