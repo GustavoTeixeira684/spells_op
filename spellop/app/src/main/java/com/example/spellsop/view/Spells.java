@@ -1,5 +1,7 @@
 package com.example.spellsop.view;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.Spinner;
 
@@ -92,6 +95,7 @@ public class Spells extends Fragment {
         recyclerView.setAdapter(spellsAdapter);
 
         // Declarações
+        ImageButton imgBtnFiltro = view.findViewById(R.id.imgBtnFiltro);
         SearchView txtPesquisaSpell = view.findViewById(R.id.txtPesquisaSpell);
         Spinner spinner = view.findViewById(R.id.spinner);
         ArrayList<String> itens_busca = new ArrayList<>();
@@ -106,6 +110,7 @@ public class Spells extends Fragment {
 
 
         // Funcões
+        // Busca
         txtPesquisaSpell.clearFocus();
         txtPesquisaSpell.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -125,6 +130,7 @@ public class Spells extends Fragment {
             }
         });
 
+        // Alterar tipo de busca
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -135,6 +141,16 @@ public class Spells extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        // Abrir seção de Configurações
+        imgBtnFiltro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ViewFiltroSpell.class);
+//                intent.putExtra("detalhe_tecnica",item);
+                startActivity(intent);
             }
         });
 
