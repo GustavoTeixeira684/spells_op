@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="80dp"
     android:fitsSystemWindows="true"
-    android:maxHeight="90dp">
+    android:outlineAmbientShadowColor="@color/black"
+    android:outlineSpotShadowColor="@color/black">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardSpell"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
         android:fitsSystemWindows="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:id="@+id/linearHorizontal1"
@@ -67,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="left|fill_vertical"
                 android:text="TextView" />
 
         </LinearLayout>

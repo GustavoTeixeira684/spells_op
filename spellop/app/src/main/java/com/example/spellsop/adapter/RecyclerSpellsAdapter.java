@@ -1,6 +1,7 @@
 package com.example.spellsop.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
+import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.model.Tecnica;
+import com.example.spellsop.view.ViewDetalheSpell;
 import com.example.spellsop.viewHolder.RecyclerSpellsViewHolder;
 
 import java.util.ArrayList;
@@ -43,6 +46,23 @@ public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsVi
           holder.labelEstilo.setText(item.getEstilo());
           holder.labelRequisito.setText(item.getRequisito());
           holder.labelGrau.setText(String.valueOf(item.getGrau()) + "°");
+          // Clique no botão de adcionar
+          holder.imgBtnAdd.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  // Depois incluir função para adicionar magia no Personagem do usuário
+              }
+          });
+          // Clique no card da magia
+          holder.cardSpell.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intent = new Intent(context, ViewDetalheSpell.class);
+                  intent.putExtra("detalhe_tecnica",item);
+                  context.startActivity(intent);
+              }
+          });
+
     }
 
     @Override

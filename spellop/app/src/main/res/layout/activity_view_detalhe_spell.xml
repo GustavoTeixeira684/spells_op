@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".view.ViewDetalheSpell">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="187dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHorizontal1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imgBtnVoltar"
+                android:layout_width="19dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/return_icon" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="333dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/logo_chopper" />
+
+            <TextView
+                android:id="@+id/labelFonte"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="aA"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ibgBtnAdd"
+                android:layout_width="36dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/add_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Titulo"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtGrau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Grau"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtEnergia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Energia"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtRequisito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Requisito"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtAlcance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Alcance"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtDuracao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Duracao"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtClasse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Classe"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtDano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Dano"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Descrição"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

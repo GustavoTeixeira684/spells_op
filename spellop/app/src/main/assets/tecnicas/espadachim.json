@@ -155,14 +155,14 @@
 	},
 	{
 		"id":14,
-		"titulo":"Grau",
-		"descricao":"Nitoryu - Dai GekkenVocê é capaz de arrancar um grande pedaço do chão, pedras e afins com as suas armas cortantes e o manter preso emsuas armas cortantes para realizar uma jogada de ataque corpo-a-corpo com 1,5 metro de alcance adicionais. Ao finalda técnica, você pode escolher manter o pedaço ou soltar suas armas cortantes.Alternativamente, você pode usar essa técnica como uma reação e fazer um Teste de Resistência de DestrezaCD 10 para não receber nenhum dano de grandes objetos e estruturas lançados contra você, que ficam cravados nassuas armas cortantes.",
+		"titulo":"Nitoryu - Dai Gekken",
+		"descricao":"Você é capaz de arrancar um grande pedaço do chão, pedras e afins com as suas armas cortantes e o manter preso emsuas armas cortantes para realizar uma jogada de ataque corpo-a-corpo com 1,5 metro de alcance adicionais. Ao finalda técnica, você pode escolher manter o pedaço ou soltar suas armas cortantes.Alternativamente, você pode usar essa técnica como uma reação e fazer um Teste de Resistência de DestrezaCD 10 para não receber nenhum dano de grandes objetos e estruturas lançados contra você, que ficam cravados nassuas armas cortantes.",
 		"energia":"9",
 		"duracao":"Instantâneo",
 		"alcance":"Toque",
 		"requisito":"2 Armas Cortantes, Ação",
 		"dano":"9d12 de dano de Concussão",
-		"grau":"A"
+		"grau":"3"
 	},
 	{
 		"id":15,

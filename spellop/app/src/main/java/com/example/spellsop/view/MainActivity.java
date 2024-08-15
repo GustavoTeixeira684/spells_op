@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-
         // Inclui a regra para poder trocar as telas
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -46,16 +45,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_main);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
-
-
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -71,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
         String[] files = new String[0];
         try {
-//            files = assetManager.list("tecnicas");
-//            SpellsController.setLista_tecnicas(assetManager.list("tecnicas"));
             String[] tecnicas_padrao = assetManager.list("tecnicas");
             for(int i = 0; i < Objects.requireNonNull(tecnicas_padrao).length; i++) {
                tecnicas_padrao[i] = "tecnicas/"+tecnicas_padrao[i];
@@ -81,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         } catch (Exception e) {
-//            throw new RuntimeException(e);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(e.getMessage());
             AlertDialog alert = builder.create();

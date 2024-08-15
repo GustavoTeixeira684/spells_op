@@ -15,8 +15,9 @@
         <LinearLayout
             android:id="@+id/linearLayouTopo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -26,11 +27,17 @@
                 android:backgroundTint="@android:color/transparent"
                 android:src="@drawable/add_spell" />
 
-            <SearchView
-                android:layout_width="214dp"
-                android:layout_height="wrap_content"
+            <EditText
+                android:id="@+id/txtPesquisaSpell"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:gravity="center" />
+                android:background="@drawable/search_view_background"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Pesquise Aqui"
+                android:inputType="text" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -47,6 +54,7 @@
             android:id="@+id/lista_tecnicas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_weight="1" />
 
     </LinearLayout>

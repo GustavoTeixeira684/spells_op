@@ -21,10 +21,11 @@ import java.util.List;
 public class SpellsController {
 
     private static ArrayList<Tecnica> tecnicas;
-
     public static ArrayList<Tecnica> getTecnicas(){
         return tecnicas;
     }
+    private static Tecnica tecnica_view;
+
 
 
     public static void carregaTecnicas(Context context, String[] caminho_arquivos) throws IOException {
@@ -86,5 +87,11 @@ public class SpellsController {
     }
 
 
+    public static Tecnica getTecnica_view() {
+        return tecnica_view;
+    }
 
+    public static void setTecnica_view(Tecnica tecnica_para_detalhe) {
+        SpellsController.tecnica_view = tecnica_para_detalhe;
+    }
 }

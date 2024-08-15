@@ -1,11 +1,16 @@
 package com.example.spellsop.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class Tecnica {
+public class Tecnica implements Parcelable {
 
     private int id;
     private String titulo;
@@ -51,6 +56,31 @@ public class Tecnica {
 
     }
 
+    protected Tecnica(Parcel in) {
+        id = in.readInt();
+        titulo = in.readString();
+        descricao = in.readString();
+        energia = in.readInt();
+        duracao = in.readString();
+        alcance = in.readString();
+        requisito = in.readString();
+        dano = in.readString();
+        grau = in.readInt();
+        estilo = in.readString();
+    }
+
+    public static final Creator<Tecnica> CREATOR = new Creator<Tecnica>() {
+        @Override
+        public Tecnica createFromParcel(Parcel in) {
+            return new Tecnica(in);
+        }
+
+        @Override
+        public Tecnica[] newArray(int size) {
+            return new Tecnica[size];
+        }
+    };
+
     public String getEstilo() {return this.estilo;}
 
     public int getId(){
@@ -84,9 +114,27 @@ public class Tecnica {
     public String getDano(){
         return this.dano;
     }
-
     public int getGrau(){
         return this.grau;
     }
 
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(titulo);
+        dest.writeString(descricao);
+        dest.writeInt(energia);
+        dest.writeString(duracao);
+        dest.writeString(alcance);
+        dest.writeString(requisito);
+        dest.writeString(dano);
+        dest.writeInt(grau);
+        dest.writeString(estilo);
+    }
 }
