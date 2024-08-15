@@ -1,5 +1,6 @@
 package com.example.spellsop.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -23,10 +24,26 @@ public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsVi
 
     private Context context;
     private ArrayList<Tecnica> itens; // Mudar. fiz só para teste
+    private ArrayList<Tecnica> lista_completa;
+
+    public ArrayList<Tecnica> getItens(){ return this.itens;}
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setListaFiltrada(ArrayList<Tecnica> itens){
+        this.itens = itens;
+        notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void listaCompleta(){
+        this.itens = this.lista_completa;
+        notifyDataSetChanged();
+    }
 
     public RecyclerSpellsAdapter(Context context, ArrayList<Tecnica> itens) {
         this.context = context;
         this.itens = itens;
+        this.lista_completa = itens;
     }
 
     @NonNull
@@ -39,13 +56,14 @@ public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsVi
         return new RecyclerSpellsViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull RecyclerSpellsViewHolder holder, int position) {
           Tecnica item = itens.get(position);
           holder.labelNome.setText(item.getTitulo());
           holder.labelEstilo.setText(item.getEstilo());
           holder.labelRequisito.setText(item.getRequisito());
-          holder.labelGrau.setText(String.valueOf(item.getGrau()) + "°");
+          holder.labelGrau.setText(item.getGrau() + "°");
           // Clique no botão de adcionar
           holder.imgBtnAdd.setOnClickListener(new View.OnClickListener() {
               @Override

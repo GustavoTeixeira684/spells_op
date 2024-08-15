@@ -23,14 +23,14 @@
 	},
 	{
 		"id":2,
-		"titulo":"Grau",
-		"descricao":"Hard BlockAo sofrer dano, você pode usar sua reação para reduzir os danos de Concussão, Cortantes e Perfurantes sofridos em6d8, até o início do seu próximo turno.Heavy Block: No 13o nível, usando sua reação, você pode usar essa técnica como uma técnica de 4o Grau, para reduziros danos de Concussão, Cortantes e Perfurantes sofridos em 10d8 e aumentar a sua CR em +3, até o início do seupróximo turno, custando 8 Pontos de Energia.Você pode gastar 1 Ponto de Energia para adicionar 2d8 de redução, até um dano máximo total de 22d8.",
+		"titulo":"Hard Block",
+		"descricao":"Ao sofrer dano, você pode usar sua reação para reduzir os danos de Concussão, Cortantes e Perfurantes sofridos em6d8, até o início do seu próximo turno.Heavy Block: No 13o nível, usando sua reação, você pode usar essa técnica como uma técnica de 4o Grau, para reduziros danos de Concussão, Cortantes e Perfurantes sofridos em 10d8 e aumentar a sua CR em +3, até o início do seupróximo turno, custando 8 Pontos de Energia.Você pode gastar 1 Ponto de Energia para adicionar 2d8 de redução, até um dano máximo total de 22d8.",
 		"energia":"2",
 		"duracao":"Até o início do seu próximo turno",
 		"alcance":"Pessoal",
 		"requisito":"Reação",
 		"dano":"Nenhum",
-		"grau":"8"
+		"grau":"1"
 	},
 	{
 		"id":3,

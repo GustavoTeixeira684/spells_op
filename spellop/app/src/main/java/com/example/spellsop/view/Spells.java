@@ -9,10 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import com.example.spellsop.R;
 import com.example.spellsop.adapter.RecyclerSpellsAdapter;
 import com.example.spellsop.controller.SpellsController;
+import com.example.spellsop.model.Tecnica;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,9 +86,41 @@ public class Spells extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(spellsAdapter);
 
+        SearchView txtPesquisaSpell = view.findViewById(R.id.txtPesquisaSpell);
+        txtPesquisaSpell.clearFocus();
+        txtPesquisaSpell.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(newText.length() > 0){
+                    pesquisar(newText);
+                }else{
+                    spellsAdapter.listaCompleta();
+                }
+
+                return true;
+            }
+        });
+
+
         return view;
     }
 
+    private void pesquisar(String newText) {
+
+        ArrayList<Tecnica> listaFiltrada = new ArrayList<>();
+        for(Tecnica item : spellsAdapter.getItens()){
+            if(item.getTitulo().toLowerCase().contains(newText.toLowerCase())){
+                listaFiltrada.add(item);
+            }
+        }
+        spellsAdapter.setListaFiltrada(listaFiltrada);
+
+    }
 
 
 }

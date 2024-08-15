@@ -16,17 +16,27 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SpellsController {
 
     private static ArrayList<Tecnica> tecnicas;
+    private static Tecnica tecnica_view;
+    private static Map<String, String> estilos;
+
     public static ArrayList<Tecnica> getTecnicas(){
         return tecnicas;
     }
-    private static Tecnica tecnica_view;
 
+    public static Tecnica getTecnica_view() {
+        return tecnica_view;
+    }
 
+    public static void setTecnica_view(Tecnica tecnica_para_detalhe) {
+        SpellsController.tecnica_view = tecnica_para_detalhe;
+    }
 
     public static void carregaTecnicas(Context context, String[] caminho_arquivos) throws IOException {
 
@@ -38,7 +48,24 @@ public class SpellsController {
         String conteudo_json;
         InputStream inputStream;
         int id, energia, grau;
-        String titulo, descricao, duracao, alcance, requisito, dano;
+        String titulo, descricao, duracao, alcance, requisito, dano, estilo;
+
+        estilos = new HashMap<>();
+        estilos.put("arqueiro","Arqueiro");
+        estilos.put("carateca_homem_peixe","Carateca Homem-Peixe");
+        estilos.put("ciborgue","Ciborgue");
+        estilos.put("combatente","Combatente");
+        estilos.put("estilingueiro","Estilingueiro");
+        estilos.put("guerreiro_oni","Guerreiro Oni");
+        estilos.put("guerrilheiro","Guerrilheiro");
+        estilos.put("hasshoken","Hasshoken");
+        estilos.put("lutador","Lutador");
+        estilos.put("ninja","Ninja");
+        estilos.put("okama_kenpo","Okama Kenpo");
+        estilos.put("rokushiki","Rokushiki");
+        estilos.put("ryusoken","Ryusoken");
+        estilos.put("sulong","Sulong");
+        estilos.put("espadachim","Espadachim");
 
         for(String arquivo : caminho_arquivos){
 
@@ -59,10 +86,8 @@ public class SpellsController {
                     requisito = jsonObject.getString("requisito");
                     dano = jsonObject.getString("dano");
                     grau = jsonObject.getInt("grau");
-
-                    tecnicas.add(new Tecnica(id, titulo, descricao, energia, duracao, alcance, requisito, dano, grau, arquivo.replace("tecnicas/","").replace(".json","")));
-                    Log.d("",arquivo);
-
+                    estilo = estilos.get(arquivo.replace("tecnicas/","").replace(".json",""));
+                    tecnicas.add(new Tecnica(id, titulo, descricao, energia, duracao, alcance, requisito, dano, grau, estilo));
                 }
 
             }catch (IOException e){
@@ -72,6 +97,7 @@ public class SpellsController {
             }
 
         }
+        tecnicas = ordenaTecnicasPorGrau();
 
     }
 
@@ -86,12 +112,45 @@ public class SpellsController {
         return stringBuilder.toString();
     }
 
-
-    public static Tecnica getTecnica_view() {
-        return tecnica_view;
+    private static ArrayList<Tecnica> ordenaTecnicasPorGrau(){
+        return ordenaTecnicasPorGrau(0, tecnicas.size(), tecnicas);
     }
 
-    public static void setTecnica_view(Tecnica tecnica_para_detalhe) {
-        SpellsController.tecnica_view = tecnica_para_detalhe;
+    private static ArrayList<Tecnica> ordenaTecnicasPorGrau(int primeiro, int ultimo, ArrayList<Tecnica> est){
+
+        if(primeiro < ultimo-1) {
+            ArrayList<Tecnica> temp = new ArrayList<>();
+            ArrayList<Tecnica> temp1;
+            ArrayList<Tecnica> temp2;
+            int meio = ((int) Math.floor(primeiro + (double) (ultimo - primeiro) / 2));
+            int i = 0, j = 0;
+
+            temp1 = ordenaTecnicasPorGrau(primeiro, meio, est);
+            temp2 = ordenaTecnicasPorGrau(meio, ultimo, est);
+
+            while (i < temp1.size() && j < temp2.size()) {
+                if (temp1.get(i).getGrau() <= temp2.get(j).getGrau()) {
+                    temp.add(temp1.get(i));
+                    i++;
+                } else {
+                    temp.add(temp2.get(j));
+                    j++;
+                }
+            }
+            while (i < temp1.size()) {
+                temp.add(temp1.get(i));
+                i++;
+            }
+            while (j < temp2.size()) {
+                temp.add(temp2.get(j));
+                j++;
+            }
+            temp1 = null;
+            temp2 = null;
+            return temp;
+        }
+        ArrayList<Tecnica> singleElement = new ArrayList<>();
+        singleElement.add(est.get(primeiro));
+        return singleElement;
     }
 }

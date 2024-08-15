@@ -49,7 +49,7 @@ public class ViewDetalheSpell extends AppCompatActivity {
         txtRequisito.setText("Requisito: " + tecnica.getRequisito());
         txtAlcance.setText("Alcance: " + tecnica.getAlcance());
         txtDuracao.setText("Duração: " + tecnica.getDuracao());
-        txtClasse.setText("Classe: " + tecnica.getEstilo());
+        txtClasse.setText("Estilo de Combate: " + tecnica.getEstilo());
         txtDano.setText("Dano: " + tecnica.getDano());
         txtDescricao.setText("Descrição: " + tecnica.getDescricao());
 

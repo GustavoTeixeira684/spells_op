@@ -24,6 +24,5 @@ public class RecyclerSpellsViewHolder extends RecyclerView.ViewHolder {
         labelEstilo = itemView.findViewById(R.id.labelEstilo);
         imgBtnAdd = itemView.findViewById(R.id.imgBtnAdd);
         cardSpell = itemView.findViewById(R.id.cardSpell);
-
     }
 }
