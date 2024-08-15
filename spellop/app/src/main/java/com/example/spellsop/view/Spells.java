@@ -17,7 +17,6 @@ import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.model.Tecnica;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +34,6 @@ public class Spells extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private RecyclerView recyclerView;
     private RecyclerSpellsAdapter spellsAdapter;
 
     // private attributes
@@ -80,7 +78,7 @@ public class Spells extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_spells, container, false);
 
-        recyclerView = view.findViewById(R.id.lista_tecnicas);
+        RecyclerView recyclerView = view.findViewById(R.id.lista_tecnicas);
         spellsAdapter = new RecyclerSpellsAdapter(getContext(), SpellsController.getTecnicas());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
@@ -96,7 +94,7 @@ public class Spells extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if(newText.length() > 0){
+                if(!newText.isEmpty()){
                     pesquisar(newText);
                 }else{
                     spellsAdapter.listaCompleta();

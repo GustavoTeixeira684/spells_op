@@ -26,6 +26,7 @@ public class SpellsController {
     private static Tecnica tecnica_view;
     private static Map<String, String> estilos;
 
+
     public static ArrayList<Tecnica> getTecnicas(){
         return tecnicas;
     }

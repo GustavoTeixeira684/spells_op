@@ -64,6 +64,7 @@ public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsVi
           holder.labelEstilo.setText(item.getEstilo());
           holder.labelRequisito.setText(item.getRequisito());
           holder.labelGrau.setText(item.getGrau() + "°");
+
           // Clique no botão de adcionar
           holder.imgBtnAdd.setOnClickListener(new View.OnClickListener() {
               @Override
