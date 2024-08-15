@@ -6,17 +6,23 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.SearchView;
+import android.widget.Spinner;
 
 import com.example.spellsop.R;
 import com.example.spellsop.adapter.RecyclerSpellsAdapter;
 import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.model.Tecnica;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +43,7 @@ public class Spells extends Fragment {
     private RecyclerSpellsAdapter spellsAdapter;
 
     // private attributes
-    private String[] files;
+    private int tipo_busca;
 
     public Spells() {
         // Required empty public constructor
@@ -84,7 +90,21 @@ public class Spells extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(spellsAdapter);
 
+        // Declarações
         SearchView txtPesquisaSpell = view.findViewById(R.id.txtPesquisaSpell);
+        Spinner spinner = view.findViewById(R.id.spinner);
+        ArrayList<String> itens_busca = new ArrayList<>();
+        itens_busca.add("Busca por Nome");
+        itens_busca.add("Busca por Estilo de Combate");
+        itens_busca.add("Busca por Requisito");
+        itens_busca.add("Busca por Descrição");
+        ArrayAdapter<String> modo_busca = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, itens_busca);
+        modo_busca.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(modo_busca);
+        tipo_busca = 0;
+
+
+        // Funcões
         txtPesquisaSpell.clearFocus();
         txtPesquisaSpell.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -104,6 +124,17 @@ public class Spells extends Fragment {
             }
         });
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                tipo_busca = (int) spinner.getSelectedItemId();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         return view;
     }
@@ -111,14 +142,42 @@ public class Spells extends Fragment {
     private void pesquisar(String newText) {
 
         ArrayList<Tecnica> listaFiltrada = new ArrayList<>();
-        for(Tecnica item : spellsAdapter.getItens()){
-            if(item.getTitulo().toLowerCase().contains(newText.toLowerCase())){
-                listaFiltrada.add(item);
-            }
+        switch(tipo_busca){
+            case 0: // Por nome/titulo
+                for(Tecnica item : spellsAdapter.getItens()){
+                    if(item.getTitulo().toLowerCase().contains(newText.toLowerCase())){
+                        listaFiltrada.add(item);
+                    }
+                }
+                break;
+            case 1: // Por estilo de combate
+                for(Tecnica item : spellsAdapter.getItens()){
+                    if(item.getEstilo().toLowerCase().contains(newText.toLowerCase())){
+                        listaFiltrada.add(item);
+                    }
+                }
+                break;
+            case 2: // Por requisito
+                for(Tecnica item : spellsAdapter.getItens()){
+                    if(item.getRequisito().toLowerCase().contains(newText.toLowerCase())){
+                        listaFiltrada.add(item);
+                    }
+                }
+                break;
+            default: // Por descrição
+                String descricao, texto;
+                for(Tecnica item : spellsAdapter.getItens()){
+                    // Normalizando e tirando ascentos
+                    descricao = Normalizer.normalize(item.getDescricao(), Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                    texto = Normalizer.normalize(newText, Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                    if(descricao.contains(texto)){
+                        listaFiltrada.add(item);
+                    }
+                }
+                break;
         }
         spellsAdapter.setListaFiltrada(listaFiltrada);
 
     }
-
 
 }

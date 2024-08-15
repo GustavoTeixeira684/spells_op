@@ -27,18 +27,34 @@
                 android:backgroundTint="@android:color/transparent"
                 android:src="@drawable/add_spell" />
 
-            <SearchView
-                android:id="@+id/txtPesquisaSpell"
-                android:layout_width="273dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
+            <LinearLayout
+                android:id="@+id/linearLayouHorizontal2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/search_view_background"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/pesquise_aqui"
-                android:iconifiedByDefault="false"
-                android:inputType="text" />
+                android:orientation="horizontal">
+
+                <SearchView
+                    android:id="@+id/txtPesquisaSpell"
+                    android:layout_width="273dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/pesquise_aqui"
+                    android:iconifiedByDefault="false"
+                    android:inputType="text">
+
+                </SearchView>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
 
             <ImageButton
                 android:id="@+id/imgBtnFiltro"
