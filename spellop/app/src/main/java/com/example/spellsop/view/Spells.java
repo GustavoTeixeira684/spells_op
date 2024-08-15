@@ -44,6 +44,7 @@ public class Spells extends Fragment {
 
     // private attributes
     private int tipo_busca;
+    private String[] hint_busa = {"Pesquise por Nome","Pesquise por Estilo de Combate","Pesquise por Requisito","Pesquise por Descrição"};
 
     public Spells() {
         // Required empty public constructor
@@ -128,6 +129,7 @@ public class Spells extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 tipo_busca = (int) spinner.getSelectedItemId();
+                txtPesquisaSpell.setQueryHint(hint_busa[tipo_busca]);
             }
 
             @Override

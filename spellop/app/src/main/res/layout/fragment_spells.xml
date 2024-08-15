@@ -41,10 +41,9 @@
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
-
                     android:ems="10"
                     android:gravity="center"
-                    android:hint="@string/pesquise_aqui"
+                    android:queryHint="Pesquise por Nome"
                     android:iconifiedByDefault="false"
                     android:inputType="text">
 
