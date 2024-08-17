@@ -3,6 +3,7 @@ package com.example.spellsop.controller;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import com.example.spellsop.model.Tecnica;
 
@@ -17,13 +18,14 @@ import java.io.InputStreamReader;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
 public class SpellsController {
 
     private static ArrayList<Tecnica> tecnicas;
-    private static Tecnica tecnica_view;
+    private static Tecnica tecnica_view; // Tecnica usada para exibir os detalhes
     private static Map<String, String> estilos;
 
 
@@ -113,6 +115,7 @@ public class SpellsController {
         return stringBuilder.toString();
     }
 
+    // Métodos para ordenar tecnicas
     private static ArrayList<Tecnica> ordenaTecnicasPorGrau(){
         return ordenaTecnicasPorGrau(0, tecnicas.size(), tecnicas);
     }
@@ -154,4 +157,57 @@ public class SpellsController {
         singleElement.add(est.get(primeiro));
         return singleElement;
     }
+
+    // Função para retornar todos os filtros possíveis da página de filtros
+    public static ArrayList<ArrayList<String>> returnFilters(){
+
+        ArrayList<ArrayList<String>> listaTodos = new ArrayList<>();
+        HashSet<String> set = new HashSet<>();
+
+        for(Tecnica item : tecnicas){ // Insere tecnica de combate
+            set.add(item.getEstilo());
+        }
+        listaTodos.add(new ArrayList<>(set));
+
+        set.clear();
+
+        for(Tecnica item : tecnicas){ // Insere Grau
+            set.add(String.valueOf(item.getGrau()));
+        }
+        listaTodos.add(new ArrayList<>(set));
+
+        set.clear();
+
+        for(Tecnica item : tecnicas){ // Insere Requisito
+            set.add(item.getRequisito());
+        }
+        listaTodos.add(new ArrayList<>(set));
+
+        set.clear();
+
+        for(Tecnica item : tecnicas){ // Insere Alcance
+            set.add(item.getAlcance());
+        }
+        listaTodos.add(new ArrayList<>(set));
+
+        set.clear();
+
+        for(Tecnica item : tecnicas){ // Insere Duracao
+            set.add(item.getDuracao());
+        }
+        listaTodos.add(new ArrayList<>(set));
+
+        set.clear();
+
+        for(Tecnica item : tecnicas){ // Insere Energia
+            set.add(String.valueOf(item.getEnergia()));
+        }
+        listaTodos.add(new ArrayList<>(set));
+
+        set.clear();
+
+        return listaTodos;
+
+    }
+
 }
