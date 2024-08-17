@@ -30,7 +30,7 @@ public class ViewDetalheSpell extends AppCompatActivity {
         // Declarações
         imgBtnVoltar = findViewById(R.id.imgBtnVoltar);
         txtTitulo = findViewById(R.id.txtTitulo);
-        txtGrau = findViewById(R.id.txtGrau);
+        txtGrau = findViewById(R.id.txtEstiloCombate);
         txtEnergia = findViewById(R.id.txtEnergia);
         txtRequisito = findViewById(R.id.txtRequisito);
         txtAlcance = findViewById(R.id.txtAlcance);
