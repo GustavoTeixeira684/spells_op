@@ -61,178 +61,270 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/linearVerticalEstiloCombate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:clipToPadding="false"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtEstiloCombate"
-                    android:layout_width="307dp"
+                <LinearLayout
+                    android:id="@+id/linearHorizontalEstiloCombate"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Estilo de Combate" />
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtQntEstiloCombate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0" />
+                    <TextView
+                        android:id="@+id/txtEstiloCombate"
+                        android:layout_width="307dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="Estilo de Combate" />
 
-                <Spinner
-                    android:id="@+id/spinnerEstiloCombate"
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
+                    <TextView
+                        android:id="@+id/txtQntEstiloCombate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnEstiloCombate"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/arrow_drop_down_icon" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerEstiloCombate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtGrau"
-                    android:layout_width="307dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Grau" />
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtQntGrau"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0" />
+                    <TextView
+                        android:id="@+id/txtGrau"
+                        android:layout_width="307dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Grau" />
 
-                <Spinner
-                    android:id="@+id/spinnerGrau"
-                    android:layout_width="25dp"
+                    <TextView
+                        android:id="@+id/txtQntGrau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnGrau"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/arrow_drop_down_icon" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerGrau"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:visibility="gone" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtRequisito"
-                    android:layout_width="307dp"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:text="Requisito" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtQntRequisito"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0" />
+                    <TextView
+                        android:id="@+id/txtRequisito"
+                        android:layout_width="307dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Requisito" />
 
-                <Spinner
-                    android:id="@+id/spinnerRequisito"
-                    android:layout_width="25dp"
+                    <TextView
+                        android:id="@+id/txtQntRequisito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnRequisito"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/arrow_drop_down_icon" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerRequisito"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:visibility="gone" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtAlcance"
-                    android:layout_width="307dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtAlcance"
+                        android:layout_width="307dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Alcance" />
+
+                    <TextView
+                        android:id="@+id/txtQntAlcance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnAlcance"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/arrow_drop_down_icon" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerAlcance"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="Alcance" />
+                    android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/txtQntAlcance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0" />
-
-                <Spinner
-                    android:id="@+id/spinnerAlcance"
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtDuracao"
-                    android:layout_width="307dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtDuracao"
+                        android:layout_width="307dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Duração" />
+
+                    <TextView
+                        android:id="@+id/txtQntDuracao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnDuracao"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/arrow_drop_down_icon" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerDuracao"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Duração" />
+                    android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/txtQntDuracao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0" />
-
-                <Spinner
-                    android:id="@+id/spinnerDuracao"
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtEnergia"
-                    android:layout_width="307dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtEnergia"
+                        android:layout_width="307dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Energia" />
+
+                    <TextView
+                        android:id="@+id/txtQntEnergia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnEnergia"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/arrow_drop_down_icon" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerEnergia"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="Energia" />
+                    android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/txtQntEnergia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0" />
-
-                <Spinner
-                    android:id="@+id/spinnerEnergia"
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
             </LinearLayout>
 
 
