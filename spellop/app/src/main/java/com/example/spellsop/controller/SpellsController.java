@@ -2,8 +2,7 @@ package com.example.spellsop.controller;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.example.spellsop.model.Tecnica;
 
@@ -15,18 +14,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class SpellsController {
 
     private static ArrayList<Tecnica> tecnicas;
     private static Tecnica tecnica_view; // Tecnica usada para exibir os detalhes
     private static Map<String, String> estilos;
+    private static int qntEstiloCombate = 0, qntGrau = 0, qntAlcance = 0, qntRequisito = 0, qntDuracao = 0, qntEnergia = 0;
 
 
     public static ArrayList<Tecnica> getTecnicas(){
@@ -209,5 +209,86 @@ public class SpellsController {
         return listaTodos;
 
     }
+
+    // Função para atualizar as componentes da View e Filtros com base no que é selecionado nas recyclers View
+    public static void atualizaItemFiltroInserido(String objeto, TextView componente, TextView componente_limpar){
+        if(Objects.equals(objeto, "estilo_combate")){
+            qntEstiloCombate++;
+            componente.setText(String.valueOf(qntEstiloCombate));
+        }else if(Objects.equals(objeto, "requisito")){
+            qntRequisito++;
+            componente.setText(String.valueOf(qntRequisito));
+        }else if(Objects.equals(objeto, "alcance")){
+            qntAlcance++;
+            componente.setText(String.valueOf(qntAlcance));
+        }else if(Objects.equals(objeto, "duracao")){
+            qntDuracao++;
+            componente.setText(String.valueOf(qntDuracao));
+        }else if(Objects.equals(objeto, "grau")){
+            qntGrau++;
+            componente.setText(String.valueOf(qntGrau));
+        }else{
+            qntEnergia++;
+            componente.setText(String.valueOf(qntEnergia));
+        }
+        componente_limpar.setVisibility(TextView.VISIBLE);
+    }
+
+    public static void atualizaItemFiltroRemovido(String objeto, TextView componente, TextView componente_limpar){
+        if(Objects.equals(objeto, "estilo_combate")){
+            qntEstiloCombate--;
+            componente.setText(String.valueOf(qntEstiloCombate));
+            if(qntEstiloCombate == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
+        }else if(Objects.equals(objeto, "requisito")){
+            qntRequisito--;
+            componente.setText(String.valueOf(qntRequisito));
+            if(qntRequisito == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
+        }else if(Objects.equals(objeto, "alcance")){
+            qntAlcance--;
+            componente.setText(String.valueOf(qntAlcance));
+            if(qntAlcance == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
+        }else if(Objects.equals(objeto, "duracao")){
+            qntDuracao--;
+            componente.setText(String.valueOf(qntDuracao));
+            if(qntDuracao == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
+        }else if(Objects.equals(objeto, "grau")){
+            qntGrau--;
+            componente.setText(String.valueOf(qntGrau));
+            if(qntGrau == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
+        }else{
+            qntEnergia--;
+            componente.setText(String.valueOf(qntEnergia));
+            if(qntEnergia == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
+        }
+    }
+
+    public static void limparItensFiltro(String objeto, TextView componente, TextView componente_limpar){
+        if(Objects.equals(objeto, "estilo_combate")){
+            qntEstiloCombate = 0;
+            componente.setText(String.valueOf(qntEstiloCombate));
+            componente_limpar.setVisibility(TextView.INVISIBLE);
+        }else if(Objects.equals(objeto, "requisito")){
+            qntRequisito = 0;
+            componente.setText(String.valueOf(qntRequisito));
+            componente_limpar.setVisibility(TextView.INVISIBLE);
+        }else if(Objects.equals(objeto, "alcance")){
+            qntAlcance = 0;
+            componente.setText(String.valueOf(qntAlcance));
+            componente_limpar.setVisibility(TextView.INVISIBLE);
+        }else if(Objects.equals(objeto, "duracao")){
+            qntDuracao = 0;
+            componente.setText(String.valueOf(qntDuracao));
+            componente_limpar.setVisibility(TextView.INVISIBLE);
+        }else if(Objects.equals(objeto, "grau")){
+            qntGrau = 0;
+            componente.setText(String.valueOf(qntGrau));
+            componente_limpar.setVisibility(TextView.INVISIBLE);
+        }else{
+            qntEnergia = 0;
+            componente.setText(String.valueOf(qntEnergia));
+            componente_limpar.setVisibility(TextView.INVISIBLE);
+        }
+    }
+
 
 }

@@ -4,12 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
-import com.example.spellsop.viewHolder.RecyclerEstiloCombateViewHolder;
+import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerRequisitoViewHolder;
 
 import java.util.ArrayList;
@@ -18,11 +19,13 @@ public class RecyclerRequisitoAdapter extends RecyclerView.Adapter<RecyclerRequi
 
     private Context context;
     private ArrayList<String> itens; // Arraylist que carrega os itens que serão exibidos
+    private TextView labelQntRequisito, labelLimparRequisito;
 
-
-    public RecyclerRequisitoAdapter(Context context, ArrayList<String> itens) {
+    public RecyclerRequisitoAdapter(Context context, ArrayList<String> itens, TextView labelQntRequisito, TextView labelLimparRequisito) {
         this.context = context;
         this.itens = itens;
+        this.labelQntRequisito = labelQntRequisito;
+        this.labelLimparRequisito = labelLimparRequisito;
     }
 
     @Override
@@ -45,8 +48,10 @@ public class RecyclerRequisitoAdapter extends RecyclerView.Adapter<RecyclerRequi
             public void onClick(View v) {
                 if (holder.imgCheck.getVisibility() == View.INVISIBLE) {
                     holder.imgCheck.setVisibility(View.VISIBLE);
+                    SpellsController.atualizaItemFiltroInserido("requisito", labelQntRequisito, labelLimparRequisito);
                 } else {
                     holder.imgCheck.setVisibility(View.INVISIBLE);
+                    SpellsController.atualizaItemFiltroRemovido("requisito", labelQntRequisito, labelLimparRequisito);
                 }
 
             }

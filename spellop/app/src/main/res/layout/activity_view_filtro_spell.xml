@@ -83,11 +83,20 @@
 
                         <TextView
                             android:id="@+id/txtEstiloCombate"
-                            android:layout_width="307dp"
+                            android:layout_width="246dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
                             android:text="@string/estilo_de_combate" />
+
+                        <TextView
+                            android:id="@+id/labelLimparEstiloCombate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Limpar"
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/txtQntEstiloCombate"
@@ -128,10 +137,19 @@
 
                         <TextView
                             android:id="@+id/txtGrau"
-                            android:layout_width="307dp"
+                            android:layout_width="246dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/grau" />
+
+                        <TextView
+                            android:id="@+id/labelLimparGrau"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Limpar"
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/txtQntGrau"
@@ -173,10 +191,19 @@
 
                         <TextView
                             android:id="@+id/txtRequisito"
-                            android:layout_width="307dp"
+                            android:layout_width="246dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/requisito" />
+
+                        <TextView
+                            android:id="@+id/labelLimparRequisito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Limpar"
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/txtQntRequisito"
@@ -215,10 +242,19 @@
 
                         <TextView
                             android:id="@+id/txtAlcance"
-                            android:layout_width="307dp"
+                            android:layout_width="246dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Alcance" />
+
+                        <TextView
+                            android:id="@+id/labelLimparAlcance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Limpar"
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/txtQntAlcance"
@@ -259,10 +295,19 @@
 
                         <TextView
                             android:id="@+id/txtDuracao"
-                            android:layout_width="307dp"
+                            android:layout_width="246dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Duração" />
+
+                        <TextView
+                            android:id="@+id/labelLimparDuracao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Limpar"
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/txtQntDuracao"
@@ -303,10 +348,19 @@
 
                         <TextView
                             android:id="@+id/txtEnergia"
-                            android:layout_width="307dp"
+                            android:layout_width="246dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Energia" />
+
+                        <TextView
+                            android:id="@+id/labelLimparEnergia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Limpar"
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/txtQntEnergia"

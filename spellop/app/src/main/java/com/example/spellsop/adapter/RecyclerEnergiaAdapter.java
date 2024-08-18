@@ -4,13 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
+import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerEnergiaViewHolder;
-import com.example.spellsop.viewHolder.RecyclerEstiloCombateViewHolder;
 
 import java.util.ArrayList;
 
@@ -18,10 +19,13 @@ public class RecyclerEnergiaAdapter extends RecyclerView.Adapter<RecyclerEnergia
 
     private Context context;
     private ArrayList<String> itens;
+    private TextView labelQntEnergia, labelLimparEnergia;
 
-    public RecyclerEnergiaAdapter(Context context, ArrayList<String> itens){
+    public RecyclerEnergiaAdapter(Context context, ArrayList<String> itens, TextView labelQntEnergia, TextView labelLimparEnergia){
         this.context = context;
         this.itens = itens;
+        this.labelQntEnergia = labelQntEnergia;
+        this.labelLimparEnergia = labelLimparEnergia;
     }
 
     @Override
@@ -43,8 +47,10 @@ public class RecyclerEnergiaAdapter extends RecyclerView.Adapter<RecyclerEnergia
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
+                    SpellsController.atualizaItemFiltroInserido("energia", labelQntEnergia, labelLimparEnergia);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
+                    SpellsController.atualizaItemFiltroRemovido("energia", labelQntEnergia, labelLimparEnergia);
                 }
 
             }

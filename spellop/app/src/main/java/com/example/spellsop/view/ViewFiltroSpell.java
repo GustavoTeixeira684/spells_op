@@ -1,11 +1,9 @@
 package com.example.spellsop.view;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -40,7 +38,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
 
     // Objetos do layout
     RecyclerView recyclerEstiloCombate, recyclerGrau, recyclerRequisito, recyclerAlcance, recyclerDuracao, recyclerEnergia;
-    TextView txtBuscar, txtQntEstiloCombate, txtQntGrau, txtQntRequisito, txtQntAlcance, txtQntDuracao, txtQntEnergia;
+    public TextView labelBuscar, labelQntEstiloCombate, labelQntGrau, labelQntRequisito, labelQntAlcance, labelQntDuracao, labelQntEnergia;
+    private TextView labelLimparEstiloCombate, labelLimparGrau, labelLimparRequisito, labelLimparAlcance, labelLimparDuracao, labelLimparEnergia;
     ImageButton imgBtnVoltar, imgBtnEstiloCombate, imgBtnGrau, imgBtnRequisito, imgBtnAlcance, imgBtnDuracao, imgBtnEnergia;
 
 
@@ -52,13 +51,13 @@ public class ViewFiltroSpell extends AppCompatActivity {
 
         //Declarações
         imgBtnVoltar = findViewById(R.id.imgBtnVoltar);
-        txtBuscar = findViewById(R.id.txtBuscar);
-        txtQntEstiloCombate = findViewById(R.id.txtQntEstiloCombate);
-        txtQntGrau = findViewById(R.id.txtQntGrau);
-        txtQntRequisito = findViewById(R.id.txtQntRequisito);
-        txtQntAlcance = findViewById(R.id.txtQntAlcance);
-        txtQntDuracao = findViewById(R.id.txtQntDuracao);
-        txtQntEnergia = findViewById(R.id.txtQntEnergia);
+        labelBuscar = findViewById(R.id.txtBuscar);
+        labelQntEstiloCombate = findViewById(R.id.txtQntEstiloCombate);
+        labelQntGrau = findViewById(R.id.txtQntGrau);
+        labelQntRequisito = findViewById(R.id.txtQntRequisito);
+        labelQntAlcance = findViewById(R.id.txtQntAlcance);
+        labelQntDuracao = findViewById(R.id.txtQntDuracao);
+        labelQntEnergia = findViewById(R.id.txtQntEnergia);
         recyclerEstiloCombate = findViewById(R.id.recyclerEstiloCombate);
         recyclerGrau = findViewById(R.id.recyclerGrau);
         recyclerRequisito = findViewById(R.id.recyclerRequisito);
@@ -71,6 +70,12 @@ public class ViewFiltroSpell extends AppCompatActivity {
         imgBtnAlcance = findViewById(R.id.imgBtnAlcance);
         imgBtnDuracao = findViewById(R.id.imgBtnDuracao);
         imgBtnEnergia = findViewById(R.id.imgBtnEnergia);
+        labelLimparEstiloCombate = findViewById(R.id.labelLimparEstiloCombate);
+        labelLimparGrau = findViewById(R.id.labelLimparGrau);
+        labelLimparRequisito = findViewById(R.id.labelLimparRequisito);
+        labelLimparAlcance = findViewById(R.id.labelLimparAlcance);
+        labelLimparDuracao = findViewById(R.id.labelLimparDuracao);
+        labelLimparEnergia = findViewById(R.id.labelLimparEnergia);
 
         this.setEstadoInicialComponentes();
         this.carregaObjetosFiltro();
@@ -92,12 +97,17 @@ public class ViewFiltroSpell extends AppCompatActivity {
         recyclerDuracao.setVisibility(View.GONE);
         recyclerEnergia.setVisibility(View.GONE);
         recyclerGrau.setVisibility(View.GONE);
+        labelLimparEstiloCombate.setVisibility(View.INVISIBLE);
+        labelLimparGrau.setVisibility(View.INVISIBLE);
+        labelLimparRequisito.setVisibility(View.INVISIBLE);
+        labelLimparAlcance.setVisibility(View.INVISIBLE);
+        labelLimparDuracao.setVisibility(View.INVISIBLE);
+        labelLimparEnergia.setVisibility(View.INVISIBLE);
 
     }
 
      // Método para centralizar os eventos
     private void setEventos(){
-
 
         //Voltar
         imgBtnVoltar.setOnClickListener(new View.OnClickListener() {
@@ -106,14 +116,67 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 finish();
             }
         });
-
-        txtBuscar.setOnClickListener(new View.OnClickListener() {
+        // Volta
+        labelBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
+        // ***** Inicio Eventos que limpam as listas de filtros ***** //
+
+        labelLimparEstiloCombate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpellsController.limparItensFiltro("estilo_combate", labelQntEstiloCombate, labelLimparEstiloCombate);
+                recyclerEstiloCombate.setAdapter(recyclerEstiloCombateAdapter);
+            }
+        });
+
+        labelLimparGrau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpellsController.limparItensFiltro("grau", labelQntGrau, labelLimparGrau);
+                recyclerGrau.setAdapter(recyclerGrauAdapter);
+            }
+        });
+
+        labelLimparRequisito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpellsController.limparItensFiltro("requisito", labelQntRequisito, labelLimparRequisito);
+                recyclerRequisito.setAdapter(recyclerRequisitoAdapter);
+            }
+        });
+
+        labelLimparAlcance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpellsController.limparItensFiltro("alcance", labelQntAlcance, labelLimparAlcance);
+                recyclerAlcance.setAdapter(recyclerAlcanceAdapter);
+            }
+        });
+
+        labelLimparDuracao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpellsController.limparItensFiltro("duracao", labelQntDuracao, labelLimparDuracao);
+                recyclerDuracao.setAdapter(recyclerDuracaoAdapter);
+            }
+        });
+
+        labelLimparEnergia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpellsController.limparItensFiltro("energia", labelQntEnergia, labelLimparEnergia);
+                recyclerEnergia.setAdapter(recyclerEnergiaAdapter);
+            }
+        });
+
+        // ***** Fim Eventos que limpam as listas de filtros ***** //
+
+        // ***** Inicio Eventos que habilitam as listas dos filtros ***** //
         imgBtnEstiloCombate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,6 +242,7 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 }
             }
         });
+        // ***** Fim Eventos que habilitam as listas dos filtros ***** //
 
     }
 
@@ -189,48 +253,49 @@ public class ViewFiltroSpell extends AppCompatActivity {
 
         //Estilo de Combate
         Collections.sort(listaItensFiltro.get(0));
-        recyclerEstiloCombateAdapter = new RecyclerEstiloCombateAdapter(ViewFiltroSpell.this, listaItensFiltro.get(0));
+        recyclerEstiloCombateAdapter = new RecyclerEstiloCombateAdapter(ViewFiltroSpell.this, listaItensFiltro.get(0), labelQntEstiloCombate, labelLimparEstiloCombate);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ViewFiltroSpell.this, LinearLayoutManager.VERTICAL, false);
         recyclerEstiloCombate.setLayoutManager(layoutManager);
         recyclerEstiloCombate.setAdapter(recyclerEstiloCombateAdapter);
 
+
         // Grau
         Collections.sort(listaItensFiltro.get(1));
-        recyclerGrauAdapter = new RecyclerGrauAdapter(ViewFiltroSpell.this, listaItensFiltro.get(1));
+        recyclerGrauAdapter = new RecyclerGrauAdapter(ViewFiltroSpell.this, listaItensFiltro.get(1), labelQntGrau, labelLimparGrau);
         layoutManager = new LinearLayoutManager(ViewFiltroSpell.this, LinearLayoutManager.VERTICAL, false);
         recyclerGrau.setLayoutManager(layoutManager);
         recyclerGrau.setAdapter(recyclerGrauAdapter);
 
         // Requisito
         Collections.sort(listaItensFiltro.get(2));
-        recyclerRequisitoAdapter = new RecyclerRequisitoAdapter(ViewFiltroSpell.this, listaItensFiltro.get(2));
+        recyclerRequisitoAdapter = new RecyclerRequisitoAdapter(ViewFiltroSpell.this, listaItensFiltro.get(2), labelQntRequisito, labelLimparRequisito);
         layoutManager = new LinearLayoutManager(ViewFiltroSpell.this, LinearLayoutManager.VERTICAL, false);
         recyclerRequisito.setLayoutManager(layoutManager);
         recyclerRequisito.setAdapter(recyclerRequisitoAdapter);
 
         // Alcance
         Collections.sort(listaItensFiltro.get(3));
-        recyclerAlcanceAdapter = new RecyclerAlcanceAdapter(ViewFiltroSpell.this, listaItensFiltro.get(3));
+        recyclerAlcanceAdapter = new RecyclerAlcanceAdapter(ViewFiltroSpell.this, listaItensFiltro.get(3), labelQntAlcance, labelLimparAlcance);
         layoutManager = new LinearLayoutManager(ViewFiltroSpell.this, LinearLayoutManager.VERTICAL, false);
         recyclerAlcance.setLayoutManager(layoutManager);
         recyclerAlcance.setAdapter(recyclerAlcanceAdapter);
 
         // Duracao
         Collections.sort(listaItensFiltro.get(4));
-        recyclerDuracaoAdapter = new RecyclerDuracaoAdapter(ViewFiltroSpell.this, listaItensFiltro.get(4));
+        recyclerDuracaoAdapter = new RecyclerDuracaoAdapter(ViewFiltroSpell.this, listaItensFiltro.get(4), labelQntDuracao, labelLimparDuracao);
         layoutManager = new LinearLayoutManager(ViewFiltroSpell.this, LinearLayoutManager.VERTICAL, false);
         recyclerDuracao.setLayoutManager(layoutManager);
         recyclerDuracao.setAdapter(recyclerDuracaoAdapter);
 
         // Energia
         Collections.sort(listaItensFiltro.get(5));
-        recyclerEnergiaAdapter = new RecyclerEnergiaAdapter(ViewFiltroSpell.this, listaItensFiltro.get(5));
+        recyclerEnergiaAdapter = new RecyclerEnergiaAdapter(ViewFiltroSpell.this, listaItensFiltro.get(5), labelQntEnergia, labelLimparEnergia);
         layoutManager = new LinearLayoutManager(ViewFiltroSpell.this, LinearLayoutManager.VERTICAL, false);
         recyclerEnergia.setLayoutManager(layoutManager);
         recyclerEnergia.setAdapter(recyclerEnergiaAdapter);
 
-
-
     }
+
+
 }
 

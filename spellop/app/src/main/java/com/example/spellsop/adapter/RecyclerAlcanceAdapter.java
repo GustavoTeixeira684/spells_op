@@ -4,13 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
+import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerAlcanceViewHolder;
-import com.example.spellsop.viewHolder.RecyclerEstiloCombateViewHolder;
 
 import java.util.ArrayList;
 
@@ -18,10 +19,13 @@ public class RecyclerAlcanceAdapter extends RecyclerView.Adapter<RecyclerAlcance
 
     Context context;
     ArrayList<String> itens;
+    TextView labelQntAlcance, labelLimparAlcance;
 
-    public RecyclerAlcanceAdapter(Context context, ArrayList<String> itens){
+    public RecyclerAlcanceAdapter(Context context, ArrayList<String> itens, TextView labelQntAlcance, TextView labelLimparAlcance){
         this.context = context;
         this.itens = itens;
+        this.labelQntAlcance = labelQntAlcance;
+        this.labelLimparAlcance = labelLimparAlcance;
     }
 
     @Override
@@ -43,8 +47,10 @@ public class RecyclerAlcanceAdapter extends RecyclerView.Adapter<RecyclerAlcance
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
+                    SpellsController.atualizaItemFiltroInserido("alcance", labelQntAlcance, labelLimparAlcance);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
+                    SpellsController.atualizaItemFiltroRemovido("alcance", labelQntAlcance, labelLimparAlcance);
                 }
 
             }

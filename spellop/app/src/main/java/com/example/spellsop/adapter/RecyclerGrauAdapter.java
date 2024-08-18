@@ -4,25 +4,28 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
-import com.example.spellsop.viewHolder.RecyclerEstiloCombateViewHolder;
+import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerGrauViewHolder;
 
 import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class RecyclerGrauAdapter extends RecyclerView.Adapter<RecyclerGrauViewHolder> {
 
-    Context context;
-    ArrayList<String> itens;
+    private Context context;
+    private ArrayList<String> itens;
+    private TextView labelQntGrau, labelLimparGrau;
 
-    public RecyclerGrauAdapter(Context context, ArrayList<String> itens){
+    public RecyclerGrauAdapter(Context context, ArrayList<String> itens, TextView labelQntGrau, TextView labelLimparGrau){
         this.context = context;
         this.itens = itens;
+        this.labelQntGrau = labelQntGrau;
+        this.labelLimparGrau = labelLimparGrau;
     }
 
     @Override
@@ -45,8 +48,10 @@ public class RecyclerGrauAdapter extends RecyclerView.Adapter<RecyclerGrauViewHo
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
+                    SpellsController.atualizaItemFiltroInserido("grau", labelQntGrau, labelLimparGrau);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
+                    SpellsController.atualizaItemFiltroRemovido("grau", labelQntGrau, labelLimparGrau);
                 }
 
             }
