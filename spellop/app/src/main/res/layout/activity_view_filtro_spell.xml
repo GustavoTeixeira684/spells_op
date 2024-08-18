@@ -41,7 +41,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Filtros"
+                android:text="@string/filtros"
                 android:textSize="24sp" />
 
             <TextView
@@ -50,14 +50,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Buscar"
+                android:text="@string/buscar"
                 android:textSize="16sp" />
 
         </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:clipToPadding="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -85,7 +87,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Estilo de Combate" />
+                            android:text="@string/estilo_de_combate" />
 
                         <TextView
                             android:id="@+id/txtQntEstiloCombate"
@@ -129,7 +131,7 @@
                             android:layout_width="307dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Grau" />
+                            android:text="@string/grau" />
 
                         <TextView
                             android:id="@+id/txtQntGrau"
@@ -137,7 +139,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="0" />
+                            android:text="@string/_0" />
 
                         <ImageButton
                             android:id="@+id/imgBtnGrau"
@@ -174,7 +176,7 @@
                             android:layout_width="307dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Requisito" />
+                            android:text="@string/requisito" />
 
                         <TextView
                             android:id="@+id/txtQntRequisito"
