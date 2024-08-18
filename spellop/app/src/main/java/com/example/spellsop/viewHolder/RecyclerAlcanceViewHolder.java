@@ -10,16 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
 
-public class RecyclerEstiloCombateViewHolder extends RecyclerView.ViewHolder {
+public class RecyclerAlcanceViewHolder extends RecyclerView.ViewHolder {
 
     public TextView labelItem;
     public ImageView imgCheck;
-    public CardView cardEstiloCombate;
+    public CardView cardAlcance;
 
-    public RecyclerEstiloCombateViewHolder(@NonNull View itemView) {
+    public RecyclerAlcanceViewHolder(@NonNull View itemView) {
         super(itemView);
         labelItem = itemView.findViewById(R.id.labelItem);
         imgCheck = itemView.findViewById(R.id.imgCheck);
-        cardEstiloCombate = itemView.findViewById(R.id.cardItemFiltro);
+        cardAlcance = itemView.findViewById(R.id.cardItemFiltro);
     }
 }
