@@ -100,6 +100,17 @@ public class Tecnica implements Parcelable {
         return this.grau;
     }
 
+    public String getAtributoTecnica(String objeto){
+        switch(objeto){
+            case "estilo_combate": return this.estilo;
+            case "duracao": return this.duracao;
+            case "alcance": return this.alcance;
+            case "requisito": return this.requisito;
+            case "grau": return String.valueOf(this.grau);
+            default: return String.valueOf(this.energia); // Energia
+        }
+    }
+
 
     @Override
     public int describeContents() {

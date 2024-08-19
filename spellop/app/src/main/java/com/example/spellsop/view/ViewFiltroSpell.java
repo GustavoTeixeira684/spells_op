@@ -100,12 +100,12 @@ public class ViewFiltroSpell extends AppCompatActivity {
         recyclerDuracao.setVisibility(View.GONE);
         recyclerEnergia.setVisibility(View.GONE);
         recyclerGrau.setVisibility(View.GONE);
-        labelQntEstiloCombate.setText(String.valueOf(SpellsController.qntEstiloCombate));
-        labelQntGrau.setText(String.valueOf(SpellsController.qntGrau));
-        labelQntRequisito.setText(String.valueOf(SpellsController.qntRequisito));
-        labelQntAlcance.setText(String.valueOf(SpellsController.qntAlcance));
-        labelQntDuracao.setText(String.valueOf(SpellsController.qntDuracao));
-        labelQntEnergia.setText(String.valueOf(SpellsController.qntEnergia));
+        labelQntEstiloCombate.setText(String.valueOf(SpellsController.getQntEstiloCombate()));
+        labelQntGrau.setText(String.valueOf(SpellsController.getQntGrau()));
+        labelQntRequisito.setText(String.valueOf(SpellsController.getQntRequisito()));
+        labelQntAlcance.setText(String.valueOf(SpellsController.getQntAlcance()));
+        labelQntDuracao.setText(String.valueOf(SpellsController.getQntDuracao()));
+        labelQntEnergia.setText(String.valueOf(SpellsController.getQntEnergia()));
         labelLimparEstiloCombate.setVisibility(labelQntEstiloCombate.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
         labelLimparGrau.setVisibility(labelQntGrau.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
         labelLimparRequisito.setVisibility(labelQntRequisito.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
