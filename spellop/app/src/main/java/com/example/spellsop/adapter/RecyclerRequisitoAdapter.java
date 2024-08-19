@@ -14,6 +14,7 @@ import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerRequisitoViewHolder;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecyclerRequisitoAdapter extends RecyclerView.Adapter<RecyclerRequisitoViewHolder> {
 
@@ -40,7 +41,11 @@ public class RecyclerRequisitoAdapter extends RecyclerView.Adapter<RecyclerRequi
     public void onBindViewHolder(@NonNull RecyclerRequisitoViewHolder holder, int position) {
         String item = itens.get(position);
         holder.labelItem.setText(item);
-        holder.imgCheck.setVisibility(View.INVISIBLE);
+        if(Objects.requireNonNull(SpellsController.getFiltros().get("requisito")).contains(item)){
+            holder.imgCheck.setVisibility(View.VISIBLE);
+        }else{
+            holder.imgCheck.setVisibility(View.INVISIBLE);
+        }
 
         // Evento selecionando item
         holder.cardRequisito.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +53,10 @@ public class RecyclerRequisitoAdapter extends RecyclerView.Adapter<RecyclerRequi
             public void onClick(View v) {
                 if (holder.imgCheck.getVisibility() == View.INVISIBLE) {
                     holder.imgCheck.setVisibility(View.VISIBLE);
-                    SpellsController.atualizaItemFiltroInserido("requisito", labelQntRequisito, labelLimparRequisito);
+                    SpellsController.atualizaItemFiltroInserido("requisito", labelQntRequisito, labelLimparRequisito, item);
                 } else {
                     holder.imgCheck.setVisibility(View.INVISIBLE);
-                    SpellsController.atualizaItemFiltroRemovido("requisito", labelQntRequisito, labelLimparRequisito);
+                    SpellsController.atualizaItemFiltroRemovido("requisito", labelQntRequisito, labelLimparRequisito, item);
                 }
 
             }

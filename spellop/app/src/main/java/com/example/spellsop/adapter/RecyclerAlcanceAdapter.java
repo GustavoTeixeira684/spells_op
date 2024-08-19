@@ -14,6 +14,7 @@ import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerAlcanceViewHolder;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecyclerAlcanceAdapter extends RecyclerView.Adapter<RecyclerAlcanceViewHolder> {
 
@@ -39,7 +40,11 @@ public class RecyclerAlcanceAdapter extends RecyclerView.Adapter<RecyclerAlcance
     public void onBindViewHolder(@NonNull RecyclerAlcanceViewHolder holder, int position) {
         String item = itens.get(position);
         holder.labelItem.setText(item);
-        holder.imgCheck.setVisibility(View.INVISIBLE);
+        if(Objects.requireNonNull(SpellsController.getFiltros().get("alcance")).contains(item)){
+            holder.imgCheck.setVisibility(View.VISIBLE);
+        }else{
+            holder.imgCheck.setVisibility(View.INVISIBLE);
+        }
 
         // Evento selecionando item
         holder.cardAlcance.setOnClickListener(new View.OnClickListener() {
@@ -47,10 +52,10 @@ public class RecyclerAlcanceAdapter extends RecyclerView.Adapter<RecyclerAlcance
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
-                    SpellsController.atualizaItemFiltroInserido("alcance", labelQntAlcance, labelLimparAlcance);
+                    SpellsController.atualizaItemFiltroInserido("alcance", labelQntAlcance, labelLimparAlcance, item);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
-                    SpellsController.atualizaItemFiltroRemovido("alcance", labelQntAlcance, labelLimparAlcance);
+                    SpellsController.atualizaItemFiltroRemovido("alcance", labelQntAlcance, labelLimparAlcance, item);
                 }
 
             }

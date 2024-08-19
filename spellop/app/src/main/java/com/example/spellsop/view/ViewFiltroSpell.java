@@ -25,6 +25,8 @@ import com.example.spellsop.controller.SpellsController;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
+import java.util.Objects;
 
 public class ViewFiltroSpell extends AppCompatActivity {
 
@@ -80,6 +82,7 @@ public class ViewFiltroSpell extends AppCompatActivity {
         this.setEstadoInicialComponentes();
         this.carregaObjetosFiltro();
         this.setEventos();
+        this.iniciaValoresJaEstabelecidos();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.Filtros), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -97,12 +100,18 @@ public class ViewFiltroSpell extends AppCompatActivity {
         recyclerDuracao.setVisibility(View.GONE);
         recyclerEnergia.setVisibility(View.GONE);
         recyclerGrau.setVisibility(View.GONE);
-        labelLimparEstiloCombate.setVisibility(View.INVISIBLE);
-        labelLimparGrau.setVisibility(View.INVISIBLE);
-        labelLimparRequisito.setVisibility(View.INVISIBLE);
-        labelLimparAlcance.setVisibility(View.INVISIBLE);
-        labelLimparDuracao.setVisibility(View.INVISIBLE);
-        labelLimparEnergia.setVisibility(View.INVISIBLE);
+        labelQntEstiloCombate.setText(String.valueOf(SpellsController.qntEstiloCombate));
+        labelQntGrau.setText(String.valueOf(SpellsController.qntGrau));
+        labelQntRequisito.setText(String.valueOf(SpellsController.qntRequisito));
+        labelQntAlcance.setText(String.valueOf(SpellsController.qntAlcance));
+        labelQntDuracao.setText(String.valueOf(SpellsController.qntDuracao));
+        labelQntEnergia.setText(String.valueOf(SpellsController.qntEnergia));
+        labelLimparEstiloCombate.setVisibility(labelQntEstiloCombate.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
+        labelLimparGrau.setVisibility(labelQntGrau.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
+        labelLimparRequisito.setVisibility(labelQntRequisito.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
+        labelLimparAlcance.setVisibility(labelQntAlcance.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
+        labelLimparDuracao.setVisibility(labelQntDuracao.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
+        labelLimparEnergia.setVisibility(labelQntEnergia.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
 
     }
 
@@ -296,6 +305,20 @@ public class ViewFiltroSpell extends AppCompatActivity {
 
     }
 
+    private void iniciaValoresJaEstabelecidos(){
+
+        Map<String, ArrayList<String>> filtrosDefinidos = SpellsController.getFiltros();
+
+        // Carrega os valores
+        for(String chave : filtrosDefinidos.keySet()){
+            for(String item : Objects.requireNonNull(filtrosDefinidos.get(chave))){
+
+
+
+            }
+        }
+
+    }
 
 }
 

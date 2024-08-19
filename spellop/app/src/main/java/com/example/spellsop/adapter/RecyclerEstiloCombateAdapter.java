@@ -14,6 +14,7 @@ import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerEstiloCombateViewHolder;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecyclerEstiloCombateAdapter extends RecyclerView.Adapter<RecyclerEstiloCombateViewHolder> {
 
@@ -41,7 +42,12 @@ public class RecyclerEstiloCombateAdapter extends RecyclerView.Adapter<RecyclerE
     public void onBindViewHolder(@NonNull RecyclerEstiloCombateViewHolder holder, int position) {
         String item = itens.get(position);
         holder.labelItem.setText(item);
-        holder.imgCheck.setVisibility(View.INVISIBLE);
+        if(Objects.requireNonNull(SpellsController.getFiltros().get("estilo_combate")).contains(item)){
+            holder.imgCheck.setVisibility(View.VISIBLE);
+        }else{
+            holder.imgCheck.setVisibility(View.INVISIBLE);
+        }
+
 
         // Evento selecionando item
         holder.cardEstiloCombate.setOnClickListener(new View.OnClickListener() {
@@ -49,10 +55,10 @@ public class RecyclerEstiloCombateAdapter extends RecyclerView.Adapter<RecyclerE
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
-                    SpellsController.atualizaItemFiltroInserido("estilo_combate", labelQntEstiloCombate, labelLimparEstiloCombate);
+                    SpellsController.atualizaItemFiltroInserido("estilo_combate", labelQntEstiloCombate, labelLimparEstiloCombate, item);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
-                    SpellsController.atualizaItemFiltroRemovido("estilo_combate", labelQntEstiloCombate, labelLimparEstiloCombate);
+                    SpellsController.atualizaItemFiltroRemovido("estilo_combate", labelQntEstiloCombate, labelLimparEstiloCombate, item);
                 }
             }
         });

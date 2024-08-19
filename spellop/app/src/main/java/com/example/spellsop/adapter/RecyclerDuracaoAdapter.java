@@ -14,6 +14,7 @@ import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerDuracaoViewHolder;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecyclerDuracaoAdapter extends RecyclerView.Adapter<RecyclerDuracaoViewHolder> {
 
@@ -39,7 +40,11 @@ public class RecyclerDuracaoAdapter extends RecyclerView.Adapter<RecyclerDuracao
     public void onBindViewHolder(@NonNull RecyclerDuracaoViewHolder holder, int position) {
         String item = itens.get(position);
         holder.labelItem.setText(item);
-        holder.imgCheck.setVisibility(View.INVISIBLE);
+        if(Objects.requireNonNull(SpellsController.getFiltros().get("duracao")).contains(item)){
+            holder.imgCheck.setVisibility(View.VISIBLE);
+        }else{
+            holder.imgCheck.setVisibility(View.INVISIBLE);
+        }
 
         // Evento selecionando item
         holder.cardDuracao.setOnClickListener(new View.OnClickListener() {
@@ -47,10 +52,10 @@ public class RecyclerDuracaoAdapter extends RecyclerView.Adapter<RecyclerDuracao
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
-                    SpellsController.atualizaItemFiltroInserido("duracao", labelQntDuracao, labelLimparDuracao);
+                    SpellsController.atualizaItemFiltroInserido("duracao", labelQntDuracao, labelLimparDuracao, item);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
-                    SpellsController.atualizaItemFiltroRemovido("duracao", labelQntDuracao, labelLimparDuracao);
+                    SpellsController.atualizaItemFiltroRemovido("duracao", labelQntDuracao, labelLimparDuracao, item);
                 }
 
             }

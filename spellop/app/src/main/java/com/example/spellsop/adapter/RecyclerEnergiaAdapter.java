@@ -14,6 +14,7 @@ import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerEnergiaViewHolder;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecyclerEnergiaAdapter extends RecyclerView.Adapter<RecyclerEnergiaViewHolder> {
 
@@ -39,7 +40,11 @@ public class RecyclerEnergiaAdapter extends RecyclerView.Adapter<RecyclerEnergia
     public void onBindViewHolder(@NonNull RecyclerEnergiaViewHolder holder, int position) {
         String item = itens.get(position);
         holder.labelItem.setText(item);
-        holder.imgCheck.setVisibility(View.INVISIBLE);
+        if(Objects.requireNonNull(SpellsController.getFiltros().get("energia")).contains(item)){
+            holder.imgCheck.setVisibility(View.VISIBLE);
+        }else{
+            holder.imgCheck.setVisibility(View.INVISIBLE);
+        }
 
         // Evento selecionando item
         holder.cardEnergia.setOnClickListener(new View.OnClickListener() {
@@ -47,10 +52,10 @@ public class RecyclerEnergiaAdapter extends RecyclerView.Adapter<RecyclerEnergia
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
-                    SpellsController.atualizaItemFiltroInserido("energia", labelQntEnergia, labelLimparEnergia);
+                    SpellsController.atualizaItemFiltroInserido("energia", labelQntEnergia, labelLimparEnergia, item);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
-                    SpellsController.atualizaItemFiltroRemovido("energia", labelQntEnergia, labelLimparEnergia);
+                    SpellsController.atualizaItemFiltroRemovido("energia", labelQntEnergia, labelLimparEnergia, item);
                 }
 
             }

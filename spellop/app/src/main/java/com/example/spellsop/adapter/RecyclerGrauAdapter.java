@@ -14,6 +14,7 @@ import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.viewHolder.RecyclerGrauViewHolder;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecyclerGrauAdapter extends RecyclerView.Adapter<RecyclerGrauViewHolder> {
 
@@ -40,7 +41,11 @@ public class RecyclerGrauAdapter extends RecyclerView.Adapter<RecyclerGrauViewHo
 
         String item = itens.get(position);
         holder.labelItem.setText(item);
-        holder.imgCheck.setVisibility(View.INVISIBLE);
+        if(Objects.requireNonNull(SpellsController.getFiltros().get("grau")).contains(item)){
+            holder.imgCheck.setVisibility(View.VISIBLE);
+        }else{
+            holder.imgCheck.setVisibility(View.INVISIBLE);
+        }
 
         // Evento selecionando item
         holder.cardGrau.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +53,10 @@ public class RecyclerGrauAdapter extends RecyclerView.Adapter<RecyclerGrauViewHo
             public void onClick(View v) {
                 if(holder.imgCheck.getVisibility() == View.INVISIBLE){
                     holder.imgCheck.setVisibility(View.VISIBLE);
-                    SpellsController.atualizaItemFiltroInserido("grau", labelQntGrau, labelLimparGrau);
+                    SpellsController.atualizaItemFiltroInserido("grau", labelQntGrau, labelLimparGrau, item);
                 }else{
                     holder.imgCheck.setVisibility(View.INVISIBLE);
-                    SpellsController.atualizaItemFiltroRemovido("grau", labelQntGrau, labelLimparGrau);
+                    SpellsController.atualizaItemFiltroRemovido("grau", labelQntGrau, labelLimparGrau, item);
                 }
 
             }

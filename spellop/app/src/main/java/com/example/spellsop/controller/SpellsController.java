@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,7 +27,8 @@ public class SpellsController {
     private static ArrayList<Tecnica> tecnicas;
     private static Tecnica tecnica_view; // Tecnica usada para exibir os detalhes
     private static Map<String, String> estilos;
-    private static int qntEstiloCombate = 0, qntGrau = 0, qntAlcance = 0, qntRequisito = 0, qntDuracao = 0, qntEnergia = 0;
+    private static Map<String, ArrayList<String>> filtros;
+    public static int qntEstiloCombate = 0, qntGrau = 0, qntAlcance = 0, qntRequisito = 0, qntDuracao = 0, qntEnergia = 0;
 
 
     public static ArrayList<Tecnica> getTecnicas(){
@@ -41,10 +43,12 @@ public class SpellsController {
         SpellsController.tecnica_view = tecnica_para_detalhe;
     }
 
+    public static Map<String, ArrayList<String>> getFiltros(){ return filtros;}
+
     public static void carregaTecnicas(Context context, String[] caminho_arquivos) throws IOException {
 
-        tecnicas = new ArrayList<Tecnica>();
-        List<String> conteudoJson = new ArrayList<>();
+        tecnicas = new ArrayList<>();
+
         AssetManager assetManager = context.getAssets();
         JSONObject jsonObject;
         JSONArray jsonArray;
@@ -52,6 +56,14 @@ public class SpellsController {
         InputStream inputStream;
         int id, energia, grau;
         String titulo, descricao, duracao, alcance, requisito, dano, estilo;
+
+        filtros = new HashMap<>(); // Inicia hashMap de filtros. É feito aqui pois a classe não tem contrutor e esse método é chamado assim que o programa inicia. Antes de a UI ser carregada para o usuário
+        filtros.put("estilo_combate", new ArrayList<>());
+        filtros.put("alcance", new ArrayList<>());
+        filtros.put("requisito", new ArrayList<>());
+        filtros.put("duracao", new ArrayList<>());
+        filtros.put("grau", new ArrayList<>());
+        filtros.put("energia", new ArrayList<>());
 
         estilos = new HashMap<>();
         estilos.put("arqueiro","Arqueiro");
@@ -211,7 +223,7 @@ public class SpellsController {
     }
 
     // Função para atualizar as componentes da View e Filtros com base no que é selecionado nas recyclers View
-    public static void atualizaItemFiltroInserido(String objeto, TextView componente, TextView componente_limpar){
+    public static void atualizaItemFiltroInserido(String objeto, TextView componente, TextView componente_limpar, String item){
         if(Objects.equals(objeto, "estilo_combate")){
             qntEstiloCombate++;
             componente.setText(String.valueOf(qntEstiloCombate));
@@ -232,9 +244,10 @@ public class SpellsController {
             componente.setText(String.valueOf(qntEnergia));
         }
         componente_limpar.setVisibility(TextView.VISIBLE);
+        Objects.requireNonNull(filtros.get(objeto)).add(item);
     }
 
-    public static void atualizaItemFiltroRemovido(String objeto, TextView componente, TextView componente_limpar){
+    public static void atualizaItemFiltroRemovido(String objeto, TextView componente, TextView componente_limpar, String item){
         if(Objects.equals(objeto, "estilo_combate")){
             qntEstiloCombate--;
             componente.setText(String.valueOf(qntEstiloCombate));
@@ -260,6 +273,7 @@ public class SpellsController {
             componente.setText(String.valueOf(qntEnergia));
             if(qntEnergia == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
         }
+        Objects.requireNonNull(filtros.get(objeto)).remove(item);
     }
 
     public static void limparItensFiltro(String objeto, TextView componente, TextView componente_limpar){
@@ -288,7 +302,24 @@ public class SpellsController {
             componente.setText(String.valueOf(qntEnergia));
             componente_limpar.setVisibility(TextView.INVISIBLE);
         }
+        Objects.requireNonNull(filtros.get(objeto)).clear();
     }
 
+    public static void atualizaFiltrosSelecionados(String objeto, TextView componente, TextView componente_limpar){
+        if(Objects.equals(objeto, "estilo_combate")){
+            componente.setText(String.valueOf(qntEstiloCombate));
+        }else if(Objects.equals(objeto, "requisito")){
+            componente.setText(String.valueOf(qntRequisito));
+        }else if(Objects.equals(objeto, "alcance")){
+            componente.setText(String.valueOf(qntAlcance));
+        }else if(Objects.equals(objeto, "duracao")){
+            componente.setText(String.valueOf(qntDuracao));
+        }else if(Objects.equals(objeto, "grau")){
+            componente.setText(String.valueOf(qntGrau));
+        }else{
+            componente.setText(String.valueOf(qntEnergia));
+        }
+        componente_limpar.setVisibility(TextView.VISIBLE);
+    }
 
 }
