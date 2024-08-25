@@ -46,7 +46,7 @@ public class SpellsController {
 
     public static Map<String, ArrayList<String>> getFiltros(){ return filtros;}
 
-    public static void carregaTecnicas(Context context, String[] caminho_arquivos) throws IOException {
+    public static void carregaTecnicas(Context context, String[] caminho_arquivos) {
 
         tecnicas = new ArrayList<>();
 
