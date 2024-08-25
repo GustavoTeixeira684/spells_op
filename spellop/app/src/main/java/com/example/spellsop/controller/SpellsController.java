@@ -2,6 +2,7 @@ package com.example.spellsop.controller;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.spellsop.model.Tecnica;
@@ -14,15 +15,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.sql.Array;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 public class SpellsController {
 
@@ -30,7 +28,7 @@ public class SpellsController {
     private static Tecnica tecnica_view; // Tecnica usada para exibir os detalhes
     private static Map<String, String> estilos;
     private static Map<String, ArrayList<String>> filtros;
-    private static Set<Tecnica> tecnicas_filtradas;
+    private static HashSet<Tecnica> tecnicas_filtradas;
     private static int qntEstiloCombate = 0, qntGrau = 0, qntAlcance = 0, qntRequisito = 0, qntDuracao = 0, qntEnergia = 0;
     private static boolean temFiltro = false;
 
@@ -257,6 +255,7 @@ public class SpellsController {
         }
         componente_limpar.setVisibility(TextView.VISIBLE);
         Objects.requireNonNull(filtros.get(objeto)).add(item);
+        insereItensFiltro(objeto, item);
     }
 
     public static void atualizaItemFiltroRemovido(String objeto, TextView componente, TextView componente_limpar, String item){
@@ -286,6 +285,7 @@ public class SpellsController {
             if(qntEnergia == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
         }
         Objects.requireNonNull(filtros.get(objeto)).remove(item);
+        removeItensFiltro(objeto, item);
     }
 
     public static void limparItensFiltro(String objeto, TextView componente, TextView componente_limpar){
@@ -314,145 +314,134 @@ public class SpellsController {
             componente.setText(String.valueOf(qntEnergia));
             componente_limpar.setVisibility(TextView.INVISIBLE);
         }
-        Objects.requireNonNull(filtros.get(objeto)).clear();
+
+        limpaItensFiltro(objeto);
+
     }
 
-    public static void atualizaFiltrosSelecionados(String objeto, TextView componente, TextView componente_limpar){
-        if(Objects.equals(objeto, "estilo_combate")){
-            componente.setText(String.valueOf(qntEstiloCombate));
-        }else if(Objects.equals(objeto, "requisito")){
-            componente.setText(String.valueOf(qntRequisito));
-        }else if(Objects.equals(objeto, "alcance")){
-            componente.setText(String.valueOf(qntAlcance));
-        }else if(Objects.equals(objeto, "duracao")){
-            componente.setText(String.valueOf(qntDuracao));
-        }else if(Objects.equals(objeto, "grau")){
-            componente.setText(String.valueOf(qntGrau));
-        }else{
-            componente.setText(String.valueOf(qntEnergia));
-        }
-        componente_limpar.setVisibility(TextView.VISIBLE);
-    }
-
+    // Método para inserir filtros
     private static void insereItensFiltro(String objeto, String valor){
         // Limpa pois quando não tem nenhum filtro mostra todos os valores
         if(!temFiltro){
             tecnicas_filtradas.clear();
             temFiltro = true;
         }
-        if(Objects.equals(objeto, "estilo_combate")){
-            for(Tecnica item : tecnicas){
-                if(normalizado(valor).equals(normalizado(item.getEstilo()))){
-                    tecnicas_filtradas.add(item);
-                }
-            }
-        }else if(Objects.equals(objeto, "requisito")){
-            for(Tecnica item : tecnicas){
-                if(normalizado(valor).equals(normalizado(item.getRequisito()))){
-                    tecnicas_filtradas.add(item);
-                }
-            }
-        }else if(Objects.equals(objeto, "alcance")){
-            for(Tecnica item : tecnicas){
-                if(normalizado(valor).equals(normalizado(item.getAlcance()))){
-                    tecnicas_filtradas.add(item);
-                }
-            }
-        }else if(Objects.equals(objeto, "duracao")){
-            for(Tecnica item : tecnicas){
-                if(normalizado(valor).equals(normalizado(item.getDuracao()))){
-                    tecnicas_filtradas.add(item);
-                }
-            }
-        }else if(Objects.equals(objeto, "grau")){
-            for(Tecnica item : tecnicas){
-                if(normalizado(valor).equals(String.valueOf(item.getGrau()))){
-                    tecnicas_filtradas.add(item);
-                }
-            }
-        }else{
-            for(Tecnica item : tecnicas){
-                if(normalizado(valor).equals(String.valueOf(item.getEnergia()))){
-                    tecnicas_filtradas.add(item);
-                }
+        ArrayList<Tecnica> lista_temporaria = new ArrayList<>();
+
+        // Pegar os itens que não atendem mais ao filtro
+        for(Tecnica item : tecnicas_filtradas){
+            if(passivelManter(item)){
+                lista_temporaria.add(item);
             }
         }
+
+        // Retirar os itens que não atendem mais ao filtro
+        for(Tecnica item : lista_temporaria){
+            tecnicas_filtradas.remove(item);
+        }
+
+        // Limpa para incluir o valores novos
+        lista_temporaria.clear();
+
+        // Adicionar os itens que fazem parte do filtro em especifico (Passo necessário para reduzir os itens que serão submetidos às analises mais pesadas
+        for(Tecnica item : tecnicas){
+            if(normalizado(valor).equals(normalizado(item.getAtributoTecnica(objeto)))){
+                lista_temporaria.add(item);
+            }
+        }
+
+        // Aplica os filtros "mais pesados" em baixo nivel para a amostra que está na variavel lista_temporaria
+        for(Tecnica item : lista_temporaria){
+            if(passivelInsert(item, objeto)){
+                tecnicas_filtradas.add(item);
+            }
+        }
+        lista_temporaria.clear();
 
     }
 
     // PARA O ESTILO DE COMBATE DEVE ESTAR FUNCIONANDO. MAS REESCREVER PARA EVITAR TANTA REDUNDANCIA DE CODIGO
     public static void removeItensFiltro(String objeto, String valor){
-
-        if(Objects.requireNonNull(filtros.get(objeto)).isEmpty()){
+        if(countTotalItensFiltro() == 0){
             tecnicas_filtradas = new HashSet<>(tecnicas);
+            temFiltro = false;
         }else{
-            if(Objects.equals(objeto, "estilo_combate")){
-                for(Tecnica item : tecnicas_filtradas){
-                    if(normalizado(item.getEstilo()).equals(normalizado(valor))){
-                        // Checa se não tem mais nenhuma caracteristica e depois apaga
-                        if(!outroFiltro(item, objeto)){
-                            tecnicas_filtradas.remove(item);
-                        }
-                    }
-                }
-            }else if(Objects.equals(objeto, "requisito")){
+            if(Objects.requireNonNull(filtros.get(objeto)).isEmpty()){
+                // O que frazer se não tiver mais nenhum filtro da categoria
                 for(Tecnica item : tecnicas){
-                    if(normalizado(valor).equals(normalizado(item.getRequisito()))){
-                        tecnicas_filtradas.add(item);
-                    }
-                }
-            }else if(Objects.equals(objeto, "alcance")){
-                for(Tecnica item : tecnicas){
-                    if(normalizado(valor).equals(normalizado(item.getAlcance()))){
-                        tecnicas_filtradas.add(item);
-                    }
-                }
-            }else if(Objects.equals(objeto, "duracao")){
-                for(Tecnica item : tecnicas){
-                    if(normalizado(valor).equals(normalizado(item.getDuracao()))){
-                        tecnicas_filtradas.add(item);
-                    }
-                }
-            }else if(Objects.equals(objeto, "grau")){
-                for(Tecnica item : tecnicas){
-                    if(normalizado(valor).equals(String.valueOf(item.getGrau()))){
+                    if(passivelInsert(item, objeto)){
                         tecnicas_filtradas.add(item);
                     }
                 }
             }else{
-                for(Tecnica item : tecnicas){
-                    if(normalizado(valor).equals(String.valueOf(item.getEnergia()))){
-                        tecnicas_filtradas.add(item);
+                // O que fazer se ainda houver algum filtro nessa categoria
+                ArrayList<Tecnica> lista_temporaria = new ArrayList<>();
+                for(Tecnica item : tecnicas_filtradas){
+                    if(passivelManter(item)){
+                        lista_temporaria.add(item);
+
                     }
                 }
+                for(Tecnica item : lista_temporaria){
+                    tecnicas_filtradas.remove(item);
+                }
+                lista_temporaria.clear();
             }
         }
+    }
 
+    private static void limpaItensFiltro(String objeto){
+        ArrayList<String> lista_excuir = new ArrayList<>(Objects.requireNonNull(filtros.get(objeto)));
 
-
-
+        for(String valor : lista_excuir){
+            Objects.requireNonNull(filtros.get(objeto)).remove(valor);
+            removeItensFiltro(objeto, valor);
+        }
 
     }
 
-    // TERMINAR FUNÇÃO PARA CHECAR SE O OBJETO É O UNICO
-    private static boolean outroFiltro(Tecnica item, String objeto) {
-        String[] outros_filtros = new String[5];
-        int contador = 0;
+    // Método para ver se podemos manter o objeto no filtro
+    private static boolean passivelManter(Tecnica item){
+        boolean possui = true;
+
+        // Captura chaves
         for(String chave : filtros.keySet()){
-            if(!chave.equals(objeto)){
-                outros_filtros[contador] = chave;
-                contador++;
-            }
-        }
-        for (String filtro : outros_filtros) {
-            for(String valor : Objects.requireNonNull(filtros.get(filtro))){
-                if(normalizado(item.getAtributoTecnica(filtro)).equals(normalizado(valor))){
+            if(!Objects.requireNonNull(filtros.get(chave)).isEmpty()){
+                possui = false;
+                for(String valor : Objects.requireNonNull(filtros.get(chave))){
+                    if(normalizado(item.getAtributoTecnica(chave)).equals(normalizado(valor))){
+                        possui = true;
+                        break;
+                    }
+                }
+                if(!possui){
                     return true;
                 }
             }
         }
         return false;
+    }
 
+    // Método para ver se podemos inserir o item na lista
+    private static boolean passivelInsert(Tecnica item, String objeto){
+        boolean possui = true;
+
+        // Captura as outras chaves
+        for(String chave : filtros.keySet()){
+            if(!chave.equals(objeto) && !Objects.requireNonNull(filtros.get(chave)).isEmpty()){
+                possui = false;
+                for(String valor : Objects.requireNonNull(filtros.get(chave))){
+                    if(normalizado(item.getAtributoTecnica(chave)).equals(normalizado(valor))){
+                        possui = true;
+                        break;
+                    }
+                }
+                if(!possui){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     // Função para trazer o total de quantidade dos itens selecionados para o filtro
