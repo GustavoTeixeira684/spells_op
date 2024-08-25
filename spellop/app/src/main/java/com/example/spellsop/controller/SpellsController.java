@@ -2,7 +2,6 @@ package com.example.spellsop.controller;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.example.spellsop.model.Tecnica;
@@ -15,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,8 +25,6 @@ import java.util.Objects;
 public class SpellsController {
 
     private static ArrayList<Tecnica> tecnicas;
-    private static Tecnica tecnica_view; // Tecnica usada para exibir os detalhes
-    private static Map<String, String> estilos;
     private static Map<String, ArrayList<String>> filtros;
     private static HashSet<Tecnica> tecnicas_filtradas;
     private static int qntEstiloCombate = 0, qntGrau = 0, qntAlcance = 0, qntRequisito = 0, qntDuracao = 0, qntEnergia = 0;
@@ -42,12 +40,6 @@ public class SpellsController {
     public static int getQntEnergia(){return qntEnergia;}
     public static ArrayList<Tecnica> getTecnicas(){
         return tecnicas;
-    }
-    public static Tecnica getTecnica_view() {
-        return tecnica_view;
-    }
-    public static void setTecnica_view(Tecnica tecnica_para_detalhe) {
-        SpellsController.tecnica_view = tecnica_para_detalhe;
     }
 
     // ***** FIM GETTERS E SETTERS ***** //
@@ -74,7 +66,7 @@ public class SpellsController {
         filtros.put("grau", new ArrayList<>());
         filtros.put("energia", new ArrayList<>());
 
-        estilos = new HashMap<>();
+        Map<String, String> estilos = new HashMap<>();
         estilos.put("arqueiro","Arqueiro");
         estilos.put("carateca_homem_peixe","Carateca Homem-Peixe");
         estilos.put("ciborgue","Ciborgue");
@@ -127,7 +119,7 @@ public class SpellsController {
     }
 
     private static String convertStreamToString(InputStream inputStream) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
         StringBuilder stringBuilder = new StringBuilder();
         String line;
         while ((line = bufferedReader.readLine()) != null) {
@@ -171,8 +163,6 @@ public class SpellsController {
                 temp.add(temp2.get(j));
                 j++;
             }
-            temp1 = null;
-            temp2 = null;
             return temp;
         }
         ArrayList<Tecnica> singleElement = new ArrayList<>();
@@ -285,7 +275,7 @@ public class SpellsController {
             if(qntEnergia == 0){componente_limpar.setVisibility(TextView.INVISIBLE);}
         }
         Objects.requireNonNull(filtros.get(objeto)).remove(item);
-        removeItensFiltro(objeto, item);
+        removeItensFiltro(objeto);
     }
 
     public static void limparItensFiltro(String objeto, TextView componente, TextView componente_limpar){
@@ -361,7 +351,7 @@ public class SpellsController {
     }
 
     // PARA O ESTILO DE COMBATE DEVE ESTAR FUNCIONANDO. MAS REESCREVER PARA EVITAR TANTA REDUNDANCIA DE CODIGO
-    public static void removeItensFiltro(String objeto, String valor){
+    public static void removeItensFiltro(String objeto){
         if(countTotalItensFiltro() == 0){
             tecnicas_filtradas = new HashSet<>(tecnicas);
             temFiltro = false;
@@ -395,14 +385,14 @@ public class SpellsController {
 
         for(String valor : lista_excuir){
             Objects.requireNonNull(filtros.get(objeto)).remove(valor);
-            removeItensFiltro(objeto, valor);
+            removeItensFiltro(objeto);
         }
 
     }
 
     // Método para ver se podemos manter o objeto no filtro
     private static boolean passivelManter(Tecnica item){
-        boolean possui = true;
+        boolean possui;
 
         // Captura chaves
         for(String chave : filtros.keySet()){
@@ -424,7 +414,7 @@ public class SpellsController {
 
     // Método para ver se podemos inserir o item na lista
     private static boolean passivelInsert(Tecnica item, String objeto){
-        boolean possui = true;
+        boolean possui;
 
         // Captura as outras chaves
         for(String chave : filtros.keySet()){
