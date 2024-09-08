@@ -40,8 +40,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
 
     // Objetos do layout
     RecyclerView recyclerEstiloCombate, recyclerGrau, recyclerRequisito, recyclerAlcance, recyclerDuracao, recyclerEnergia;
-    public TextView labelBuscar, labelQntEstiloCombate, labelQntGrau, labelQntRequisito, labelQntAlcance, labelQntDuracao, labelQntEnergia;
-    private TextView labelLimparEstiloCombate, labelLimparGrau, labelLimparRequisito, labelLimparAlcance, labelLimparDuracao, labelLimparEnergia;
+    public TextView labelBuscar, labelQntEstiloCombate, labelQntGrau, labelQntRequisito, labelQntAlcance, labelQntDuracao, labelQntEnergia, labelQntTecnicas;
+    private TextView labelLimparEstiloCombate, labelLimparGrau, labelLimparRequisito, labelLimparAlcance, labelLimparDuracao, labelLimparEnergia, labelLimparTudo;
     ImageButton imgBtnVoltar, imgBtnEstiloCombate, imgBtnGrau, imgBtnRequisito, imgBtnAlcance, imgBtnDuracao, imgBtnEnergia;
 
 
@@ -78,6 +78,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
         labelLimparAlcance = findViewById(R.id.labelLimparAlcance);
         labelLimparDuracao = findViewById(R.id.labelLimparDuracao);
         labelLimparEnergia = findViewById(R.id.labelLimparEnergia);
+        labelLimparTudo = findViewById(R.id.labelLimparTudo);
+        labelQntTecnicas = findViewById(R.id.labelQntTecnicas);
 
         this.setEstadoInicialComponentes();
         this.carregaObjetosFiltro();
@@ -112,6 +114,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
         labelLimparAlcance.setVisibility(labelQntAlcance.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
         labelLimparDuracao.setVisibility(labelQntDuracao.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
         labelLimparEnergia.setVisibility(labelQntEnergia.getText().equals("0") ? View.INVISIBLE : View.VISIBLE);
+        atualizaQntTecnicasFiltradas();
+        setLabelLimpaTudo();
 
     }
 
@@ -140,6 +144,7 @@ public class ViewFiltroSpell extends AppCompatActivity {
             public void onClick(View v) {
                 SpellsController.limparItensFiltro("estilo_combate", labelQntEstiloCombate, labelLimparEstiloCombate);
                 recyclerEstiloCombate.setAdapter(recyclerEstiloCombateAdapter);
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -148,6 +153,7 @@ public class ViewFiltroSpell extends AppCompatActivity {
             public void onClick(View v) {
                 SpellsController.limparItensFiltro("grau", labelQntGrau, labelLimparGrau);
                 recyclerGrau.setAdapter(recyclerGrauAdapter);
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -156,6 +162,7 @@ public class ViewFiltroSpell extends AppCompatActivity {
             public void onClick(View v) {
                 SpellsController.limparItensFiltro("requisito", labelQntRequisito, labelLimparRequisito);
                 recyclerRequisito.setAdapter(recyclerRequisitoAdapter);
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -164,6 +171,7 @@ public class ViewFiltroSpell extends AppCompatActivity {
             public void onClick(View v) {
                 SpellsController.limparItensFiltro("alcance", labelQntAlcance, labelLimparAlcance);
                 recyclerAlcance.setAdapter(recyclerAlcanceAdapter);
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -172,6 +180,7 @@ public class ViewFiltroSpell extends AppCompatActivity {
             public void onClick(View v) {
                 SpellsController.limparItensFiltro("duracao", labelQntDuracao, labelLimparDuracao);
                 recyclerDuracao.setAdapter(recyclerDuracaoAdapter);
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -180,6 +189,19 @@ public class ViewFiltroSpell extends AppCompatActivity {
             public void onClick(View v) {
                 SpellsController.limparItensFiltro("energia", labelQntEnergia, labelLimparEnergia);
                 recyclerEnergia.setAdapter(recyclerEnergiaAdapter);
+                atualizaQntTecnicasFiltradas();
+            }
+        });
+
+        labelLimparTudo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                labelLimparEstiloCombate.performClick();
+                labelLimparGrau.performClick();
+                labelLimparRequisito.performClick();
+                labelLimparEnergia.performClick();
+                labelLimparDuracao.performClick();
+                labelLimparAlcance.performClick();
             }
         });
 
@@ -194,6 +216,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 }else{
                     recyclerEstiloCombate.setVisibility(View.GONE);
                 }
+                setLabelLimpaTudo();
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -205,6 +229,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 }else{
                     recyclerGrau.setVisibility(View.GONE);
                 }
+                setLabelLimpaTudo();
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -216,6 +242,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 }else{
                     recyclerRequisito.setVisibility(View.GONE);
                 }
+                setLabelLimpaTudo();
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -227,6 +255,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 }else{
                     recyclerDuracao.setVisibility(View.GONE);
                 }
+                setLabelLimpaTudo();
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -238,6 +268,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 }else{
                     recyclerEnergia.setVisibility(View.GONE);
                 }
+                setLabelLimpaTudo();
+                atualizaQntTecnicasFiltradas();
             }
         });
 
@@ -249,6 +281,8 @@ public class ViewFiltroSpell extends AppCompatActivity {
                 }else{
                     recyclerAlcance.setVisibility(View.GONE);
                 }
+                setLabelLimpaTudo();
+                atualizaQntTecnicasFiltradas();
             }
         });
         // ***** Fim Eventos que habilitam as listas dos filtros ***** //
@@ -318,6 +352,21 @@ public class ViewFiltroSpell extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void setLabelLimpaTudo(){
+
+        int quantidade_filtros = Integer.parseInt(String.join(labelQntEstiloCombate.getText() , labelQntDuracao.getText() , labelQntEnergia.getText() , labelQntAlcance.getText() ,  labelQntRequisito.getText() ,  labelQntGrau.getText()));
+        if(quantidade_filtros == 0){
+            labelLimparTudo.setVisibility(View.GONE);
+        }else{
+            labelLimparTudo.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+    private void atualizaQntTecnicasFiltradas(){
+        labelQntTecnicas.setText(String.valueOf(SpellsController.getQuantidadeTecnicasFiltradas()) + " Técnicas");
     }
 
 }

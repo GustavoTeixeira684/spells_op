@@ -41,6 +41,7 @@ public class SpellsController {
     public static ArrayList<Tecnica> getTecnicas(){
         return tecnicas;
     }
+    public static int getQuantidadeTecnicasFiltradas() {return tecnicas_filtradas.size();}
 
     // ***** FIM GETTERS E SETTERS ***** //
 
