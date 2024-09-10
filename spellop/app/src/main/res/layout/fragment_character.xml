@@ -6,12 +6,50 @@
     android:fitsSystemWindows="true"
     tools:context=".view.Character">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C32828"
-        android:text="Character"
-        tools:ignore="HardcodedText" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayouTopo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/imgBtnAdd"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/add_icon_medium" />
+
+            <TextView
+                android:id="@+id/labelTitulo"
+                android:layout_width="273dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Personagens"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imgBtnFiltro"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/mais_horizontal_icon_medium" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </FrameLayout>
