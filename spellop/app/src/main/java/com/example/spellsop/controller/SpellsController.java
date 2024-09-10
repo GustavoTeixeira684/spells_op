@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.widget.TextView;
 
+import com.example.spellsop.adapter.RecyclerSpellsAdapter;
 import com.example.spellsop.model.Tecnica;
 
 import org.json.JSONArray;
@@ -29,9 +30,12 @@ public class SpellsController {
     private static HashSet<Tecnica> tecnicas_filtradas;
     private static int qntEstiloCombate = 0, qntGrau = 0, qntAlcance = 0, qntRequisito = 0, qntDuracao = 0, qntEnergia = 0;
     private static boolean temFiltro = false;
+    private static RecyclerSpellsAdapter adapter;
 
     // ***** GETTERS E SETTERS ***** //
 
+    public static void setAdapter(RecyclerSpellsAdapter adapt) {adapter = adapt;}
+    public static RecyclerSpellsAdapter getAdapter() {return adapter;}
     public static int getQntEstiloCombate(){return qntEstiloCombate;}
     public static int getQntGrau(){return qntGrau;}
     public static int getQntAlcance(){return qntAlcance;}
@@ -39,7 +43,7 @@ public class SpellsController {
     public static int getQntDuracao(){return qntDuracao;}
     public static int getQntEnergia(){return qntEnergia;}
     public static ArrayList<Tecnica> getTecnicas(){
-        return tecnicas;
+        return ordenaTecnicasPorGrau(0, tecnicas_filtradas.size(), new ArrayList<>(tecnicas_filtradas));
     }
     public static int getQuantidadeTecnicasFiltradas() {return tecnicas_filtradas.size();}
 
@@ -247,6 +251,7 @@ public class SpellsController {
         componente_limpar.setVisibility(TextView.VISIBLE);
         Objects.requireNonNull(filtros.get(objeto)).add(item);
         insereItensFiltro(objeto, item);
+        adapter.listaCompleta();
     }
 
     public static void atualizaItemFiltroRemovido(String objeto, TextView componente, TextView componente_limpar, String item){
@@ -277,6 +282,7 @@ public class SpellsController {
         }
         Objects.requireNonNull(filtros.get(objeto)).remove(item);
         removeItensFiltro(objeto);
+        adapter.listaCompleta();
     }
 
     public static void limparItensFiltro(String objeto, TextView componente, TextView componente_limpar){
@@ -307,6 +313,7 @@ public class SpellsController {
         }
 
         limpaItensFiltro(objeto);
+        adapter.listaCompleta();
 
     }
 

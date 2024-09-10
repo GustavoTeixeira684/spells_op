@@ -24,7 +24,6 @@ public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsVi
 
     private Context context;
     private ArrayList<Tecnica> itens; // Mudar. fiz só para teste
-    private ArrayList<Tecnica> lista_completa;
 
     public ArrayList<Tecnica> getItens(){ return this.itens;}
 
@@ -36,20 +35,20 @@ public class RecyclerSpellsAdapter extends RecyclerView.Adapter<RecyclerSpellsVi
 
     @SuppressLint("NotifyDataSetChanged")
     public void listaCompleta(){
-        this.itens = this.lista_completa;
+        this.itens = SpellsController.getTecnicas();
         notifyDataSetChanged();
     }
 
-    public RecyclerSpellsAdapter(Context context, ArrayList<Tecnica> itens) {
+
+    public RecyclerSpellsAdapter(Context context) {
         this.context = context;
-        this.itens = itens;
-        this.lista_completa = itens;
+        this.itens = SpellsController.getTecnicas();
+        SpellsController.setAdapter(this);
     }
 
     @NonNull
     @Override
     public RecyclerSpellsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
 
         View view = LayoutInflater.from(this.context).inflate(R.layout.card_spells, parent, false);
 
