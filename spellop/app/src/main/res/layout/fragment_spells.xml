@@ -20,7 +20,7 @@
             android:padding="5dp">
 
             <ImageButton
-                android:id="@+id/imgButtonAdd"
+                android:id="@+id/imgBtnAdd"
                 android:layout_width="32dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -1,0 +1,2 @@
+ViewFiltrosSpell:
+	- Colocar funcionalidade de, quando um item for filtrado, nos filtros de outras categorias aparecem só aqueles que tem intersecção com os itens ja filtrados (Para evitar que o usuário selecione, por exemplo, um requisito que não esteja em nenhum dos outros itens filtrados. Fazendo assim com que o usuário acabe tendo uma combinação de filtros que trás 0 resultados).

@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.spellsop.R;
 import com.example.spellsop.adapter.RecyclerSpellsAdapter;
@@ -96,6 +97,7 @@ public class Spells extends Fragment {
 
         // Declarações
         ImageButton imgBtnFiltro = view.findViewById(R.id.imgBtnFiltro);
+        ImageButton imgBtnAdd = view.findViewById(R.id.imgBtnAdd);
         SearchView txtPesquisaSpell = view.findViewById(R.id.txtPesquisaSpell);
         Spinner spinner = view.findViewById(R.id.spinner);
         ArrayList<String> itens_busca = new ArrayList<>();
@@ -151,6 +153,13 @@ public class Spells extends Fragment {
                 Intent intent = new Intent(getContext(), ViewFiltroSpell.class);
 //                intent.putExtra("detalhe_tecnica",item);
                 startActivity(intent);
+            }
+        });
+
+        imgBtnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Funcionalidade em Desenvolvimento!", Toast.LENGTH_LONG).show();
             }
         });
 
