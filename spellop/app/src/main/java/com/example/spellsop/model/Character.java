@@ -68,5 +68,6 @@ public class Character {
         this.estiloCombate = estiloCombate;
     }
 
+    
 
 }
