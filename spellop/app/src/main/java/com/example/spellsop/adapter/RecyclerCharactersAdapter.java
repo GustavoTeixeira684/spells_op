@@ -45,8 +45,6 @@ public class RecyclerCharactersAdapter extends RecyclerView.Adapter<RecyclerChar
             holder.imgPersonagem.setImageBitmap(item.getImagemPersonagem());
         }
 
-
-
     }
 
     @Override

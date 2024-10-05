@@ -1,5 +1,6 @@
 package com.example.spellsop.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.spellsop.R;
 import com.example.spellsop.adapter.RecyclerCharactersAdapter;
@@ -26,6 +28,7 @@ public class Character extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private RecyclerCharactersAdapter charactersAdapter;
+    private ImageButton imgBtnAdd;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -73,6 +76,18 @@ public class Character extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(charactersAdapter);
+
+        // Instanciando objetos de layoyut
+        imgBtnAdd = view.findViewById(R.id.imgBtnAdd);
+        imgBtnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ViewCriarPersonagem.class);
+//                intent.putExtra("detalhe_tecnica",item);
+                startActivity(intent);
+            }
+        });
+
 
         return view;
     }
