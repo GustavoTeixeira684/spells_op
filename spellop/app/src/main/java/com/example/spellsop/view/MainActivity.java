@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.spellsop.R;
+import com.example.spellsop.controller.CharacterController;
 import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.databinding.ActivityMainBinding;
 
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             SpellsController.carregaTecnicas(MainActivity.this, Objects.requireNonNull(tecnicas_padrao));
 
             funcaoTestaLeituraPersonagem(assetManager); // Executa função para apenas testar se o programa está lendo o json do personagem
-
+            CharacterController.carregaPersonagens(MainActivity.this);
 
         } catch (Exception e) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

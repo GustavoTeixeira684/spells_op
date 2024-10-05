@@ -2,7 +2,7 @@
     "nome":"Oscar D. Alho",
     "especie":"Homem-Peixe",
     "antecedente":"Não definido",
-    "estilocombate":"Carateca Homem-Peixe",
+    "estilocombate":"carateca_homem_peixe",
     "profissao":"medico",
     "nivel":"5",
     "experiencia":"11500",
@@ -20,8 +20,21 @@
     "pvatual":"85",
     "pvtemp":"85",
     "dadosvida":"5d12",
-    "ataques":"Colocar os ataques depois",
-    "tecnicas":"Relembrar como representar as tecnicas",
+    "ataques":[
+        {
+            "nome":"Soco desarmado",
+            "bonusacerto":"0",
+            "alcance":"9 metros",
+            "dano":"1d4"
+        },
+        {
+            "nome":"Tridente",
+            "bonusacerto":"0",
+            "alcance":"pessoal",
+            "dano":"1d10 com duas mãos e 1d8 com uma mão"
+        }
+    ],
+    "tecnicas":["1","2"],
     "ppmax":"10",
     "ppatual":"10",
     "individualidade":"Ambição de Rei",

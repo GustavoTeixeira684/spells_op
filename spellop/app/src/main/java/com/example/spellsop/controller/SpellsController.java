@@ -455,4 +455,13 @@ public class SpellsController {
         return Normalizer.normalize(valor, Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
     }
 
+    public static Tecnica buscaTecnicaEstiloCombate(int id, String estilo){
+        for(Tecnica tecnica : tecnicas){
+            if(tecnica.getEstilo().equals(estilo) && tecnica.getId() == id){
+                return tecnica;
+            }
+        }
+        return null;
+    }
+
 }
