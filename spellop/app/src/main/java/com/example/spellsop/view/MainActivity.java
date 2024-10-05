@@ -1,6 +1,8 @@
 package com.example.spellsop.view;
 
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -14,10 +16,13 @@ import com.example.spellsop.controller.CharacterController;
 import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.databinding.ActivityMainBinding;
 
+import org.json.JSONException;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -40,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getTechniques();
+
+        try {
+            CharacterController.carregaPersonagens(MainActivity.this);
+        } catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
 
         this.replaceFragment(new Spells());
         binding.bottomNavigationViewMain.setOnItemSelectedListener(item -> {
@@ -75,9 +86,8 @@ public class MainActivity extends AppCompatActivity {
                tecnicas_padrao[i] = "tecnicas/"+tecnicas_padrao[i];
             }
             SpellsController.carregaTecnicas(MainActivity.this, Objects.requireNonNull(tecnicas_padrao));
-
             funcaoTestaLeituraPersonagem(assetManager); // Executa função para apenas testar se o programa está lendo o json do personagem
-            CharacterController.carregaPersonagens(MainActivity.this);
+
 
         } catch (Exception e) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -94,32 +104,48 @@ public class MainActivity extends AppCompatActivity {
 
         String[] arquivos = assetManager.list("");
         String template_personagem = "";
+        String imagem_personagem = "";
         boolean diretorioCriado = false;
         for(int i = 0; i < Objects.requireNonNull(arquivos).length; i++){
             if(arquivos[i].contains(".json")){
                 template_personagem = arquivos[i];
+            }else if(arquivos[i].contains(".png")){
+                imagem_personagem = arquivos[i];
             }
         }
 
         // Transfere para o armazenamento local
         File diretorio = new File(MainActivity.this.getFilesDir(), "personagens");
+        File jsonDiretorio = new File(MainActivity.this.getFilesDir(), "personagens/json");
+        File imagensDiretorio = new File(MainActivity.this.getFilesDir(), "personagens/imagens");
         if(!diretorio.exists() || !diretorio.isDirectory()){
             diretorioCriado = diretorio.mkdir();
+            diretorioCriado = jsonDiretorio.mkdir();
+            diretorioCriado = imagensDiretorio.mkdir();
 
+            // Ler JSON dos personagens
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(assetManager.open(template_personagem), StandardCharsets.UTF_8));
             StringBuilder stringBuilder = new StringBuilder();
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 stringBuilder.append(line+"\n");
             }
-            Log.d("AIIINN PAPAI",stringBuilder.toString());
             bufferedReader.close();
-            File arquivo = new File(MainActivity.this.getFilesDir(), diretorio.getName()+"/oscar_d_alho.json");
+            File arquivo = new File(jsonDiretorio, "/oscar_d_alho.json");
             FileOutputStream fos = new FileOutputStream(arquivo);
             OutputStreamWriter out = new OutputStreamWriter(fos);
             out.write(stringBuilder.toString());
             out.close();
             fos.close();
+
+            // Ler imagem do personagem
+            InputStream inputStream = assetManager.open(imagem_personagem);
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+            File arquivoImagem = new File(imagensDiretorio, "/imagem_oscar_d_alho.png");
+            FileOutputStream outputStream = new FileOutputStream(arquivoImagem);
+            bitmap.compress(Bitmap.CompressFormat.PNG,100, outputStream);
+            outputStream.flush();
+            outputStream.close();
         }
 
     }

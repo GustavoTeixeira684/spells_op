@@ -1,6 +1,10 @@
 package com.example.spellsop.controller;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import androidx.annotation.NonNull;
 
 import com.example.spellsop.model.Personagem;
 import com.example.spellsop.model.Tecnica;
@@ -24,10 +28,16 @@ public class CharacterController {
 
     public static ArrayList<Personagem> personagens;
 
+    public static ArrayList<Personagem> getPersonagens(){
+        return personagens;
+    }
+
     public static void carregaPersonagens(Context context) throws IOException, JSONException {
 
         personagens = new ArrayList<>();
         File diretorio = new File(context.getFilesDir(), "personagens");
+        File diretorioJson = new File(context.getFilesDir(), "personagens/json");
+        File diretorioImagens = new File(context.getFilesDir(), "personagens/imagens");
         File arquivo_personagem = null;
         FileInputStream inputStream;
         BufferedReader bufferedReader;
@@ -38,8 +48,10 @@ public class CharacterController {
 
         if(!diretorio.exists() || !diretorio.isDirectory()){ // Cria o diretório caso seja a primeira vez do usuário e ele ainda não exista
             diretorio.mkdir();
+            diretorioJson.mkdir();
+            diretorioImagens.mkdir();
         }else{ // Caso o diretório ja exista, lê todos os personagens do usuário
-            String[] arquivos = diretorio.list();
+            String[] arquivos = diretorioJson.list();
             assert arquivos != null;
             // Garante que está lendo apenas os json (Para caso o usuário tenha root no celular e seja um cabaço
             for(String arquivo : arquivos){
@@ -49,7 +61,7 @@ public class CharacterController {
             }
 
             for(String arquivo : arquivos_personagens){
-                arquivo_personagem = new File(context.getFilesDir(), "personagens/"+arquivo);
+                arquivo_personagem = new File(context.getFilesDir(), "personagens/json/"+arquivo);
                 inputStream = new FileInputStream(arquivo_personagem);
                 bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 stringBuilder = new StringBuilder();
@@ -58,8 +70,7 @@ public class CharacterController {
                 }
                 bufferedReader.close();
                 inputStream.close();
-                inserePersonagemNaClasse(stringBuilder.toString());
-
+                inserePersonagemNaClasse(stringBuilder.toString(), context);
 
             }
 
@@ -67,34 +78,20 @@ public class CharacterController {
 
     }
 
-    private static void inserePersonagemNaClasse(String arquivo) throws JSONException {
+    private static void inserePersonagemNaClasse(String arquivo, Context context) throws JSONException {
 
         JSONObject jsonObject = new JSONObject(arquivo);
         JSONObject jsonTemp;
         JSONArray jsonArray;
-        String nome, especie, antecedente, estiloCombate, profissao, dadosVida, individualidade, defeito, codigoHonra, habilidadesBasicas, equipamentos, outros, alcunha, sonho, caminho, cargo, detalhesProfissao, detalhesTreinamento, hakiObservacao, hakiArmamento, hakiRei, akumaNoMi;
+        String nome, especie, antecedente, estiloCombate, profissao, dadosVida, individualidade, defeito, codigoHonra, habilidadesBasicas, equipamentos, outros, alcunha, sonho, caminho, cargo, detalhesProfissao, detalhesTreinamento, hakiObservacao, hakiArmamento, hakiRei, akumaNoMi, nomeImagem;
         int nivel, experiencia, valorForca, valorDestreza, valorConstituicao, valorSabedoria, valorPresenca, valorVontade, classeResistencia, valorProeficiencia, deslocamento, pvMax, pvAtual, pvTemp, ppMax, ppAtual, qntTripulacao, idade;
         double cash, altura, peso;
         ArrayList<String> proeficiencias, ataques_temp;
         ArrayList<Tecnica> tecnicas;
         ArrayList<ArrayList<String>> ataques;
+        Bitmap imagemPersonagem = null;
 
-        Map<String, String> estilos = new HashMap<>();
-        estilos.put("arqueiro","Arqueiro");
-        estilos.put("carateca_homem_peixe","Carateca Homem-Peixe");
-        estilos.put("ciborgue","Ciborgue");
-        estilos.put("combatente","Combatente");
-        estilos.put("estilingueiro","Estilingueiro");
-        estilos.put("guerreiro_oni","Guerreiro Oni");
-        estilos.put("guerrilheiro","Guerrilheiro");
-        estilos.put("hasshoken","Hasshoken");
-        estilos.put("lutador","Lutador");
-        estilos.put("ninja","Ninja");
-        estilos.put("okama_kenpo","Okama Kenpo");
-        estilos.put("rokushiki","Rokushiki");
-        estilos.put("ryusoken","Ryusoken");
-        estilos.put("sulong","Sulong");
-        estilos.put("espadachim","Espadachim");
+        Map<String, String> estilos = getStringStringMap();
 
         nome = jsonObject.getString("nome");
         especie = jsonObject.getString("especie");
@@ -168,6 +165,14 @@ public class CharacterController {
         hakiArmamento = jsonObject.getString("hakiarmamento");
         hakiRei = jsonObject.getString("hakirei");
         akumaNoMi = jsonObject.getString("akumanomi");
+        nomeImagem = jsonObject.getString("imagem");
+
+        // Lendo imagem
+//        File diretorioImagem = new File(context.getFilesDir(), "personagens/imagens");
+        File arquivoImagem = new File(context.getFilesDir(), "personagens/imagens/"+nomeImagem);
+        if(arquivoImagem.exists()){
+            imagemPersonagem = BitmapFactory.decodeFile(arquivoImagem.getAbsolutePath());
+        }
 
         // Insere personagem
         personagens.add(
@@ -179,9 +184,29 @@ public class CharacterController {
                         defeito, codigoHonra, habilidadesBasicas, equipamentos, outros, cash,
                         alcunha, sonho, caminho, qntTripulacao, cargo, altura, peso, idade,
                         detalhesProfissao, detalhesTreinamento, hakiObservacao, hakiArmamento,
-                        hakiRei, akumaNoMi)
+                        hakiRei, akumaNoMi, imagemPersonagem)
         );
 
+    }
+
+    private static @NonNull Map<String, String> getStringStringMap() {
+        Map<String, String> estilos = new HashMap<>();
+        estilos.put("arqueiro","Arqueiro");
+        estilos.put("carateca_homem_peixe","Carateca Homem-Peixe");
+        estilos.put("ciborgue","Ciborgue");
+        estilos.put("combatente","Combatente");
+        estilos.put("estilingueiro","Estilingueiro");
+        estilos.put("guerreiro_oni","Guerreiro Oni");
+        estilos.put("guerrilheiro","Guerrilheiro");
+        estilos.put("hasshoken","Hasshoken");
+        estilos.put("lutador","Lutador");
+        estilos.put("ninja","Ninja");
+        estilos.put("okama_kenpo","Okama Kenpo");
+        estilos.put("rokushiki","Rokushiki");
+        estilos.put("ryusoken","Ryusoken");
+        estilos.put("sulong","Sulong");
+        estilos.put("espadachim","Espadachim");
+        return estilos;
     }
 
 }

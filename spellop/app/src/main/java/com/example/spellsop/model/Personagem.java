@@ -2,6 +2,7 @@ package com.example.spellsop.model;
 
 import static java.lang.Math.floor;
 
+import android.graphics.Bitmap;
 import android.util.Pair;
 
 import java.util.ArrayList;
@@ -62,7 +63,17 @@ public class Personagem {
     private String hakiArmamento;
     private String hakiRei;
     private String akumaNoMi;
+    private Bitmap imagemPersonagem;
 
+    /* GETTERS E SETTERS */
+
+    public String getNome(){return this.nome;}
+    public String getEstiloCombate(){return this.estiloCombate;}
+    public String getEspecie(){return this.especie;}
+    public int getNivel(){return this.nivel;}
+    public Bitmap getImagemPersonagem(){return this.imagemPersonagem;}
+
+    // CONSTRUTOR
     public Personagem(String nome, String especie, String antecedente, String estiloCombate, String profissao,
                       int nivel, long experiencia, int valorForca, int valorDestreza, int valorConstituicao,
                       int valorSabedoria, int valorPresenca, int valorVontade, ArrayList<String> proeficiencias,
@@ -71,7 +82,7 @@ public class Personagem {
                       int ppMax, int ppAtual, String individualidade, String defeito, String codigo_honra, String habilidades_basicas,
                       String equipamentos, String outros, double cash, String alcunha, String sonho, String caminho,
                       int qntTripulacao, String cargo, double altura, double peso, int idade, String detalhesProfissao,
-                      String detalhesTreinamentos, String hakiObservacao, String hakiArmamento, String hakiRei, String akumaNoMi){
+                      String detalhesTreinamentos, String hakiObservacao, String hakiArmamento, String hakiRei, String akumaNoMi, Bitmap imagemPersonagem){
         this.nome = nome;
         this.especie = especie;
         this.antecedente = antecedente;
@@ -124,6 +135,7 @@ public class Personagem {
         this.hakiArmamento = hakiArmamento;
         this.hakiRei = hakiRei;
         this.akumaNoMi = akumaNoMi;
+        this.imagemPersonagem = imagemPersonagem;
     }
 
     private int calculaModificador(int valor){
