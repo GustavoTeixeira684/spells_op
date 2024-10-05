@@ -3,15 +3,14 @@ package com.example.spellsop.model;
 import android.util.Pair;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
-public class Character {
+public class Personagem {
 
     private int id;
     private String nome;
     private String especie;
     private String antecedente;
+//    private ArrayList<String> estiloCombate; INCLUIR NA PROXIMA VERSAO
     private String estiloCombate;
     private String profissao;
     private int nivel;
@@ -28,7 +27,7 @@ public class Character {
     private int modificadorPresenca;
     private int valorVontade;
     private int modificadorVontade;
-    private HashMap<String, Integer> habilidades;
+    private ArrayList<String> proeficiencias;
     private int classeResistencia;
     private int proeficiencia;
     private float deslocamento;
@@ -62,10 +61,11 @@ public class Character {
     private String hakiRei;
     private String akumaNoMi;
 
-    public Character(String nome, String especie, String estiloCombate){
+    public Personagem(String nome, String especie, String estiloCombate, int nivel){
         this.nome = nome;
         this.especie = especie;
         this.estiloCombate = estiloCombate;
+        this.nivel = nivel;
     }
 
     

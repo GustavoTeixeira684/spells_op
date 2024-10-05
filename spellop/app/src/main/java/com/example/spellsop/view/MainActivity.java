@@ -2,6 +2,7 @@ package com.example.spellsop.view;
 
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -12,6 +13,14 @@ import com.example.spellsop.R;
 import com.example.spellsop.controller.SpellsController;
 import com.example.spellsop.databinding.ActivityMainBinding;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
             }
             SpellsController.carregaTecnicas(MainActivity.this, Objects.requireNonNull(tecnicas_padrao));
 
+            funcaoTestaLeituraPersonagem(assetManager); // Executa função para apenas testar se o programa está lendo o json do personagem
+
 
         } catch (Exception e) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -77,5 +88,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Função criada apenas para testar se o programa está lendo o json do personagem
+    private void funcaoTestaLeituraPersonagem(AssetManager assetManager) throws IOException {
+
+        String[] arquivos = assetManager.list("");
+        String template_personagem = "";
+        boolean diretorioCriado = false;
+        for(int i = 0; i < Objects.requireNonNull(arquivos).length; i++){
+            if(arquivos[i].contains(".json")){
+                template_personagem = arquivos[i];
+            }
+        }
+
+        // Transfere para o armazenamento local
+        File diretorio = new File(MainActivity.this.getFilesDir(), "personagens");
+        if(!diretorio.exists() || !diretorio.isDirectory()){
+            diretorioCriado = diretorio.mkdir();
+
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(assetManager.open(template_personagem), StandardCharsets.UTF_8));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line+"\n");
+            }
+            Log.d("AIIINN PAPAI",stringBuilder.toString());
+            bufferedReader.close();
+            File arquivo = new File(MainActivity.this.getFilesDir(), diretorio.getName()+"/oscar_d_alho.json");
+            FileOutputStream fos = new FileOutputStream(arquivo);
+            OutputStreamWriter out = new OutputStreamWriter(fos);
+            out.write(stringBuilder.toString());
+            out.close();
+            fos.close();
+        }
+
+    }
 
 }
