@@ -3,6 +3,7 @@ package com.example.spellsop.controller;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Pair;
 
 import androidx.annotation.NonNull;
 
@@ -16,7 +17,6 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
@@ -26,15 +26,19 @@ import java.util.Map;
 
 public class CharacterController {
 
-    public static ArrayList<Personagem> personagens;
+    private static ArrayList<Personagem> personagens;
+    private static ArrayList<Pair<String, String>> especies;
 
+    // GETTERS E SETTERS
     public static ArrayList<Personagem> getPersonagens(){
         return personagens;
     }
+    public static ArrayList<Pair<String, String>> getEspecies(){ return especies;}
 
     public static void carregaPersonagens(Context context) throws IOException, JSONException {
 
         personagens = new ArrayList<>();
+        especies = getListaEspecies();
         File diretorio = new File(context.getFilesDir(), "personagens");
         File diretorioJson = new File(context.getFilesDir(), "personagens/json");
         File diretorioImagens = new File(context.getFilesDir(), "personagens/imagens");
@@ -187,6 +191,21 @@ public class CharacterController {
                         hakiRei, akumaNoMi, imagemPersonagem)
         );
 
+    }
+
+    private static @NonNull ArrayList<Pair<String, String>> getListaEspecies(){
+        ArrayList<Pair<String, String>> especies = new ArrayList<>();
+        especies.add(new Pair<>("anao", "Anão"));
+        especies.add(new Pair<>("celestial", "Celestial"));
+        especies.add(new Pair<>("gigante", "Gigante"));
+        especies.add(new Pair<>("homem_peixe", "Homem-Peixe"));
+        especies.add(new Pair<>("humano", "Humano"));
+        especies.add(new Pair<>("kuja", "Kuja"));
+        especies.add(new Pair<>("lunariano", "Lunariano"));
+        especies.add(new Pair<>("meio_homem_pexe", "Meio Homem-Peixe"));
+        especies.add(new Pair<>("mink", "Mink"));
+        especies.add(new Pair<>("sireno", "Sireno"));
+        return especies;
     }
 
     private static @NonNull Map<String, String> getStringStringMap() {

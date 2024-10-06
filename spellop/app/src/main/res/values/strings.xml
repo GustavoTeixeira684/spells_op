@@ -10,4 +10,50 @@
     <string name="grau">Grau</string>
     <string name="_0">0</string>
     <string name="requisito">Requisito</string>
+
+    <string-array name="especies">
+        <item>Anão</item>
+        <item>Celestial</item>
+        <item>Gigante</item>
+        <item>Homem-Peixe</item>
+        <item>Humano</item>
+        <item>Kuja</item>
+        <item>Lunariano</item>
+        <item>Meio Homem-Peixe</item>
+        <item>Mink</item>
+        <item>Sireno</item>
+    </string-array>
+
+    <string-array name="estiloCombate">
+        <item>Arqueiro</item>
+        <item>Carateca Homem-Peixe</item>
+        <item>Ciborgue</item>
+        <item>Combatente</item>
+        <item>Estilingueiro</item>
+        <item>Guerreiro Oni</item>
+        <item>Guerrilheiro</item>
+        <item>Hasshoken</item>
+        <item>Lutador</item>
+        <item>Ninja</item>
+        <item>Okama Kenpo</item>
+        <item>Rokushiki</item>
+        <item>Ryusoken</item>
+        <item>Sulong</item>
+        <item>Espadachim</item>
+    </string-array>
+
+    <string-array name="profissoes">
+        <item>Adestrador</item>
+        <item>Arqueólogo</item>
+        <item>Caçador de Recompensas</item>
+        <item>Carpinteiro</item>
+        <item>Cientista</item>
+        <item>Combatente</item>
+        <item>Cozinheiro</item>
+        <item>Médico</item>
+        <item>Músico</item>
+        <item>Navegador</item>
+        <item>Timoneiro</item>
+    </string-array>
+    
 </resources>
