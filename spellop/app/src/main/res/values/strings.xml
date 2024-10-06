@@ -55,5 +55,26 @@
         <item>Navegador</item>
         <item>Timoneiro</item>
     </string-array>
-    
+
+    <string-array name="proeficiencias">
+        <item>Atletismo</item>
+        <item>Acrobacia</item>
+        <item>Furtividade</item>
+        <item>Prestidigitação</item>
+        <item>História</item>
+        <item>Investigação</item>
+        <item>Natureza</item>
+        <item>Sobrevivência</item>
+        <item>Atuação</item>
+        <item>Enganação</item>
+        <item>Intimidação</item>
+        <item>Persuasão</item>
+        <item>Provocação</item>
+        <item>Haki</item>
+        <item>Intuição</item>
+        <item>Percepção</item>
+        <item>Sobrenatural</item>
+        <item>Sorte</item>
+    </string-array>
+
 </resources>
