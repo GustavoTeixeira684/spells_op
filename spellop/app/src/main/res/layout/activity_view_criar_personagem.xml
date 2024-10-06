@@ -295,6 +295,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtInputLayoutProeficiencias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:boxBackgroundMode="outline"
@@ -303,12 +304,13 @@
                     app:boxCornerRadiusTopEnd="24dp"
                     app:boxCornerRadiusTopStart="24dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <AutoCompleteTextView
                         android:id="@+id/txtProeficiencias"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:padding="15dp"
                         android:hint="Proeficiências"
-                        android:inputType="textMultiLine" />
+                        android:inputType="none" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

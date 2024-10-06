@@ -20,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,12 +29,14 @@ public class CharacterController {
 
     private static ArrayList<Personagem> personagens;
     private static ArrayList<Pair<String, String>> especies;
+    private static ArrayList<String> proeficiencias;
 
     // GETTERS E SETTERS
     public static ArrayList<Personagem> getPersonagens(){
         return personagens;
     }
     public static ArrayList<Pair<String, String>> getEspecies(){ return especies;}
+    public static ArrayList<String> getProeficiencias(){return proeficiencias;}
 
     public static void carregaPersonagens(Context context) throws IOException, JSONException {
 
@@ -226,6 +229,18 @@ public class CharacterController {
         estilos.put("sulong","Sulong");
         estilos.put("espadachim","Espadachim");
         return estilos;
+    }
+
+    public static void setSelectedProeficiencia(String proeficiencia){
+        proeficiencias.add(normalizado(proeficiencia));
+    }
+
+    public static void removeSelectedProeficiencia(String proeficiencia){
+        proeficiencias.remove(normalizado(proeficiencia));
+    }
+
+    private static String normalizado(String valor){
+        return Normalizer.normalize(valor, Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
     }
 
 }

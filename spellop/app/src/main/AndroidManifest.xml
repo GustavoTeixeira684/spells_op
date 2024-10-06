@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SpellsOP"
         tools:targetApi="31">
         <activity
+            android:name=".view.ViewBottomSheetDialogProeficiencias"
+            android:exported="false" />
+        <activity
             android:name=".view.ViewCriarPersonagem"
             android:exported="false" />
         <activity
