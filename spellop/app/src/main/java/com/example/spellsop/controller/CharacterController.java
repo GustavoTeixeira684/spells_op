@@ -1,9 +1,11 @@
 package com.example.spellsop.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Pair;
+import android.widget.AutoCompleteTextView;
 
 import androidx.annotation.NonNull;
 
@@ -30,6 +32,8 @@ public class CharacterController {
     private static ArrayList<Personagem> personagens;
     private static ArrayList<Pair<String, String>> especies;
     private static ArrayList<String> proeficiencias;
+    @SuppressLint("StaticFieldLeak")
+    public static AutoCompleteTextView txtProeficienciaCadastro;
 
     // GETTERS E SETTERS
     public static ArrayList<Personagem> getPersonagens(){
@@ -42,6 +46,7 @@ public class CharacterController {
 
         personagens = new ArrayList<>();
         especies = getListaEspecies();
+        proeficiencias = new ArrayList<>();
         File diretorio = new File(context.getFilesDir(), "personagens");
         File diretorioJson = new File(context.getFilesDir(), "personagens/json");
         File diretorioImagens = new File(context.getFilesDir(), "personagens/imagens");
@@ -233,10 +238,24 @@ public class CharacterController {
 
     public static void setSelectedProeficiencia(String proeficiencia){
         proeficiencias.add(normalizado(proeficiencia));
+        atualizaProeficienciasCadastro();
     }
 
     public static void removeSelectedProeficiencia(String proeficiencia){
         proeficiencias.remove(normalizado(proeficiencia));
+        atualizaProeficienciasCadastro();
+    }
+
+    private static void atualizaProeficienciasCadastro(){
+        txtProeficienciaCadastro.setText(listToString(proeficiencias));
+    }
+
+    private static String listToString(ArrayList<String> lista){
+        StringBuilder retorno = new StringBuilder();
+        for(String item : lista){
+            retorno.append(item).append(";");
+        }
+        return retorno.toString();
     }
 
     private static String normalizado(String valor){

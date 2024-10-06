@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
@@ -23,6 +24,7 @@
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="Atletismo"
+                android:textColor="@color/black"
                 android:textSize="22sp" />
 
             <View
@@ -37,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Acrobacia"
                 android:textSize="22sp" />
@@ -50,6 +53,7 @@
             <TextView
                 android:id="@+id/labelFurtividade"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -66,6 +70,7 @@
             <TextView
                 android:id="@+id/labelPrestidigitacao"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -82,6 +87,7 @@
             <TextView
                 android:id="@+id/labelHistoria"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -100,6 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/black"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="Investigação"
@@ -117,6 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Natureza"
                 android:textSize="22sp" />
@@ -133,6 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Sobrevivencia"
                 android:textSize="22sp" />
@@ -150,6 +159,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="Atuação"
                 android:textSize="22sp" />
 
@@ -164,6 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/black"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="Enganação"
@@ -183,6 +194,7 @@
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="Intimidação"
+                android:textColor="@android:color/black"
                 android:textSize="22sp" />
 
             <View
@@ -197,6 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Persuasão"
                 android:textSize="22sp" />
@@ -214,6 +227,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="Provocação"
                 android:textSize="22sp" />
 
@@ -229,6 +243,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Haki"
                 android:textSize="22sp" />
@@ -244,6 +259,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/black"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="Intuição"
@@ -259,6 +275,7 @@
                 android:id="@+id/labelPercepcao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
@@ -277,6 +294,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Sobrenatural"
                 android:textSize="22sp" />
@@ -291,6 +309,7 @@
                 android:id="@+id/labelSorte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
