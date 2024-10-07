@@ -13,7 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.example.spellsop.R;
+import com.example.spellsop.adapter.RecyclerAtaquesAdapter;
 import com.example.spellsop.adapter.RecyclerCharactersAdapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,8 +30,10 @@ public class Character extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private RecyclerCharactersAdapter charactersAdapter;
+    private RecyclerCharactersAdapter charactersAdapter ;
+    private RecyclerAtaquesAdapter ataquesAdapter;
     private ImageButton imgBtnAdd;
+    public ArrayList<String> ataques;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -76,6 +81,8 @@ public class Character extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(charactersAdapter);
+
+
 
         // Instanciando objetos de layoyut
         imgBtnAdd = view.findViewById(R.id.imgBtnAdd);

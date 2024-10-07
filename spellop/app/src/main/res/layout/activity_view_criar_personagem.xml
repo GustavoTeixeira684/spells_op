@@ -10,7 +10,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayouTopo"
@@ -55,11 +59,13 @@
 
 
             <LinearLayout
+                android:id="@+id/linearLayoutt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_marginHorizontal="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -308,9 +314,9 @@
                         android:id="@+id/txtProeficiencias"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:padding="15dp"
                         android:hint="Proeficiências"
-                        android:inputType="none" />
+                        android:inputType="none"
+                        android:padding="15dp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -432,21 +438,6 @@
                         android:hint="Dados de Vida" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusBottomEnd="24dp"
-                    app:boxCornerRadiusBottomStart="24dp"
-                    app:boxCornerRadiusTopEnd="24dp"
-                    app:boxCornerRadiusTopStart="24dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtAtaques"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:hint="Ataques" />
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -844,16 +835,80 @@
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/borda"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAtaques"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblAtaques"
+                        android:layout_width="337dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Ataques"
+                        android:textSize="20sp" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnAddAtaque"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/baseline_add_32" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewAtaques"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:padding="5dp"
+                    android:layout_marginEnd="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layouuut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnCancelarCadastro"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="@color/design_default_color_error"
+                        android:text="Cancelar" />
+
+                    <Button
+                        android:id="@+id/btnSalvarCadastro"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@android:color/holo_green_dark"
+                        android:text="Salvar" />
+                </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
 
-    </LinearLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

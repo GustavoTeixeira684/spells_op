@@ -32,6 +32,7 @@ public class CharacterController {
     private static ArrayList<Personagem> personagens;
     private static ArrayList<Pair<String, String>> especies;
     private static ArrayList<String> proeficiencias;
+    public static ArrayList<ArrayList<String>> ataques;
     @SuppressLint("StaticFieldLeak")
     public static AutoCompleteTextView txtProeficienciaCadastro;
 
@@ -47,6 +48,7 @@ public class CharacterController {
         personagens = new ArrayList<>();
         especies = getListaEspecies();
         proeficiencias = new ArrayList<>();
+        ataques = new ArrayList<>();
         File diretorio = new File(context.getFilesDir(), "personagens");
         File diretorioJson = new File(context.getFilesDir(), "personagens/json");
         File diretorioImagens = new File(context.getFilesDir(), "personagens/imagens");

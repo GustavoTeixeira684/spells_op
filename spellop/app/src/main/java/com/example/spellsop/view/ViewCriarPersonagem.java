@@ -1,7 +1,6 @@
 package com.example.spellsop.view;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,25 +8,39 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
+import com.example.spellsop.adapter.RecyclerAtaquesAdapter;
 import com.example.spellsop.controller.CharacterController;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
 
 public class ViewCriarPersonagem extends AppCompatActivity {
 
     ImageButton btnFechar;
     AutoCompleteTextView txtProeficiencias;
-    BottomSheetDialog bottomSheetDialog;
+    TextInputEditText txtAddNome, txtAddBonusAcerto, txtAddAlcance, txtAddDano;
+    BottomSheetDialog bottomSheetDialog, bottomSheetDialogAtaques;
+    RecyclerAtaquesAdapter ataquesAdapter;
+    ArrayList<String> ataques;
+
+    ImageButton imgBtnAddAtaque;
+    Button btnInserir, btnCancelar;
+
     TextView labelAtletismo, labelAcrobacia, labelFurtividade, labelHistoria, labelInvestigacao, labelNatureza,
     labelSobrevivencia, labelAtuacao, labelEnganacao, labelIntimidacao, labelPersuasao, labelProvocacao, labelHaki, labelIntuicao,
     labelPercepcao, labelSobrenatural, labelSorte, labelPrestidigitacao;
@@ -37,7 +50,7 @@ public class ViewCriarPersonagem extends AppCompatActivity {
             selectedLabelHaki = false, selectedLabelIntuicao = false, selectedLabelPercepcao = false, selectedLabelSobrenatural = false, selectedLabelSorte = false,
             selectedLabelPrestidigitacao = false;
 
-    View view;
+    View viewProeficiencias, viewAtaques;
 
 
 
@@ -79,28 +92,48 @@ public class ViewCriarPersonagem extends AppCompatActivity {
 
         txtProeficiencias = findViewById(R.id.txtProeficiencias);
         CharacterController.txtProeficienciaCadastro = this.txtProeficiencias; // Passa referência para que a seleção seja atualizada em tempo real
-        bottomSheetDialog = new BottomSheetDialog(ViewCriarPersonagem.this); // Instanciando um objeto BottomSheetDialog
-        view = LayoutInflater.from(ViewCriarPersonagem.this).inflate(R.layout.proeficiencias_bottom_sheet_layout, null, false);
-        bottomSheetDialog.setContentView(view);
 
-        labelAtletismo = view.findViewById(R.id.labelAtletismo);
-        labelAcrobacia = view.findViewById(R.id.labelAcrobacia);
-        labelFurtividade = view.findViewById(R.id.labelFurtividade);
-        labelHistoria = view.findViewById(R.id.labelHistoria);
-        labelInvestigacao = view.findViewById(R.id.labelInvestigacao);
-        labelNatureza = view.findViewById(R.id.labelNatureza);
-        labelSobrevivencia = view.findViewById(R.id.labelSobrevivencia);
-        labelAtuacao = view.findViewById(R.id.labelAtuacao);
-        labelEnganacao = view.findViewById(R.id.labelEnganacao);
-        labelIntimidacao = view.findViewById(R.id.labelIntimidacao);
-        labelProvocacao = view.findViewById(R.id.labelProvocacao);
-        labelHaki = view.findViewById(R.id.labelHaki);
-        labelIntuicao = view.findViewById(R.id.labelIntuicao);
-        labelPercepcao = view.findViewById(R.id.labelPercepcao);
-        labelSobrenatural = view.findViewById(R.id.labelSobrenatural);
-        labelSorte = view.findViewById(R.id.labelSorte);
-        labelPrestidigitacao = view.findViewById(R.id.labelPrestidigitacao);
-        labelPersuasao = view.findViewById(R.id.labelPersuasao);
+        RecyclerView recyclerViewAtaques = this.findViewById(R.id.recyclerViewAtaques);
+        ataques = new ArrayList<>();
+        ataquesAdapter = new RecyclerAtaquesAdapter(this, ataques);
+        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerViewAtaques.setLayoutManager(layoutManager1);
+        recyclerViewAtaques.setAdapter(ataquesAdapter);
+
+        bottomSheetDialog = new BottomSheetDialog(ViewCriarPersonagem.this); // Instanciando um objeto BottomSheetDialog
+        viewProeficiencias = LayoutInflater.from(ViewCriarPersonagem.this).inflate(R.layout.proeficiencias_bottom_sheet_layout, null, false);
+        bottomSheetDialog.setContentView(viewProeficiencias);
+
+        bottomSheetDialogAtaques = new BottomSheetDialog(ViewCriarPersonagem.this);
+        viewAtaques = LayoutInflater.from(ViewCriarPersonagem.this).inflate(R.layout.ataques_bottom_sheet_layout, null, false);
+        bottomSheetDialogAtaques.setContentView(viewAtaques);
+
+        labelAtletismo = viewProeficiencias.findViewById(R.id.labelAtletismo);
+        labelAcrobacia = viewProeficiencias.findViewById(R.id.labelAcrobacia);
+        labelFurtividade = viewProeficiencias.findViewById(R.id.labelFurtividade);
+        labelHistoria = viewProeficiencias.findViewById(R.id.labelHistoria);
+        labelInvestigacao = viewProeficiencias.findViewById(R.id.labelInvestigacao);
+        labelNatureza = viewProeficiencias.findViewById(R.id.labelNatureza);
+        labelSobrevivencia = viewProeficiencias.findViewById(R.id.labelSobrevivencia);
+        labelAtuacao = viewProeficiencias.findViewById(R.id.labelAtuacao);
+        labelEnganacao = viewProeficiencias.findViewById(R.id.labelEnganacao);
+        labelIntimidacao = viewProeficiencias.findViewById(R.id.labelIntimidacao);
+        labelProvocacao = viewProeficiencias.findViewById(R.id.labelProvocacao);
+        labelHaki = viewProeficiencias.findViewById(R.id.labelHaki);
+        labelIntuicao = viewProeficiencias.findViewById(R.id.labelIntuicao);
+        labelPercepcao = viewProeficiencias.findViewById(R.id.labelPercepcao);
+        labelSobrenatural = viewProeficiencias.findViewById(R.id.labelSobrenatural);
+        labelSorte = viewProeficiencias.findViewById(R.id.labelSorte);
+        labelPrestidigitacao = viewProeficiencias.findViewById(R.id.labelPrestidigitacao);
+        labelPersuasao = viewProeficiencias.findViewById(R.id.labelPersuasao);
+
+        imgBtnAddAtaque = this.findViewById(R.id.imgBtnAddAtaque);
+        btnCancelar = viewAtaques.findViewById(R.id.btnCancelar);
+        btnInserir = viewAtaques.findViewById(R.id.btnInserir);
+        txtAddNome = viewAtaques.findViewById(R.id.txtAddNome);
+        txtAddAlcance = viewAtaques.findViewById(R.id.txtAddAlcance);
+        txtAddBonusAcerto = viewAtaques.findViewById(R.id.txtAddBonusAcerto);
+        txtAddDano = viewAtaques.findViewById(R.id.txtAddDano);
 
         this.setEventos();
 
@@ -113,6 +146,48 @@ public class ViewCriarPersonagem extends AppCompatActivity {
 
     @SuppressLint("ClickableViewAccessibility")
     private void setEventos(){
+
+        btnInserir.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onClick(View v) {
+                if(!String.valueOf(txtAddNome.getText()).isEmpty() && !String.valueOf(txtAddAlcance.getText()).isEmpty() && !String.valueOf(txtAddDano.getText()).isEmpty() && !String.valueOf(txtAddBonusAcerto.getText()).isEmpty()){
+                    ataques.add(String.valueOf(txtAddNome.getText()));
+                    ArrayList<String> temp = new ArrayList<>();
+                    temp.add(String.valueOf(txtAddNome.getText()));
+                    temp.add(String.valueOf(txtAddAlcance.getText()));
+                    temp.add(String.valueOf(txtAddBonusAcerto.getText()));
+                    temp.add(String.valueOf(txtAddDano.getText()));
+                    CharacterController.ataques.add(temp);
+                    ataquesAdapter.notifyDataSetChanged();
+                    btnCancelar.performClick();
+                }else{
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ViewCriarPersonagem.this);
+                    builder.setTitle("FILHO DA PUTA BURRO!");
+                    builder.setMessage("Preenche todos os campos cacete!");
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
+            }
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtAddNome.setText("");
+                txtAddAlcance.setText("");
+                txtAddBonusAcerto.setText("");
+                txtAddDano.setText("");
+                bottomSheetDialogAtaques.cancel();
+            }
+        });
+
+        imgBtnAddAtaque.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetDialogAtaques.show();
+            }
+        });
 
         txtProeficiencias.setOnClickListener(new View.OnClickListener() {
             @Override
