@@ -46,10 +46,21 @@ public class SpellsController {
         return ordenaTecnicasPorGrau(0, tecnicas_filtradas.size(), new ArrayList<>(tecnicas_filtradas));
     }
     public static int getQuantidadeTecnicasFiltradas() {return tecnicas_filtradas.size();}
+    public static Map<String, ArrayList<String>> getFiltros(){ return filtros;}
 
     // ***** FIM GETTERS E SETTERS ***** //
 
-    public static Map<String, ArrayList<String>> getFiltros(){ return filtros;}
+    public static ArrayList<Tecnica> getTecnicasDoEstilo(String estiloCombate){
+
+        ArrayList<Tecnica> retorno = new ArrayList<>();
+        for(Tecnica item : tecnicas){
+            if(item.getEstilo().equals(estiloCombate)){
+                retorno.add(item);
+            }
+        }
+
+        return retorno;
+    }
 
     public static void carregaTecnicas(Context context, String[] caminho_arquivos) {
 
@@ -139,7 +150,7 @@ public class SpellsController {
         return ordenaTecnicasPorGrau(0, tecnicas.size(), tecnicas);
     }
 
-    private static ArrayList<Tecnica> ordenaTecnicasPorGrau(int primeiro, int ultimo, ArrayList<Tecnica> est){
+    public static ArrayList<Tecnica> ordenaTecnicasPorGrau(int primeiro, int ultimo, ArrayList<Tecnica> est){
 
         if(primeiro < ultimo-1) {
             ArrayList<Tecnica> temp = new ArrayList<>();

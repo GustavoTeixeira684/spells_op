@@ -22,8 +22,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
+import com.example.spellsop.adapter.RecyclerAdicionarTecnicasAdapter;
 import com.example.spellsop.adapter.RecyclerAtaquesAdapter;
+import com.example.spellsop.adapter.RecyclerTecnicasAdapter;
 import com.example.spellsop.controller.CharacterController;
+import com.example.spellsop.controller.SpellsController;
+import com.example.spellsop.model.Tecnica;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -32,13 +36,16 @@ import java.util.ArrayList;
 public class ViewCriarPersonagem extends AppCompatActivity {
 
     ImageButton btnFechar;
-    AutoCompleteTextView txtProeficiencias;
+    AutoCompleteTextView txtProeficiencias, txtEstiloCombate;
     TextInputEditText txtAddNome, txtAddBonusAcerto, txtAddAlcance, txtAddDano;
-    BottomSheetDialog bottomSheetDialog, bottomSheetDialogAtaques;
+    BottomSheetDialog bottomSheetDialog, bottomSheetDialogAtaques, bottomSheetDialogTecnicas;
     RecyclerAtaquesAdapter ataquesAdapter;
-    ArrayList<String> ataques;
+    RecyclerTecnicasAdapter tecnicasAdapter;
+    RecyclerAdicionarTecnicasAdapter adicionarTecnicasAdapter;
+    ArrayList<String> ataques, tecnicas;
+    ArrayList<Tecnica> listaTecnicas;
 
-    ImageButton imgBtnAddAtaque;
+    ImageButton imgBtnAddAtaque, imgBtnAddTecnica;
     Button btnInserir, btnCancelar;
 
     TextView labelAtletismo, labelAcrobacia, labelFurtividade, labelHistoria, labelInvestigacao, labelNatureza,
@@ -50,7 +57,7 @@ public class ViewCriarPersonagem extends AppCompatActivity {
             selectedLabelHaki = false, selectedLabelIntuicao = false, selectedLabelPercepcao = false, selectedLabelSobrenatural = false, selectedLabelSorte = false,
             selectedLabelPrestidigitacao = false;
 
-    View viewProeficiencias, viewAtaques;
+    View viewProeficiencias, viewAtaques, viewTecnicas;
 
 
 
@@ -81,7 +88,7 @@ public class ViewCriarPersonagem extends AppCompatActivity {
 
         String[] stringArrayEstiloCombate = getResources().getStringArray(R.array.estiloCombate);
         ArrayAdapter<String> adapterEstiloCombate= new ArrayAdapter<>(ViewCriarPersonagem.this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, stringArrayEstiloCombate);
-        AutoCompleteTextView txtEstiloCombate = this.findViewById(R.id.txtEstilo);
+        txtEstiloCombate = this.findViewById(R.id.txtEstilo);
         txtEstiloCombate.setAdapter(adapterEstiloCombate);
 
         String[] stringArrayProfissoes = getResources().getStringArray(R.array.profissoes);
@@ -93,6 +100,7 @@ public class ViewCriarPersonagem extends AppCompatActivity {
         txtProeficiencias = findViewById(R.id.txtProeficiencias);
         CharacterController.txtProeficienciaCadastro = this.txtProeficiencias; // Passa referência para que a seleção seja atualizada em tempo real
 
+        // Lista de Ataques Adicionados
         RecyclerView recyclerViewAtaques = this.findViewById(R.id.recyclerViewAtaques);
         ataques = new ArrayList<>();
         ataquesAdapter = new RecyclerAtaquesAdapter(this, ataques);
@@ -100,13 +108,28 @@ public class ViewCriarPersonagem extends AppCompatActivity {
         recyclerViewAtaques.setLayoutManager(layoutManager1);
         recyclerViewAtaques.setAdapter(ataquesAdapter);
 
+        // Lista de Tecnicas Adicionadas
+        RecyclerView recyclerViewTecnicas = this.findViewById(R.id.recyclerViewTecnicas);
+        tecnicas = new ArrayList<>();
+        tecnicasAdapter = new RecyclerTecnicasAdapter(this, tecnicas);
+        RecyclerView.LayoutManager layoutManagerTecnicas = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerViewTecnicas.setLayoutManager(layoutManagerTecnicas);
+        recyclerViewTecnicas.setAdapter(tecnicasAdapter);
+
+        // BottomSheetDialog para a Proeficiencias
         bottomSheetDialog = new BottomSheetDialog(ViewCriarPersonagem.this); // Instanciando um objeto BottomSheetDialog
         viewProeficiencias = LayoutInflater.from(ViewCriarPersonagem.this).inflate(R.layout.proeficiencias_bottom_sheet_layout, null, false);
         bottomSheetDialog.setContentView(viewProeficiencias);
 
+        // BottomSheetDialog para os ataques
         bottomSheetDialogAtaques = new BottomSheetDialog(ViewCriarPersonagem.this);
         viewAtaques = LayoutInflater.from(ViewCriarPersonagem.this).inflate(R.layout.ataques_bottom_sheet_layout, null, false);
         bottomSheetDialogAtaques.setContentView(viewAtaques);
+
+        // BottomSheetDialog para as Tecnicas
+        bottomSheetDialogTecnicas = new BottomSheetDialog(ViewCriarPersonagem.this);
+        viewTecnicas = LayoutInflater.from(ViewCriarPersonagem.this).inflate(R.layout.tecnicas_bottom_sheet_layout, null, false);
+        bottomSheetDialogTecnicas.setContentView(viewTecnicas);
 
         labelAtletismo = viewProeficiencias.findViewById(R.id.labelAtletismo);
         labelAcrobacia = viewProeficiencias.findViewById(R.id.labelAcrobacia);
@@ -128,6 +151,9 @@ public class ViewCriarPersonagem extends AppCompatActivity {
         labelPersuasao = viewProeficiencias.findViewById(R.id.labelPersuasao);
 
         imgBtnAddAtaque = this.findViewById(R.id.imgBtnAddAtaque);
+        imgBtnAddTecnica = this.findViewById(R.id.imgBtnAddTecnica);
+
+
         btnCancelar = viewAtaques.findViewById(R.id.btnCancelar);
         btnInserir = viewAtaques.findViewById(R.id.btnInserir);
         txtAddNome = viewAtaques.findViewById(R.id.txtAddNome);
@@ -179,6 +205,34 @@ public class ViewCriarPersonagem extends AppCompatActivity {
                 txtAddBonusAcerto.setText("");
                 txtAddDano.setText("");
                 bottomSheetDialogAtaques.cancel();
+            }
+        });
+
+        imgBtnAddTecnica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(String.valueOf(txtEstiloCombate.getText()).isEmpty()){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ViewCriarPersonagem.this);
+                    builder.setTitle("Impossivel carregar Tecnicas");
+                    builder.setMessage("Você precisa definir qual o Estilo de Combate Primeiro!");
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }else{
+                    // Inserir aqui a regra para pegar apenas as tecnicas do estilo de combate do jogador
+                    listaTecnicas = SpellsController.getTecnicasDoEstilo(String.valueOf(txtEstiloCombate.getText()));
+                    listaTecnicas = SpellsController.ordenaTecnicasPorGrau(0, listaTecnicas.size(), listaTecnicas); // Ordena por grau
+
+                    RecyclerView recyclerViewAdicionarTecnicas = viewTecnicas.findViewById(R.id.recyclerViewTecnicas);
+                    adicionarTecnicasAdapter = new RecyclerAdicionarTecnicasAdapter(viewTecnicas.getContext(), listaTecnicas);
+                    RecyclerView.LayoutManager layoutManagerAdicionarTecnicas = new LinearLayoutManager(viewTecnicas.getContext(), LinearLayoutManager.VERTICAL, false);
+                    recyclerViewAdicionarTecnicas.setLayoutManager(layoutManagerAdicionarTecnicas);
+                    recyclerViewAdicionarTecnicas.setAdapter(adicionarTecnicasAdapter);
+
+                    bottomSheetDialogTecnicas.show();
+                }
+
+
             }
         });
 

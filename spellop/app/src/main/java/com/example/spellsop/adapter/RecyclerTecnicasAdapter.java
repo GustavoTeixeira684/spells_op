@@ -11,31 +11,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spellsop.R;
 import com.example.spellsop.viewHolder.RecyclerAtaquesViewHolder;
+import com.example.spellsop.viewHolder.RecyclerTecnicasViewHolder;
 
 import java.util.ArrayList;
 
-public class RecyclerAtaquesAdapter extends RecyclerView.Adapter<RecyclerAtaquesViewHolder> {
+public class RecyclerTecnicasAdapter extends RecyclerView.Adapter<RecyclerTecnicasViewHolder> {
 
     Context context;
     ArrayList<String> itens;
 
-    public RecyclerAtaquesAdapter(Context context, ArrayList<String> itens){
+    public RecyclerTecnicasAdapter(Context context, ArrayList<String> itens){
         this.context = context;
         this.itens = itens;
     }
 
     @NonNull
     @Override
-    public RecyclerAtaquesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerTecnicasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(this.context).inflate(R.layout.card_ataque, parent, false);
-        return new RecyclerAtaquesViewHolder(view);
+        return new RecyclerTecnicasViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAtaquesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerTecnicasViewHolder holder, int position) {
 
         String item = itens.get(position);
-        holder.txtNomeAtaque.setText(item);
+        holder.txtNomeTecnica.setText(item);
 
     }
 
